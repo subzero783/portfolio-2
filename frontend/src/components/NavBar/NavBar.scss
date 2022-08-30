@@ -1,0 +1,54 @@
+
+div#navbar {
+    position: fixed;
+    width: 100%;
+    padding: 20px 0px 25px;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    transition: all .45s ease;
+
+    > .container {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #top-logo {
+        width: 20%;
+    }
+    #tn-nav {
+        width: 80%;
+        > ul {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            margin-left: auto;
+            justify-content: flex-end;
+            > li {
+                > a {
+                    background: none;
+                    border: none;
+                    color: rgb(255, 255, 255);
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    margin: 10px 5px;
+                    padding: 5px;
+                    transition: all 0.5s ease 0s;
+                    text-decoration: unset;
+                    &:hover, 
+                    &:active,
+                    &:focus {
+                        color: rgb(4, 229, 229);
+                    }
+                }
+            }
+        }
+    }
+    &.scrolled {
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 1px 8px 3px rgba(0,0,0,0.3);
+    }
+}

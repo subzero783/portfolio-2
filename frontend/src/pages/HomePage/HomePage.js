@@ -1,4 +1,7 @@
+
+
 import React, { useState, useEffect } from 'react';
+import Hero from '../../components/Hero/Hero';
 
 
 function HomePage(){
@@ -17,12 +20,11 @@ function HomePage(){
     },[]);
 
     return(
-        <>
-            <p>message:</p>
-            <p>{message}</p>
-            <div class="container">
-            </div>
-        </>
+        <div id="homepage-container">
+            {/* <p>message:</p>
+            <p>{message}</p> */}
+            <Hero />
+        </div>
     );
 }
 

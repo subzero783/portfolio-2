@@ -23,7 +23,29 @@ ul {
   margin: 0;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.main-logo {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 0;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 15% 0%;
+  }
+  50% {
+    background-position: 85% 100%;
+  }
+  100% {
+    background-position: 15% 0%;
+  }
 }

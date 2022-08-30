@@ -1,0 +1,49 @@
+
+#hero {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    video {
+        width: 100%;
+        position: fixed;
+    }
+    > h1 {
+        font-size: 50px;
+        color: #000;
+    }
+    #headline-container {
+        position: relative;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        height: 500px;
+        width: 900px;
+        margin: auto;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 5px;
+            background: linear-gradient(120deg, #04e5e5, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+            background-size: 300% 300%;
+            clip-path: polygon(0% 100%, 10px 100%, 10px 10px, calc(100% - 10px) 10px, calc(100% - 10px) calc(100% - 10px), 10px calc(100% - 10px), 10px 100%, 100% 100%, 100% 0%, 0% 0%);
+        }
+        &.animate:after {
+            animation: gradientAnimation 2s ease-in-out infinite;
+        }
+    }
+}
