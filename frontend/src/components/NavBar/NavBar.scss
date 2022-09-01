@@ -2,7 +2,7 @@
 div#navbar {
     position: fixed;
     width: 100%;
-    padding: 20px 0px 25px;
+    padding: 0 0 25px;
     z-index: 100;
     left: 50%;
     transform: translateX(-50%);
@@ -18,6 +18,9 @@ div#navbar {
 
     #top-logo {
         width: 20%;
+        > .glitch {
+            font-size: 70px;
+        }
     }
     #tn-nav {
         width: 80%;

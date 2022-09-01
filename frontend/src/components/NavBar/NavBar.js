@@ -1,5 +1,6 @@
 import React,{useRef} from 'react';
 import {Link} from 'react-router-dom';
+import Glitch from '../Glitch/Glitch';
 import './NavBar.scss';
 
 
@@ -27,7 +28,8 @@ export default function NavBar(){
     <div id="navbar">
       <div className="container">
         <div id="top-logo">
-          <p className="main-logo">G</p>
+          {/* <p className="main-logo glitch">G</p> */}
+          <Glitch className="main-logo" text="G" />
         </div>
         <nav id="tn-nav">
           <ul>
