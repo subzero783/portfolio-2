@@ -1,6 +1,5 @@
 
 #hero {
-    position: relative;
     display: flex;
     flex-flow: column nowrap;
     -webkit-box-align: center;
@@ -10,19 +9,49 @@
     height: 100vh;
     video {
         width: 100%;
-        position: fixed;
+        position: absolute;
     }
-    > h1 {
+    .heading {
+        > .glitch {
+            &:last-of-type {
+                margin-bottom: 16px;
+            }
+        }
+    }
+    p.subheading {
+        font-size: 24px;
+        font-weight: 400;
+        color: rgb(204, 204, 204);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .type {
         font-size: 50px;
-        color: #000;
+        line-height: 50px;
+        color: #fff;
+        text-transform: uppercase;
+        margin-left: 6px;
+        @media (min-width:768px) and (max-width:1500px) {
+            font-size: 23px;
+            line-height: 20px;
+        }
+        @media (max-width:767px) {
+            font-size: 20px;
+            line-height: 20px;
+        }
+        span {
+            font-family: Teko;
+        }
+    }
+    .button_1 {
+        margin-top: 40px;
     }
     #headline-container {
         position: relative;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
         height: 500px;
-        width: 900px;
+        max-width: 900px;
+        width: 100%;
         margin: auto;
         display: flex;
         -webkit-box-align: center;

@@ -1,9 +1,9 @@
 
 
 import React, { useState, useEffect } from 'react';
+import Glitch from '../../components/Glitch/Glitch';
+import Typewriter from 'typewriter-effect'
 import './Hero.scss';
-
-
 
 
 export default function Hero(){
@@ -52,7 +52,35 @@ export default function Hero(){
                 <source src={process.env.PUBLIC_URL + '/videos/abstract-video-bg.mp4'} type="video/mp4"/>
             </video>
             <div id="headline-container" className="animate parallax-hero-item">
-                <h1 className="parallax-hero-item">Hello</h1>
+                <p className="subheading parallax-hero-item">Hello, I'm</p>
+                <div className="heading parallax-hero-item">
+                    <Glitch text="Gustavo" />
+                    <Glitch text="Amezcua" />
+                    <div className="type teko-font">
+                        <Typewriter
+                            options={{
+                            strings: [
+                                'Front-End Developer',
+                                'Back-End Developer',
+                                'Full-Stack Developer',
+                                'WordPress Developer',
+                                'UX Developer',
+                                'Web Designer',
+                            ],
+                            autoStart: true,
+                            loop: true,
+                            }}
+                        />
+
+                    </div>
+                    <a 
+                        href="https://docs.google.com/document/d/1DvOP_pcP5jvvcKz7qN-4QGLck8vYdMlu/edit?usp=sharing&ouid=102193198745538813297&rtpof=true&sd=true" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="button_1">
+                            Download Resume
+                    </a>
+                </div>
             </div>
         </div>
     )
