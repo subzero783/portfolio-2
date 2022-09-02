@@ -2,50 +2,177 @@
 div#navbar {
     position: fixed;
     width: 100%;
-    padding: 0 0 25px;
-    z-index: 100;
+    padding: 20px 0 25px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
     transition: all .45s ease;
 
+    @media screen and (max-width: 767px){
+        padding-top: 0;
+        padding-bottom: 0;
+        position: absolute;
+        > .container {
+            max-width: unset;
+            padding: 0;
+        }
+    }
+
     > .container {
+        > .logo-and-burger-container {
+            display: none;
+            flex-flow: row nowrap;
+            justify-content: center;
+
+            @media screen and (max-width: 767px){
+                display: flex;
+            }
+
+            > #top-logo {
+                background-color: #272b2e;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                width: 50%;
+                display: block;
+                z-index: 1;
+                > .glitch {
+                    font-size: 70px;
+                    line-height: 50px;
+                }
+            }
+            > .burger {
+                background-color: #272b2e;
+                width: 50%;
+                position: relative;
+                display: none;
+                justify-content: flex-end;
+                align-items: center;
+                padding-right: 15px;
+                z-index: 2;
+                cursor: pointer;
+                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                &.burger--active {
+                    &:before {
+                        transform: rotate(-45deg) translate(-7px, -7px) scaleX(0.7);
+                    }
+                    &:after {
+                        transform: rotate(45deg) translate(-7px, 7px) scaleX(0.7);
+                    }
+                    > .burger__patty {
+                        transform: rotate(90deg);
+                        &:before {
+                            transform: rotate(-45deg) translate(-7px, -7px) scaleX(0.7);
+                        }
+                        &:after {
+                            transform: rotate(45deg) translate(-7px, 7px) scaleX(0.7);
+                        }
+                    }
+                }
+                > .burger__patty {
+                    position: relative;
+                    height: 2px;
+                    width: 40px;
+                    background: white;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: -10px;
+                        left: 0;
+                        height: 2px;
+                        width: 100%;
+                        background: white;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        height: 2px;
+                        width: 100%;
+                        background: white;
+                    }
+                }
+                > .burger__patty, 
+                > .burger__patty:before,
+                > .burger__patty:after {
+                    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                }
+                @media screen and (max-width: 767px){
+                    display: flex;
+                    > .burger__patty {
+                        transform: scale(0.8);
+                        &.burger--active {
+                            transform: scale(0.8) rotate(90deg);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .logo-and-nav-container {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
-    }
-
-    #top-logo {
-        width: 20%;
-        > .glitch {
-            font-size: 70px;
+        #top-logo {
+            width: 20%;
+            > .glitch {
+                font-size: 70px;
+                line-height: 0;
+            }
         }
-    }
-    #tn-nav {
-        width: 80%;
-        > ul {
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            margin-left: auto;
-            justify-content: flex-end;
-            > li {
-                > a {
-                    background: none;
-                    border: none;
-                    color: rgb(255, 255, 255);
-                    text-transform: capitalize;
-                    font-weight: 500;
-                    margin: 10px 5px;
-                    padding: 5px;
-                    transition: all 0.5s ease 0s;
-                    text-decoration: unset;
-                    &:hover, 
-                    &:active,
-                    &:focus {
-                        color: rgb(4, 229, 229);
+        #tn-nav {
+            width: 80%;
+            > ul {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                margin-left: auto;
+                justify-content: flex-end;
+                > li {
+                    > a {
+                        background: none;
+                        border: none;
+                        color: rgb(255, 255, 255);
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        margin: 10px 5px;
+                        padding: 5px;
+                        transition: all 0.5s ease 0s;
+                        text-decoration: unset;
+                        &:hover, 
+                        &:active,
+                        &:focus {
+                            color: rgb(4, 229, 229);
+                        }
                     }
+                }
+            }
+        }
+        @media screen and (max-width: 767px){
+            #top-logo {
+                display: none;
+            }
+            #tn-nav {
+                width: 100%;
+                transform: translate(0, -100%);
+                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                background-color: #272b2e;
+                > ul {
+                    flex-flow: column nowrap;
+                    padding-bottom: 10px;
+                    > li {
+                        > a {
+                            font-family: 'Poppins', sans-serif;
+                            text-transform: uppercase;
+                            padding: 10px 15px;
+                            line-height: 36px;
+                        }
+                    }
+                }
+                &.burger--active {
+                    transform: translate(0, 0);
                 }
             }
         }
@@ -53,5 +180,9 @@ div#navbar {
     &.scrolled {
         background-color: rgba(0, 0, 0, 0.8);
         box-shadow: 0 1px 8px 3px rgba(0,0,0,0.3);
+        @media screen and (max-width: 767px){
+            box-shadow: unset;
+            background-color: unset;
+        }
     }
 }

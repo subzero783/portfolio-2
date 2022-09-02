@@ -1,7 +1,11 @@
 
 
 import React, { useState, useEffect } from 'react';
+// Hero component
 import Hero from '../../components/Hero/Hero';
+
+// Sections components
+import About from './sections/About/About';
 
 
 function HomePage(){
@@ -24,6 +28,7 @@ function HomePage(){
             {/* <p>message:</p>
             <p>{message}</p> */}
             <Hero />
+            <About />
         </div>
     );
 }
