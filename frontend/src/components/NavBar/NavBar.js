@@ -1,4 +1,4 @@
-import React,{useRef} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import Glitch from '../Glitch/Glitch';
 import './NavBar.scss';
@@ -8,22 +8,20 @@ const burger_click = (e) => {
   document.getElementById("tn-nav").classList.toggle('burger--active');
 }
 
-function navbar_link_click_on_mobile(){
-  // Add event listener for each list item link in the navbar unordered list on mobile. 
-  // When a link in the unordered list is clicked, the burger menu is closed. 
-  // This is done by adding the class "burger--active" to the burger menu.
-  var navbar_links = document.getElementsByClassName("navbar__link");
-  for(var i = 0; i < navbar_links.length; i++){
-    navbar_links[i].addEventListener("click", function(){
-      document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
-      document.getElementById("tn-nav").classList.toggle('burger--active');
-    });
+const navbar_link_click = (e) => {
+  if(window.innerWidth < 768){
+    document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
+    document.getElementById("tn-nav").classList.toggle('burger--active');
   }
 }
-navbar_link_click_on_mobile();
 
+const onWindowResize = () => {
+  document.getElementById("tn-nav").classList.remove('burger--active');
+  document.getElementsByClassName("burger")[0].classList.remove("burger--active");
+};
+window.addEventListener('resize', onWindowResize);
 
-function page_scroll(){
+const page_scroll = () => {
   window.onscroll = function() {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     if(scrolled > 50){
@@ -58,13 +56,19 @@ export default function NavBar(){
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <a className="navbar__link" href='#about'>About</a>
+                <a
+                  onClick={navbar_link_click}
+                  href='#about'>About</a>
               </li>
               <li>
-                <a className="navbar__link" href='#portfolio'>Portfolio</a>
+                <a
+                  onClick={navbar_link_click}
+                  href='#portfolio'>Portfolio</a>
               </li>
               <li>
-                <a className="navbar__link" href='#services'>Services</a>
+                <a
+                  onClick={navbar_link_click}
+                  href='#services'>Services</a>
               </li>
               <li>
                 <a href='#experience'>Experience</a>
