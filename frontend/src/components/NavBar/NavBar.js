@@ -1,5 +1,7 @@
 
-import React from 'react';
+import React, {useEffect} from 'react';
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 import {Link} from 'react-router-dom';
 import Glitch from '../Glitch/Glitch';
 import './NavBar.scss';
@@ -45,6 +47,13 @@ page_scroll();
 
 export default function NavBar(){
 
+  useEffect(() => {
+    AOS.init({
+        duration : 2000
+    });
+    AOS.refresh();
+}, []);
+
   return(
     <div id="navbar">
       <div className="container">
@@ -58,7 +67,7 @@ export default function NavBar(){
           </div>
         </div>
         <div className="logo-and-nav-container">
-          <div id="top-logo">
+          <div id="top-logo" data-aos="fade-right">
             <Glitch className="main-logo" text="G" />
           </div>
           <nav 

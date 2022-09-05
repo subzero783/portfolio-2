@@ -2,12 +2,21 @@
 
 import React, { useState, useEffect } from 'react';
 import Glitch from '../../components/Glitch/Glitch';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Typewriter from 'typewriter-effect'
 import './Hero.scss';
 import Shapes from '../Shapes/Shapes';
 
 
 export default function Hero(){
+
+    useEffect(() => {
+        AOS.init({
+            duration : 2000
+        });
+        AOS.refresh();
+    }, []);
     
     const [headlineContainer, setHeadlineContainer] = useState({
         width: 0,
@@ -52,7 +61,11 @@ export default function Hero(){
             <video autoPlay loop muted>
                 <source src={process.env.PUBLIC_URL + '/videos/abstract-video-bg.mp4'} type="video/mp4"/>
             </video>
-            <div id="headline-container" className="animate parallax-hero-item">
+            <div 
+                id="headline-container" 
+                className="animate parallax-hero-item"
+                data-aos="fade-up"
+            >
                 <p className="subheading parallax-hero-item">Hello, I'm</p>
                 <div className="heading parallax-hero-item">
                     <Glitch text="Gustavo" />
