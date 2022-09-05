@@ -59,8 +59,10 @@ export default function NavBar(){
       <div className="container">
         <div className="logo-and-burger-container">
           <div className="extra"></div>
-          <div id="top-logo">
-            <Glitch className="main-logo" text="G" />
+          <div className="top-logo-container">
+            <div id="top-logo" data-aos="fade-right">
+              <Glitch className="main-logo" text="G" />
+            </div>
           </div>
           <div className="burger" onClick={burger_click}>
             <div className="burger__patty"></div>
@@ -71,6 +73,7 @@ export default function NavBar(){
             <Glitch className="main-logo" text="G" />
           </div>
           <nav 
+            data-aos="fade-left"
             id="tn-nav" 
             style={{
               transform: check_window_innerwidth()
