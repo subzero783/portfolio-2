@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import Glitch from '../Glitch/Glitch';
 import './NavBar.scss';
+
 
 const burger_click = (e) => {
   document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
@@ -39,6 +40,7 @@ export default function NavBar(){
     <div id="navbar">
       <div className="container">
         <div className="logo-and-burger-container">
+          <div className="extra"></div>
           <div id="top-logo">
             <Glitch className="main-logo" text="G" />
           </div>

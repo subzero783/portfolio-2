@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Glitch from '../../components/Glitch/Glitch';
 import Typewriter from 'typewriter-effect'
 import './Hero.scss';
+import Shapes from '../Shapes/Shapes';
 
 
 export default function Hero(){
@@ -82,6 +83,7 @@ export default function Hero(){
                     </a>
                 </div>
             </div>
+            <Shapes />
         </div>
     )
 }

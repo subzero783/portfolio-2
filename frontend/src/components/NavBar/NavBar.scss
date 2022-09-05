@@ -27,19 +27,24 @@ div#navbar {
             @media screen and (max-width: 767px){
                 display: flex;
             }
-
+            > div.extra {
+                width: 20%;
+            }
             > #top-logo {
                 background-color: #000;
                 padding-top: 5px;
                 padding-bottom: 10px;
                 width: 80%;
-                display: block;
                 z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: row nowrap;
                 > .glitch {
                     font-size: 70px;
                     line-height: 50px;
                     position: relative;
-                    right: -60px;
+                    margin-left: 15px;
                 }
             }
             > .burger {
@@ -53,7 +58,6 @@ div#navbar {
                 z-index: 2;
                 cursor: pointer;
                 transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                right: 15px;
                 &.burger--active {
                     &:before {
                         transform: rotate(-45deg) translate(-7px, -7px) scaleX(0.7);
@@ -169,7 +173,8 @@ div#navbar {
                         width: 100%;
                         > a {
                             width: 100%;
-                            display: inline-block;
+                            display: block;
+                            margin: 10px 0;
                             font-family: 'Poppins', sans-serif;
                             text-transform: uppercase;
                             padding: 10px 15px;
