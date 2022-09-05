@@ -1,8 +1,16 @@
-import React, { useEffect, useState } from 'react';
+
+import React from 'react';
 import {Link} from 'react-router-dom';
 import Glitch from '../Glitch/Glitch';
 import './NavBar.scss';
 
+const check_window_innerwidth = () => {
+  if(window.innerWidth < 768){
+    return "translate(0, -100%)";
+  }else{
+    return "";
+  }
+}
 
 const burger_click = (e) => {
   document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
@@ -19,6 +27,7 @@ const navbar_link_click = (e) => {
 const onWindowResize = () => {
   document.getElementById("tn-nav").classList.remove('burger--active');
   document.getElementsByClassName("burger")[0].classList.remove("burger--active");
+  document.getElementById("tn-nav").style.transform = check_window_innerwidth();
 };
 window.addEventListener('resize', onWindowResize);
 
@@ -52,7 +61,12 @@ export default function NavBar(){
           <div id="top-logo">
             <Glitch className="main-logo" text="G" />
           </div>
-          <nav id="tn-nav">
+          <nav 
+            id="tn-nav" 
+            style={{
+              transform: check_window_innerwidth()
+            }}
+          >
             <ul>
               <li>
                 <Link to="/">Home</Link>
