@@ -2,4 +2,35 @@
 #about {
     padding: 150px 0;
     background-color: #000;
+    #about-me-image {
+        > img {
+            border-radius: 20px;
+            overflow: hidden;
+            animation: 10s ease 0s infinite alternate none running aboutMeImage;
+        }
+    }
+    #about-me-text {
+        color: #fff;
+        h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 70px;
+            color: rgb(255, 255, 255);
+            line-height: 50px;
+            text-align: left;
+        }
+    }
 }
+
+@keyframes aboutMeImage {
+    0%   {box-shadow: 0 28px 60px rgba(4, 229, 229, .5);}
+    10%  {box-shadow: 0 28px 60px rgba(243, 112, 85, .5);}
+    20%  {box-shadow: 0 28px 60px rgba(239, 78, 123, .5);}
+    30%  {box-shadow: 0 28px 60px rgba(161, 102, 171, .5);}
+    40% {box-shadow: 0 28px 60px rgba(80, 115, 184, .5);}
+    50% {box-shadow: 0 28px 60px rgba(4, 229, 229, .5);}
+    60% {box-shadow: 0 28px 60px rgba(7, 179, 155, .5);}
+    70% {box-shadow: 0 28px 60px rgba(111, 186, 130, .5);}
+    80% {box-shadow: 0 28px 60px rgba(80, 115, 184, .5);}
+    90% {box-shadow: 0 28px 60px rgba(16, 152, 173, .5);}
+    100% {box-shadow: 0 28px 60px rgba(243, 112, 85, .5);}
+  }

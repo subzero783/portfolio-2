@@ -39,6 +39,23 @@ code {
   line-height: 0;
 }
 
+// Text
+.text-1 {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgb(197, 197, 197);
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+}
+
+// Underline
+.text-underline-1 {
+  height: 5px;
+  width: 50px;
+  background-color: rgb(4, 229, 229);
+  margin-bottom: 20px;
+}
+
 // Buttons
 .button_1 {
   display: block;
