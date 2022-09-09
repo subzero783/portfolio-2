@@ -4,6 +4,8 @@
     background-color: #000;
     #about-me-image {
         > img {
+            width: 100%;
+            max-width: 380px;
             border-radius: 20px;
             overflow: hidden;
             animation: 10s ease 0s infinite alternate none running aboutMeImage;
