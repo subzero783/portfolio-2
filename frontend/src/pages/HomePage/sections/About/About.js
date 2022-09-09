@@ -3,34 +3,26 @@ import React, {useEffect} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './About.scss';
+import {activate_text_fade_down} from '../../../../functions';
 
-const activate_text_fade_down = () => {
-    var elements = document.querySelectorAll("#about_me > p");
-    elements.forEach((element, key) => {
-        var timing = "00." + key + 3;
-        timing = parseFloat(timing);
-        element.style.cssText += "transition-duration:"+(timing)+"s";
-        element.classList.add("come_down");
-    });
+
+const page_scroll_2 = () => {
+    var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    if(
+        scrolled >= document.getElementById("about").offsetTop - 200
+        &&
+        scrolled <  document.getElementById("services").offsetTop
+        ){
+        activate_text_fade_down(true, document.querySelectorAll("#about_me > div"));
+    }else{
+        activate_text_fade_down(false, document.querySelectorAll("#about_me > div"));
+    }
 }
 
-const page_scroll = () => {
-    window.onscroll = function() {
-
-        var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-
-        if( scrolled >= document.getElementById("about").offsetTop ){
-            activate_text_fade_down();
-        }
-    };
-}
-page_scroll();
-
-setTimeout(() => {
-    activate_text_fade_down();
-}, 1000);
 
 export default function About(){
+
+    window.addEventListener('scroll', page_scroll_2);
 
     useEffect(() => {
         AOS.init({
@@ -50,24 +42,15 @@ export default function About(){
                     </div>
                     <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                         <div id="about-me-text">
-                            {/* <h2 id="about_me">About Me</h2> */}
                             <h2 id="about_me">
-                                {/* <p style={{transitionDuration: "0.5s"}}>A</p>
-                                <p style={{transitionDuration: "0.8s"}}>b</p>
-                                <p style={{transitionDuration: "1s"}}>o</p>
-                                <p style={{transitionDuration: "1.3s"}}>u</p>
-                                <p style={{transitionDuration: "1.6s"}}>t</p>
-                                <p>&#32;&#32;</p>
-                                <p style={{transitionDuration: "1.9s"}}>M</p>
-                                <p style={{transitionDuration: "2.2s"}}>e</p> */}
-                                <p>A</p>
-                                <p>b</p>
-                                <p>o</p>
-                                <p>u</p>
-                                <p>t</p>
-                                <p>  </p>
-                                <p>M</p>
-                                <p>e</p>
+                                <div>A</div>
+                                <div>b</div>
+                                <div>o</div>
+                                <div>u</div>
+                                <div>t</div>
+                                <div className="empty_text"></div>
+                                <div>M</div>
+                                <div>e</div>
                             </h2>
                             <div className="text-underline-1"></div>
                             <p className="text-1">

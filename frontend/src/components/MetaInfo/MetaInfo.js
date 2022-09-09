@@ -1,14 +1,16 @@
 
 import React from "react";
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function MetaInfo({title, description}){ 
 
     return(
-        <Helmet>
-            <title>{title}</title>
-            {description ? <meta name="description" content={description} /> : null }
-        </Helmet>
+        <HelmetProvider>
+            <Helmet>
+                {title ? <title>{title}</title> : null } 
+                {description ? <meta name="description" content={description} /> : null }
+            </Helmet>
+        </HelmetProvider>
     )
 }
 

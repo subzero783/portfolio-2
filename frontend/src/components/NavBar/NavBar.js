@@ -33,26 +33,36 @@ const onWindowResize = () => {
 };
 window.addEventListener('resize', onWindowResize);
 
-const page_scroll = () => {
-  window.onscroll = function() {
-    var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    if(scrolled > 50){
-      document.getElementById("navbar").classList.add("scrolled");
-    }else{
-      document.getElementById("navbar").classList.remove("scrolled");
-    }
-  };
+
+
+window.onscroll = function() {
+  var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+  if(scrolled > 50){
+    document.getElementById("navbar").classList.add("scrolled");
+  }else{
+    document.getElementById("navbar").classList.remove("scrolled");
+  }
+};
+
+const on_window_page_scroll = () => {
+  var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+  if(scrolled > 50){
+    document.getElementById("navbar").classList.add("scrolled");
+  }else{
+    document.getElementById("navbar").classList.remove("scrolled");
+  }
 }
-page_scroll();
 
 export default function NavBar(){
 
+  window.addEventListener('scroll', on_window_page_scroll);
+
   useEffect(() => {
     AOS.init({
-        duration : 2000
+      duration : 2000
     });
     AOS.refresh();
-}, []);
+  }, []);
 
   return(
     <div id="navbar">

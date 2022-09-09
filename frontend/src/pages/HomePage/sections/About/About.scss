@@ -8,6 +8,9 @@
             overflow: hidden;
             animation: 10s ease 0s infinite alternate none running aboutMeImage;
         }
+        @media screen and (max-width: 991px){
+            margin-bottom: 90px;
+        }
     }
     #about-me-text {
         color: #fff;
@@ -15,17 +18,20 @@
             font-family: 'Teko', sans-serif;
             font-size: 70px;
             color: rgb(255, 255, 255);
-            line-height: 50px;
             text-align: left;
-            overflow: hidden;
-            > p {
+            > div {
+                opacity: 0;
                 transform: translateY(-100px);
                 position: relative;
                 display: inline-block;
                 transition-timing-function: ease-in-out;
-                transition-property: transform;
+                transition-property: all;
+                &.empty_text {
+                    width: 20px;
+                }
                 &.come_down {
                     transform: translateY(0);
+                    opacity: 1;
                 }
             }
         }

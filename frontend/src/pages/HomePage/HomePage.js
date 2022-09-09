@@ -39,6 +39,7 @@ function HomePage(){
                 <p>{message}</p> */}
                 <Hero />
                 <About />
+                <div id="services" style={{height: '1000px'}}></div>
             </div>
         </>
     );

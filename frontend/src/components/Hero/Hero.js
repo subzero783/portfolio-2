@@ -4,19 +4,12 @@ import React, { useState, useEffect } from 'react';
 import Glitch from '../../components/Glitch/Glitch';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Typewriter from 'typewriter-effect'
+import Typewriter from 'typewriter-effect';
 import './Hero.scss';
 import Shapes from '../Shapes/Shapes';
 
 
 export default function Hero(){
-
-    useEffect(() => {
-        AOS.init({
-            duration : 2000
-        });
-        AOS.refresh();
-    }, []);
     
     const [headlineContainer, setHeadlineContainer] = useState({
         width: 0,
@@ -37,6 +30,12 @@ export default function Hero(){
     }
 
     useEffect(() => {
+
+        AOS.init({
+            duration : 2000
+        });
+        AOS.refresh();
+
         setHeadlineContainer({
             width: window.innerWidth,
             height: window.innerHeight
