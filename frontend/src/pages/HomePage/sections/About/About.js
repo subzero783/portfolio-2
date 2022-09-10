@@ -1,8 +1,10 @@
 
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './About.scss';
+import Progress from '../../../../components/Progress/Progress';
+import Timeline from '../../../../components/Timeline/Timeline';
 import {activate_text_fade_down} from '../../../../functions';
 
 
@@ -19,10 +21,16 @@ const page_scroll_2 = () => {
     }
 }
 
-
 export default function About(){
 
+    const [selectedTab, setSelectedTab] = useState('skills');
+
     window.addEventListener('scroll', page_scroll_2);
+
+    const tab_click = (e) => {
+        var tab_data = e.target.getAttribute("data-extra");
+        setSelectedTab(tab_data);
+    }    
 
     useEffect(() => {
         AOS.init({
@@ -56,6 +64,79 @@ export default function About(){
                             <p className="text-1">
                             Full-stack web developer with over 5 years of experience in producing pixel-perfect websites and solutions with advanced knowledge in coding. Eager to support development teams with top-notch coding skills. In previous roles, was able to adopt new CMS platforms such as HubSpot and also new coding technologies such as NodeJS, ReactJS and API Integrations.
                             </p>
+                        </div>
+                        <div id="about-extra-content">
+                            <div className="buttons-container">
+                                <button data-extra="skills" onClick={tab_click} className={selectedTab === 'skills' ? 'active' : ''}>Skills</button>
+                                <button data-extra="experience" onClick={tab_click} className={selectedTab === 'experience' ? 'active' : ''}>Experience</button>
+                                <button data-extra="education" onClick={tab_click} className={selectedTab === 'education' ? 'active' : ''}>Education</button>
+                            </div>
+                            <ul>
+                                <li data-extra-content="skills" className={selectedTab === 'skills' ? 'active' : ''}>
+                                    <Progress value={100} text="ReactJS" />
+                                    <Progress value={100} text="NodeJS" />
+                                    <Progress value={100} text="MongoDB" />
+                                    <Progress value={100} text="JavaScript, jQuery, AJAX" />
+                                    <Progress value={100} text="Grunt and Gulp" />
+                                    <Progress value={100} text="PHP" />
+                                    <Progress value={100} text="MySQL" />
+                                    <Progress value={100} text="WordPress" />
+                                    <Progress value={100} text="Twitter Bootstrap and Zurb Foundation" />
+                                    <Progress value={100} text="Linux and Windows Command Line" />
+                                    <Progress value={100} text="Git, GitHub and Bitbucket" />
+                                    <Progress value={100} text="Adobe PhotoShop" />
+                                    <Progress value={100} text="Online Marketing" />
+                                    <Progress value={100} text="SEO" />
+                                </li>
+                                <li data-extra-content="experience" className={selectedTab === 'experience' ? 'active' : ''}>
+                                    <Timeline data={{
+                                        "2001 - 2005" :  {
+                                            title: "UX Front End Developer",
+                                            institution: "Ascent Funding LLC in San Diego, CA, USA",
+                                            description: "<ul><li>Manage and update WordPress sites with ACF, create REST APIs and code using ReactJS.</li><li>Use the Adobe Creative Suite to modify and optimize designs.</li><li>Integrate websites into GitHub repositories and add automatic deployment with GitHub Actions.</li>"
+                                        },
+                                        "2007 - 2010" : {
+                                            title: "Senior Developer",
+                                            institution: "Ipsum Technologies",
+                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        },
+                                        "2012 - 2018" : {
+                                            title: "Data Scientist",
+                                            institution: "Dolor AI",
+                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        },
+                                        "2018 - Now" : {
+                                            title: "AI Scientist",
+                                            institution: "Ipsum AI",
+                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        }
+                                    }}/>
+                                </li>
+                                <li data-extra-content="education" className={selectedTab === 'education' ? 'active' : ''}>
+                                    <Timeline data={{
+                                        "2001 - 2005" :  {
+                                            title: "Junior Developer",
+                                            institution: "Lorem Softwares",
+                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        },
+                                        "2007 - 2010" : {
+                                            title: "Senior Developer",
+                                            institution: "Ipsum Technologies",
+                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        },
+                                        "2012 - 2018" : {
+                                            title: "Data Scientist",
+                                            institution: "Dolor AI",
+                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        },
+                                        "2018 - Now" : {
+                                            title: "AI Scientist",
+                                            institution: "Ipsum AI",
+                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        }
+                                    }}/>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

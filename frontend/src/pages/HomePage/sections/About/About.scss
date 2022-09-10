@@ -12,10 +12,14 @@
         }
         @media screen and (max-width: 991px){
             margin-bottom: 90px;
+            > img {
+                max-width: 340px;
+            }
         }
     }
     #about-me-text {
         color: #fff;
+        margin-bottom: 16px;
         h2 {
             font-family: 'Teko', sans-serif;
             font-size: 70px;
@@ -38,6 +42,97 @@
             }
         }
     }
+    #about-extra-content {
+        > .buttons-container {
+            text-align: left;
+            margin-bottom: 20px;
+            > button {
+                color: rgb(255, 255, 255);
+                font-size: 20px;
+                font-weight: bold;
+                background-color: transparent;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                border-image: initial;
+                margin: 0px 10px 0px 0px;
+                border-bottom: 2px solid rgb(255, 255, 255);
+                transition: all 0.5s ease 0s;
+                -webkit-appearance: button;
+                &.active {
+                    border-bottom-width: 3px;
+                }
+                &:hover, 
+                &.active {
+                    animation: colorAnimation 10s infinite alternate;
+                }
+                &:focus {
+                    outline: none;
+                }
+                @media (max-width: 767px) {
+                    font-size: 18px;
+                }
+            }
+        }
+        > ul {
+            > li[data-extra-content="skills"]{
+                flex-flow: row wrap;
+                > div {
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 47%;
+                    &:nth-of-type(odd){
+                        margin-right: 20px;
+                    }
+                    > p:nth-of-type(1){
+                        text-align: left;
+                        width: 80%;
+                    }
+                    > span {
+                        width: 20%;
+                        text-align: right;
+                    }
+                    > div {
+                        width: 100%;
+                    }
+                }
+            }
+            > li {
+                display: none;
+                animation: fadeAnimation 1s forwards;
+                text-align: left;
+            }
+            > li.active {
+                display: block;
+                &[data-extra-content="skills"] {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes colorAnimation {
+    0%  {border-color: #04e5e5;}
+    10% {border-color: #f37055;}
+    20% {border-color: #ef4e7b;}
+    30% {border-color: #a166ab;}
+    40% {border-color: #5073b8;}
+    50% {border-color: #04e5e5;}
+    60% {border-color: #07b39b;}
+    70% {border-color: #6fba82;}
+    80% {border-color: #5073b8;}
+    90% {border-color: #1098ad;}
+    100% {border-color: #f37055;}
 }
 
 @keyframes aboutMeImage {
