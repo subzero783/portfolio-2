@@ -49,7 +49,7 @@ export default function About(){
                         </div>
                     </div>
                     <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                        <div id="about-me-text">
+                        <div id="about-me-text" className="title-1">
                             <h2 id="about_me">
                                 <div>A</div>
                                 <div>b</div>
@@ -90,50 +90,60 @@ export default function About(){
                                 </li>
                                 <li data-extra-content="experience" className={selectedTab === 'experience' ? 'active' : ''}>
                                     <Timeline data={{
-                                        "2001 - 2005" :  {
+                                        "2022 - Present" :  {
                                             title: "UX Front End Developer",
                                             institution: "Ascent Funding LLC in San Diego, CA, USA",
-                                            description: "<ul><li>Manage and update WordPress sites with ACF, create REST APIs and code using ReactJS.</li><li>Use the Adobe Creative Suite to modify and optimize designs.</li><li>Integrate websites into GitHub repositories and add automatic deployment with GitHub Actions.</li>"
+                                            description: "<ul> <li>Use the Adobe Creative Suite including PhotoShop and Illustrator and also use Figma to modify and optimize designs. Develop websites from the designs created on Figma files. Incorporate technical SEO and also put the users experience first when writing code. </li><li>Integrate websites into GitHub repositories and add automatic deployment with GitHub Actions. Including using version-control interface frameworks such as SourceTree. </li><li>Create, manage and update responsive/cross-browser compatible WordPress websites. Developed with ACF, REST APIs, JavaScript, ReactJS and CSS pre-processing frameworks (SASS/LESS).</li><li>Document code by writing comments and instructions for content updates and also for other developers to have clear instructions. </li></ul>"
                                         },
-                                        "2007 - 2010" : {
-                                            title: "Senior Developer",
-                                            institution: "Ipsum Technologies",
-                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        "2021 - 2022" : {
+                                            title: "Web Developer",
+                                            institution: "Innovision LLC",
+                                            description: "<ul> <li>Manage and update eCommerce sites. Perform Cross-Browser development by testing the development of sites on common browsers and devices using BrowserStack. </li><li>Create, manage, and update WordPress sites using custom themes and manage and update Drupal sites. </li><li>Create APIs using NodeJS, JavaScript, MongoDB, PHP, and WordPress.</li><li>Integrate websites with API connections with Google Spreadsheet, Google Maps, and WordPress. </li><li>Create ReactJS websites using GraphQL with WordPress as the Headless CMS, and with SCSS, Apollo React, and Git/GitHub. </li><li>Create custom WordPress themes that include using Gulp, SCSS, Git/GitHub, and Advanced Custom Fields. Provide recommendations and implement ways to improve workflow and processes using web technologies such as better SEO and strategic website development.</li></ul>"
                                         },
-                                        "2012 - 2018" : {
-                                            title: "Data Scientist",
-                                            institution: "Dolor AI",
-                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        "2019 - 2020" : {
+                                            title: "Developer",
+                                            institution: "VSSL Agency",
+                                            description: "<ul> <li>Manage eCommerce websites that use WooCommerce. </li><li>Manage the development of creating and re-designing websites using PHP with advanced MySQL queries and Plugin customization that uses Object Oriented PHP. </li><li>Full-Stack development by setting up a website with GatsbyJS, ReactJS, and WordPress using API integration. </li><li>Do maintenance work on many WordPress websites such as backups, PHP 7.3+ upgrades, granting access, coding (MySQL, PHP, JavaScript, CSS, jQuery, Bootstrap), SEO improvements, updating content, managing all websites through WPEngine and ManageWP. </li><li>Create websites, landing pages, and blogs on WordPress. Manage and create HubSpot templates for websites, landing pages, blogs, and emails using the HubL coding language. </li><li>Collaborate with designers and client managers to create and follow the technical guidelines for custom HTML emails. Custom application integration on WordPress sites. Learn the ReactJS programming language.</li></ul>"
                                         },
-                                        "2018 - Now" : {
-                                            title: "AI Scientist",
-                                            institution: "Ipsum AI",
-                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        "2019 - 2019" : {
+                                            title: "Web Developer",
+                                            institution: "123Websites",
+                                            description: "<p>Collaborate with re m ote programmers to d e v elo p a custom WordPress theme that will be used by thousands of clients. Using efficient and best practices for coding by using the programming languages of MySQL, PHP, JavaScript, HTML5, CSS and SCSS and creating documentation.</p>"
+                                        },
+                                        "2018 - 2019" : {
+                                            title: "Web Developer",
+                                            institution: "EPhost",
+                                            description: "<ul> <li>Collaborate with Graphic Designer, Server Manager and Project Manager to create WordPress websites and fix technical issues with client’s websites. </li><li>Develop WordPress websites using the latest DIVI theme and other themes. </li><li>Create eCommerce stores using WooCommerce, backup websites, install the most reliable plugins and use MySQL, PHP, HTML5, CSS3, JavaScript and jQuery and Adobe Photoshop to build websites.</li></ul>"
+                                        },
+                                        "2017 - 2018" : {
+                                            title: "Front End Developer and Social Media Specialist PPC",
+                                            institution: "SBHIS Insurance Services",
+                                            description: "</ul> <li>Work with a team of Graphic Designers using the Adobe Creative Suite to create designs for websites. </li><li>Designed and developed advanced HTML5, customizable WordPress sites with plugin development using various themes and child-themes. </li><li>Developed landing pages with MySQL, PHP, HTML5, CSS3 and JavaScript, including jQuery. </li><li>Developed a Content Management System with Object-Oriented PHP without using a framework and utilizing the CRUD system with SQL databases and used JavaScript, including jQuery with API integration and the Bootstrap framework. </li><li>Learned new technologies and applied them such as using hardware including Raspberry Pi and the command line. </li></ul>"
+                                        },
+                                        "2017 - 2017" : {
+                                            title: "Web Developer",
+                                            institution: "Compounding Wholesalers of Mexico",
+                                            description: "<p>Worked with Graphic Designers to build new websites, manage company email users, small IT work and also transfer company data into the CRM of Zoho.</p>"
+                                        },
+                                        "2016 - 2017" : {
+                                            title: "Teacher of Web Design and Programming",
+                                            institution: "D4 Reality",
+                                            description: "<p>Teaching web design, programming languages and SQL to help people advance in their own careers.</p>"                                            
+                                        },
+                                        "2016 - 2017" : {
+                                            title: "Intern as Publicist and Web Designer",
+                                            institution: "Baja Testing Lab",
+                                            description: "Managed digital advertising including PPC and CPM, developed websites and created new graphic designs."
                                         }
                                     }}/>
                                 </li>
                                 <li data-extra-content="education" className={selectedTab === 'education' ? 'active' : ''}>
                                     <Timeline data={{
-                                        "2001 - 2005" :  {
-                                            title: "Junior Developer",
-                                            institution: "Lorem Softwares",
-                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
+                                        "2013 - 2017" :  {
+                                            title: "Bachelor’s Degree in International Business ",
+                                            institution: "CETYS University",
+                                            description: ""
                                         },
-                                        "2007 - 2010" : {
-                                            title: "Senior Developer",
-                                            institution: "Ipsum Technologies",
-                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
-                                        },
-                                        "2012 - 2018" : {
-                                            title: "Data Scientist",
-                                            institution: "Dolor AI",
-                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
-                                        },
-                                        "2018 - Now" : {
-                                            title: "AI Scientist",
-                                            institution: "Ipsum AI",
-                                            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
-                                        }
                                     }}/>
                                 </li>
                             </ul>
