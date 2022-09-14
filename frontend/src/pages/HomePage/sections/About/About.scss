@@ -17,31 +17,7 @@
             }
         }
     }
-    #about-me-text {
-        color: #fff;
-        margin-bottom: 16px;
-        h2 {
-            font-family: 'Teko', sans-serif;
-            font-size: 70px;
-            color: rgb(255, 255, 255);
-            text-align: left;
-            > div {
-                opacity: 0;
-                transform: translateY(-100px);
-                position: relative;
-                display: inline-block;
-                transition-timing-function: ease-in-out;
-                transition-property: all;
-                &.empty_text {
-                    width: 20px;
-                }
-                &.come_down {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-            }
-        }
-    }
+    
     #about-extra-content {
         > .buttons-container {
             text-align: left;

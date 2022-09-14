@@ -1,0 +1,16 @@
+
+#services {
+    > .container {
+        > .row {
+            > .title-1 {
+                > h2 {
+                    text-align: center;
+                    text-transform: uppercase;
+                    > div.empty_text ~ div {
+                        color: rgb(4, 229, 229);
+                    }
+                }
+            }
+        }
+    }
+}
