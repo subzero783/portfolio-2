@@ -92,7 +92,7 @@ export default function About(){
                                     <Timeline data={{
                                         "2022 - Present" :  {
                                             title: "UX Front End Developer",
-                                            institution: "Ascent Funding LLC in San Diego, CA, USA",
+                                            institution: "Ascent Funding LLC",
                                             description: "<ul> <li>Use the Adobe Creative Suite including PhotoShop and Illustrator and also use Figma to modify and optimize designs. Develop websites from the designs created on Figma files. Incorporate technical SEO and also put the users experience first when writing code. </li><li>Integrate websites into GitHub repositories and add automatic deployment with GitHub Actions. Including using version-control interface frameworks such as SourceTree. </li><li>Create, manage and update responsive/cross-browser compatible WordPress websites. Developed with ACF, REST APIs, JavaScript, ReactJS and CSS pre-processing frameworks (SASS/LESS).</li><li>Document code by writing comments and instructions for content updates and also for other developers to have clear instructions. </li></ul>"
                                         },
                                         "2021 - 2022" : {
