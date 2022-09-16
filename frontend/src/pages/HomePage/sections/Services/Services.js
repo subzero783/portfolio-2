@@ -5,6 +5,8 @@ import './Services.scss';
 
 import {activate_text_fade_down} from '../../../../functions';
 
+import bg2 from '../../../../images/bg2.jpg';
+
 const page_scroll_2 = () => {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     if(
@@ -24,6 +26,9 @@ export default function Services(){
 
     return(
         <div id="services">
+            <div className="services-bg-image-container">
+                <img className="services-bg-image" src={bg2} alt="services background image" />
+            </div>
             <div className="container">
                 <div className="row">
                     <div className="title-1">

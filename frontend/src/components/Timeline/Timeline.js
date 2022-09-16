@@ -4,7 +4,6 @@ import htmlParse from 'html-react-parser'
 
 class Timeline extends React.Component {
     constructor(props) {
-        this.console.log(this.props.data)
         super(props)
         this.state = {
             selector: Object.keys(this.props.data)[0]
