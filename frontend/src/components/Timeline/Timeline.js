@@ -110,7 +110,9 @@ class Timeline extends React.Component {
                     </Text>
                 </Details>
                 <TimelineSelectors>
-                    {Object.keys(this.props.data).map((value, index) => (
+                    {
+                   
+                    Object.keys(this.props.data).map((value, index) => (
                         <TimelineSelector
                             key={index}
                             onClick={() => this.setState({selector : value})}
