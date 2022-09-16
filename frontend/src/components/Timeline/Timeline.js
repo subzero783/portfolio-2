@@ -4,6 +4,7 @@ import htmlParse from 'html-react-parser'
 
 class Timeline extends React.Component {
     constructor(props) {
+        this.console.log(this.props.data)
         super(props)
         this.state = {
             selector: Object.keys(this.props.data)[0]
@@ -110,7 +111,9 @@ class Timeline extends React.Component {
                     </Text>
                 </Details>
                 <TimelineSelectors>
-                    {Object.keys(this.props.data).map((value, index) => (
+                    {
+                   
+                    Object.keys(this.props.data).map((value, index) => (
                         <TimelineSelector
                             key={index}
                             onClick={() => this.setState({selector : value})}
