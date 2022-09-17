@@ -101,7 +101,7 @@ export default function NavBar(){
               <li>
                 <a
                   onClick={navbar_link_click}
-                  href='#portfolio'>Portfolio</a>
+                  href='#recent-projects'>Portfolio</a>
               </li>
               <li>
                 <a
@@ -109,10 +109,10 @@ export default function NavBar(){
                   href='#services'>Services</a>
               </li>
               <li>
-                <a href='#experience'>Experience</a>
+                <a href='#about'>Experience</a>
               </li>
               <li>
-                <a href='#skills'>Skills</a>
+                <a href='#about'>Skills</a>
               </li>
               <li>
                 <a href='#contact'>Contact</a>

@@ -1,0 +1,18 @@
+
+#recent-projects {
+    position: relative;
+    padding: 100px 0;
+    > .container {
+        > .row {
+            > .title-1 {
+                z-index: 1;
+                > h2 {
+                    text-align: center;
+                    > div.empty_text ~ div {
+                        color: rgb(4, 229, 229);
+                    }
+                }
+            }
+        }
+    }
+}

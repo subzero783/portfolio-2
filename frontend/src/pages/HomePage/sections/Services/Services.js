@@ -68,7 +68,7 @@ export default function Services(){
                             <li data-aos="fade-up">
                                 <div className="service-content">
                                     <div className="service-icon-container">
-                                        <img className="service-icon" src={serviceMobile} alt="service icon" />
+                                        <img className="service-icon" src={serviceMobile} alt="Responsive web design service icon" />
                                     </div>
                                     <h4 className="text-2">Responsive Web Design</h4>
                                     <div className="underline-1"></div>
@@ -77,7 +77,7 @@ export default function Services(){
                             <li data-aos="fade-up">
                                 <div className="service-content">
                                     <div className="service-icon-container">
-                                        <img className="service-icon" src={serviceWeb} alt="service icon" />
+                                        <img className="service-icon" src={serviceWeb} alt="Web development service icon" />
                                     </div>
                                     <h4 className="text-2">Web Development</h4>
                                     <div className="underline-1"></div>
@@ -86,7 +86,7 @@ export default function Services(){
                             <li data-aos="fade-up">
                                 <div className="service-content">
                                     <div className="service-icon-container">
-                                        <img className="service-icon" src={serviceFrontend} alt="service icon" />
+                                        <img className="service-icon" src={serviceFrontend} alt="UI/UX Front-end development service icon" />
                                     </div>
                                     <h4 className="text-2">UI/UX Front-end Development</h4>
                                     <div className="underline-1"></div>
@@ -95,7 +95,7 @@ export default function Services(){
                             <li data-aos="fade-up">
                                 <div className="service-content">
                                     <div className="service-icon-container">
-                                        <img className="service-icon" src={serviceBackend} alt="service icon" />
+                                        <img className="service-icon" src={serviceBackend} alt="Back-end Development service icon" />
                                     </div>
                                     <h4 className="text-2">Back-end Development</h4>
                                     <div className="underline-1"></div>
@@ -104,7 +104,7 @@ export default function Services(){
                             <li data-aos="fade-up">
                                 <div className="service-content">
                                     <div className="service-icon-container">
-                                        <img className="service-icon" src={serviceWordpress} alt="service icon" />
+                                        <img className="service-icon" src={serviceWordpress} alt="WordPress Development service icon" />
                                     </div>
                                     <h4 className="text-2">WordPress Development</h4>
                                     <div className="underline-1"></div>
@@ -113,7 +113,7 @@ export default function Services(){
                             <li data-aos="fade-up">
                                 <div className="service-content">
                                     <div className="service-icon-container">
-                                        <img className="service-icon" src={serviceSeo} alt="service icon" />
+                                        <img className="service-icon" src={serviceSeo} alt="Search Engine Optimization service icon" />
                                     </div>
                                     <h4 className="text-2">Search Engine Optimization</h4>
                                     <div className="underline-1"></div>
