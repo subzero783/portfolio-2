@@ -9,6 +9,13 @@ import './Services.scss';
 import {activate_text_fade_down} from '../../../../functions';
 
 import bg2 from '../../../../images/bg2.jpg';
+import serviceMobile from '../../../../images/services-icons/mobile.png';
+import serviceWeb from '../../../../images/services-icons/web.png'
+import serviceFrontend from '../../../../images/services-icons/front-end.png'
+import serviceBackend from '../../../../images/services-icons/back-end.png'
+import serviceWordpress from '../../../../images/services-icons/wordpress-white.png'
+import serviceSeo from '../../../../images/services-icons/seo2.png'
+
 
 const page_scroll_2 = () => {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
@@ -58,11 +65,60 @@ export default function Services(){
                     </div>
                     <div className="list-of-services">
                         <ul>
-                            <li data-aos="fade-in-left">
-                                <div className="icon-container">
-                                    
+                            <li data-aos="fade-up">
+                                <div className="service-content">
+                                    <div className="service-icon-container">
+                                        <img className="service-icon" src={serviceMobile} alt="service icon" />
+                                    </div>
+                                    <h4 className="text-2">Responsive Web Design</h4>
+                                    <div className="underline-1"></div>
                                 </div>
                             </li>
+                            <li data-aos="fade-up">
+                                <div className="service-content">
+                                    <div className="service-icon-container">
+                                        <img className="service-icon" src={serviceWeb} alt="service icon" />
+                                    </div>
+                                    <h4 className="text-2">Web Development</h4>
+                                    <div className="underline-1"></div>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up">
+                                <div className="service-content">
+                                    <div className="service-icon-container">
+                                        <img className="service-icon" src={serviceFrontend} alt="service icon" />
+                                    </div>
+                                    <h4 className="text-2">UI/UX Front-end Development</h4>
+                                    <div className="underline-1"></div>
+                                </div>
+                            </li>    
+                            <li data-aos="fade-up">
+                                <div className="service-content">
+                                    <div className="service-icon-container">
+                                        <img className="service-icon" src={serviceBackend} alt="service icon" />
+                                    </div>
+                                    <h4 className="text-2">Back-end Development</h4>
+                                    <div className="underline-1"></div>
+                                </div>
+                            </li>    
+                            <li data-aos="fade-up">
+                                <div className="service-content">
+                                    <div className="service-icon-container">
+                                        <img className="service-icon" src={serviceWordpress} alt="service icon" />
+                                    </div>
+                                    <h4 className="text-2">WordPress Development</h4>
+                                    <div className="underline-1"></div>
+                                </div>
+                            </li>    
+                            <li data-aos="fade-up">
+                                <div className="service-content">
+                                    <div className="service-icon-container">
+                                        <img className="service-icon" src={serviceSeo} alt="service icon" />
+                                    </div>
+                                    <h4 className="text-2">Search Engine Optimization</h4>
+                                    <div className="underline-1"></div>
+                                </div>
+                            </li>    
                         </ul>
                     </div>
                 </div>
