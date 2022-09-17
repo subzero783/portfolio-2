@@ -11,7 +11,7 @@
             height: 100%;
             z-index: 1;
             content: "";
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.8);
         }
         > img.services-bg-image {
             position: absolute;
@@ -24,6 +24,7 @@
     > .container {
         > .row {
             > .title-1 {
+                z-index: 1;
                 > h2 {
                     text-align: center;
                     text-transform: uppercase;
@@ -33,5 +34,33 @@
                 }
             }
         }
+    }
+    .list-of-services {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 25px auto;
+        background-color: #fff;
+        border-radius: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(120deg, #04e5e5, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+        background-size: 300% 300%;
+        animation: gradientAnimation 5s ease-in-out infinite;
+        img {
+            max-height: 70px;
+        }
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 15% 0%;
+    }
+    50% {
+        background-position: 85% 100%;
+    }
+    100% {
+        background-position: 15% 0%;
     }
 }

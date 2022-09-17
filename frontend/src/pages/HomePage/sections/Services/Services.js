@@ -1,5 +1,8 @@
 
-import React from 'react';
+import React,{ useEffect } from 'react';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import './Services.scss';
 
@@ -21,6 +24,13 @@ const page_scroll_2 = () => {
 }
 
 export default function Services(){
+
+    useEffect(() => {
+        AOS.init({
+            duration : 2000
+        });
+        AOS.refresh();
+    }, []);
 
     window.addEventListener('scroll', page_scroll_2);
 
@@ -45,6 +55,15 @@ export default function Services(){
                             <div>e</div>
                             <div>s</div>
                         </h2>
+                    </div>
+                    <div className="list-of-services">
+                        <ul>
+                            <li data-aos="fade-in-left">
+                                <div className="icon-container">
+                                    
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
