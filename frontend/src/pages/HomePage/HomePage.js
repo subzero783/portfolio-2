@@ -8,6 +8,7 @@ import Hero from '../../components/Hero/Hero';
 import About from './sections/About/About';
 import Services from './sections/Services/Services';
 import RecentProjects from './sections/RecentProjects/RecentProjects';
+import Contact from './sections/Contact/Contact';
 
 import MetaInfo from '../../components/MetaInfo/MetaInfo';
 
@@ -43,7 +44,7 @@ function HomePage(){
                 <About />
                 <Services />
                 <RecentProjects />
-                <div id="contact" style={{height: '1000px'}}></div>
+                <Contact />
             </div>
         </>
     );
