@@ -23,6 +23,7 @@ const TextContainer = styled.div`
     display: flex;
     align-items: flex-end;
     visibility: visible;
+    padding: 0 20px;
     background-image: linear-gradient(to top, rgba(4,229,229,1), rgba(255, 255, 255, 0));
 `
 
@@ -58,13 +59,16 @@ const ItemContainer = styled.div`
     }
     &:hover {
         ${Text} {
-            transform: translateY(-10px);
+            transform: translateY(-45px);
         }
         img {
             transform: scale(1.1);
         }
         ${TextContainer} {
             opacity: 1 !important;
+        }
+        > a.repo-link {
+            transform: translateY(-45px);
         }
     }
     &.blue-shadow {
@@ -73,7 +77,6 @@ const ItemContainer = styled.div`
         &:hover {
             box-shadow: 0 28px 60px rgb(4,229,229,.5);
         }
-        
     }
 `
 
@@ -85,7 +88,7 @@ const Heading = styled.h4`
 
 const SubHeading = styled.h5`
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
 `
@@ -104,7 +107,19 @@ const Image = styled.img`
     }
 `
 
-export default function PortfolioItem({image, alt, link, ariaLabel, title, category}){
+const RepoLink = styled.a`
+    transition: .5s;
+    text-transform: uppercase;
+    display: block;
+    &:hover, 
+    &:focus, 
+    &:active {
+        color: #000;
+    }
+`;
+
+export default function PortfolioItem({image, alt, link, ariaLabel, title, category, repoLink}){
+
     return(
         <ItemContainer className="blue-shadow">
             <a href={link} aria-label={ariaLabel} target="_blank" rel="noopener noreferrer">
@@ -116,6 +131,18 @@ export default function PortfolioItem({image, alt, link, ariaLabel, title, categ
                     </Text>
                 </TextContainer>
             </a>
+            {
+                repoLink !== undefined ? 
+                    <RepoLink 
+                        className="repo-link"
+                        href={repoLink} 
+                        aria-label={ariaLabel} 
+                        target="_blank"
+                    >
+                        Code Link
+                    </RepoLink>
+                : null
+            }
         </ItemContainer>
     )
 }

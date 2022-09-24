@@ -3,6 +3,7 @@
     position: relative;
     padding: 100px 0;
     background-color: #050505;
+    overflow: hidden;
     > .container {
         > .row {
             > .title-1 {
@@ -17,14 +18,24 @@
         }
     }
 }
-
-.slick-slide {
-    display: block;
-    margin: 0px 0 70px 0px;
-}
-.slick-dots {
-    bottom: 0;
-    li button:before,.slick-dots li.slick-active button:before {
-      color: #04e5e5;
+.slick-slider {
+    .slick-list {
+        overflow: inherit;
+    }
+    .slick-slide {
+        display: block;
+        margin: 0px 0 70px 0px;
+    }
+    .slick-dots {
+        bottom: 0;
+        li button:before,
+        .slick-dots li.slick-active button:before {
+            color: #fff;
+            opacity: 1;
+        }
+        li.slick-active button:before {
+            color: #04e5e5;
+            opacity: 1;
+        }
     }
 }
