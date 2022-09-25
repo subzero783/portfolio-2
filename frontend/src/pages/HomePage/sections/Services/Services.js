@@ -34,11 +34,8 @@ export default function Services(){
 
     useEffect(() => {
         AOS.init({
-            offset: 300,
-            delay: 3000,
-            duration : 3000
+            offset: 400
         });
-        AOS.refresh();
     }, []);
 
     window.addEventListener('scroll', page_scroll_2);
@@ -67,7 +64,7 @@ export default function Services(){
                     </div>
                     <div className="list-of-services">
                         <ul>
-                            <li data-aos="fade-up">
+                            <li data-aos="fade-up" data-aos-duration="1000">
                                 <div className="service-content">
                                     <div className="service-icon-container">
                                         <img className="service-icon" src={serviceMobile} alt="Responsive web design service icon" />
@@ -76,7 +73,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>
-                            <li data-aos="fade-down">
+                            <li data-aos="fade-down" data-aos-duration="1000">
                                 <div className="service-content">
                                     <div className="service-icon-container">
                                         <img className="service-icon" src={serviceWeb} alt="Web development service icon" />
@@ -85,7 +82,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>
-                            <li data-aos="fade-right">
+                            <li data-aos="fade-right" data-aos-duration="1000">
                                 <div className="service-content">
                                     <div className="service-icon-container">
                                         <img className="service-icon" src={serviceFrontend} alt="UI/UX Front-end development service icon" />
@@ -94,7 +91,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>    
-                            <li data-aos="fade-left">
+                            <li data-aos="fade-left" data-aos-duration="1000">
                                 <div className="service-content">
                                     <div className="service-icon-container">
                                         <img className="service-icon" src={serviceBackend} alt="Back-end Development service icon" />
@@ -103,7 +100,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>    
-                            <li data-aos="fade-down-right">
+                            <li data-aos="fade-down-right" data-aos-duration="1000">
                                 <div className="service-content">
                                     <div className="service-icon-container">
                                         <img className="service-icon" src={serviceWordpress} alt="WordPress Development service icon" />
@@ -112,7 +109,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>    
-                            <li data-aos="fade-down-left">
+                            <li data-aos="fade-down-left" data-aos-duration="1000">
                                 <div className="service-content">
                                     <div className="service-icon-container">
                                         <img className="service-icon" src={serviceSeo} alt="Search Engine Optimization service icon" />
