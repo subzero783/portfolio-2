@@ -24,7 +24,6 @@ export default function Contact(){
         changed: false
     })
 
-
     const [ messageState, setMessageState ] = useState({
         value: ''
     })
@@ -103,13 +102,25 @@ export default function Contact(){
                 nameState.value !== ''
             )
         ){
-            console.log('sent');
+            fetch(`/api/contact/`)
+                .then(response => response.json())
+                .then(data => {
+                    setServerState({
+                        sent: true, 
+                        response: data.data
+                    })
+                })
+            // setServerState({
+            //     sent: false, 
+            //     response: 'We have received your message and will get back to shortly!'
+            // })
             resetFormAfterSentSucess();
         }else{
             setServerState({
                 sent: false, 
                 response: 'Please fill out the form to send a message.'
             })
+            resetFormAfterSentSucess();
         }
     }
 
@@ -166,7 +177,6 @@ export default function Contact(){
                         <div className="input-element">
                             <input 
                                 type="text"
-                                defaultValue={nameState.value}
                                 className="name"
                                 placeholder="Name"
                                 value={nameState.value}
@@ -180,7 +190,7 @@ export default function Contact(){
                         <div className="input-element">
                             <input 
                                 type="text"
-                                defaultValue={emailState.value}
+                                value={emailState.value}
                                 className="email"
                                 placeholder="Email"
                                 onChange={handleEmail}
@@ -193,13 +203,13 @@ export default function Contact(){
                         <div className="input-element">
                             <textarea
                                 placeholder="Message"
-                                defaultValue={messageState.value}
+                                value={messageState.value}
                                 className="message"
                                 onChange={handleMessage}
                                 onKeyDown={handleFormEnter}
                             />
                         </div>
-                        <button onClick={()=>formSubmit()} >
+                        <button onClick={(e)=>formSubmit(e)} >
                             <span>
                                 Submit
                             </span>
