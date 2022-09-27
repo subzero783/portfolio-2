@@ -169,56 +169,62 @@ export default function Contact(){
         <div id="contact">
             <div className="container">
                 <div className="row">
-                    <div className="contact-form">
-                        <h2 className="heading">
-                            Get In Touch
-                        </h2>
-                        <div className="text-underline-1"></div>
-                        <div className="input-element">
-                            <input 
-                                type="text"
-                                className="name"
-                                placeholder="Name"
-                                value={nameState.value}
-                                onChange={handleName}
-                                onKeyDown={handleFormEnter}
-                            />
+                    <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div className="contact-form">
+                            <h2 className="heading">
+                                Get In Touch
+                            </h2>
+                            <div className="text-underline-1"></div>
+                            <div className="input-element">
+                                <input 
+                                    type="text"
+                                    className="name"
+                                    placeholder="Name"
+                                    value={nameState.value}
+                                    onChange={handleName}
+                                    onKeyDown={handleFormEnter}
+                                />
+                                {
+                                    getNameError()
+                                }
+                            </div>
+                            <div className="input-element">
+                                <input 
+                                    type="text"
+                                    value={emailState.value}
+                                    className="email"
+                                    placeholder="Email"
+                                    onChange={handleEmail}
+                                    onKeyDown={handleFormEnter}
+                                />
+                                {
+                                    getEmailError()
+                                }
+                            </div>
+                            <div className="input-element">
+                                <textarea
+                                    placeholder="Message"
+                                    value={messageState.value}
+                                    className="message"
+                                    onChange={handleMessage}
+                                    onKeyDown={handleFormEnter}
+                                />
+                            </div>
+                            <button onClick={(e)=>formSubmit(e)} >
+                                <span>
+                                    Submit
+                                </span>
+                            </button>
                             {
-                                getNameError()
+                                serverState.response !== '' ? 
+                                <p className="server-response">{serverState.response}</p>
+                                : ''
                             }
                         </div>
-                        <div className="input-element">
-                            <input 
-                                type="text"
-                                value={emailState.value}
-                                className="email"
-                                placeholder="Email"
-                                onChange={handleEmail}
-                                onKeyDown={handleFormEnter}
-                            />
-                            {
-                                getEmailError()
-                            }
-                        </div>
-                        <div className="input-element">
-                            <textarea
-                                placeholder="Message"
-                                value={messageState.value}
-                                className="message"
-                                onChange={handleMessage}
-                                onKeyDown={handleFormEnter}
-                            />
-                        </div>
-                        <button onClick={(e)=>formSubmit(e)} >
-                            <span>
-                                Submit
-                            </span>
-                        </button>
-                        {
-                            serverState.response !== '' ? 
-                            <p className="server-response">{serverState.response}</p>
-                            : ''
-                        }
+                        <div className="gradient"></div>
+                    </div>
+                    <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429157.54675741366!2d-117.389166995983!3d32.824240427869604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9530fad921e4b%3A0xd3a21fdfd15df79!2sSan%20Diego%2C%20CA%2C%20USA!5e0!3m2!1sen!2smx!4v1664243066005!5m2!1sen!2smx" style={{border: "0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

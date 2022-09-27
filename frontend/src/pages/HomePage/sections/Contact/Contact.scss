@@ -1,14 +1,51 @@
 #contact {
+    > .container {
+        > .row {
+            > .col {
+                &:nth-of-type(1){
+                    padding-right: 0;
+                    padding-left: 0;
+                    position: relative;
+                    display: flex;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    > .gradient {
+                        z-index: 6;
+                        padding-right: 0;
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        top: 0;
+                        clip-path: polygon(0% 100%, 10px 100%, 10px 10px, calc(100% - 10px) 10px, calc(100% - 10px) calc(100% - 10px), 10px calc(100% - 10px), 10px 100%, 100% 100%, 100% 0%, 0% 0%);
+                        background: linear-gradient(120deg, #04e5e5, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+                        background-size: 300% 300%;
+                        animation: contactFormGradient 5s ease-in-out infinite;
+                        @media screen and (max-width: 991px){
+                            width: 100%;
+                        }
+                    }
+                }
+                &:nth-of-type(2){
+                    padding-left: 0;
+                    padding-right: 0;
+                    min-height: 500px;
+                }
+            }
+        }
+    }
     .contact-form {
         padding: 40px;
         width: 100%;
+        height: 100%;
         position: relative;
         z-index: 5;
+        background-color: rgb(17, 17, 17);
     }
     .heading {
         font-size: 70px;
         font-family: Teko;
         color: #fff;
+        text-align: left;
     }
     .input-element {
         margin: 20px 0;
@@ -25,9 +62,6 @@
         &:focus {
             border-bottom: 1px solid #04e5e5;
             outline: none;
-        }
-        &.error {
-
         }
     }
     textarea {
@@ -69,6 +103,10 @@
             letter-spacing: 2px;
         }
     }
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 @keyframes errorInputAnimation {
@@ -77,5 +115,17 @@
     }
     100% {
         border-bottom: 1px solid #ff0000;
+    }
+}
+
+@keyframes contactFormGradient {
+    0% {
+        background-position: 15% 0%;
+    }
+    50% {
+        background-position: 85% 100%;
+    }
+    100% {
+        background-position: 15% 0%;
     }
 }
