@@ -44,8 +44,26 @@
             font-family: Teko;
         }
     }
-    .button_1 {
+    .hero-buttons-container {
         margin-top: 40px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        .button_1 {
+            max-width: 300px;
+            margin-right: 10px;
+            font-size: 14px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @media screen and (max-width: 991px){
+            margin-top: 10px;
+            flex-flow: column nowrap;
+            .button_1 {
+                margin-right: 0;
+            }
+        }
     }
     #headline-container {
         position: relative;

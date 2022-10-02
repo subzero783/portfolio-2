@@ -86,13 +86,20 @@ export default function Hero(){
                         />
 
                     </div>
-                    <a 
-                        href="https://docs.google.com/document/d/1DvOP_pcP5jvvcKz7qN-4QGLck8vYdMlu/edit?usp=sharing&ouid=102193198745538813297&rtpof=true&sd=true" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="button_1">
-                            Download Resume
-                    </a>
+                    <div className="hero-buttons-container">
+                        <a 
+                            href="https://docs.google.com/document/d/1DvOP_pcP5jvvcKz7qN-4QGLck8vYdMlu/edit?usp=sharing&ouid=102193198745538813297&rtpof=true&sd=true" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="button_1">
+                                Download Resume
+                        </a>
+                        <a 
+                            href="#recent-projects" 
+                            className="button_1">
+                                Recent Projects
+                        </a>
+                    </div>
                 </div>
             </div>
             <Shapes />
