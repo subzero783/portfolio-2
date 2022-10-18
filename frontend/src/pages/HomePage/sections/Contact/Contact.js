@@ -106,7 +106,7 @@ export default function Contact(){
                 nameState.value !== ''
             )
         ){
-            fetch(`http://localhost:8000/api/contact/?email=${emailState.value}&name=${nameState.value}&message=${messageState.value}`)
+            fetch(`/api/contact/?email=${emailState.value}&name=${nameState.value}&message=${messageState.value}`)
                 .then(response => response.json())
                 .then(data => {
                     setServerState({
