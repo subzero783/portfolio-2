@@ -229,7 +229,7 @@ export default function Contact(){
                 </div>
                 <div className="row contact-info-row">
                     <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                        <div className="info-part" data-aos="fade-down" data-aos-offset="200">
+                        <div className="info-part">
                             <div className="icon-container">
                                 <img className="icon" src={email2} alt="Email icon"/>
                             </div>
@@ -242,7 +242,7 @@ export default function Contact(){
                         </div>
                     </div>
                     <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                        <div className="info-part" data-aos="fade-down" data-aos-offset="200">
+                        <div className="info-part">
                             <div className="icon-container">
                                 <img className="icon" src={phone} alt="Phone icon"/>
                             </div>
@@ -255,7 +255,7 @@ export default function Contact(){
                         </div>
                     </div>
                     <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                        <div className="info-part" data-aos="fade-down" data-aos-offset="200">
+                        <div className="info-part">
                             <div className="icon-container">
                                 <img className="icon" src={thumbsUp} alt="Thumbs up icon"/>
                             </div>
