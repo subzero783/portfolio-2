@@ -37,6 +37,9 @@ class Timeline extends React.Component {
                 left: 40%;
                 border-radius: 20px;
             }
+            @media screen and (max-width: 767px){
+                left: 3px;
+            }
         `
         
         const TimelineSelector = styled.button`

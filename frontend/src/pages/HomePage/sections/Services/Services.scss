@@ -22,6 +22,9 @@
         }
     }
     > .container {
+        @media screen and (max-width: 991px){
+            max-width: unset;
+        }
         > .row {
             > .title-1 {
                 z-index: 1;
@@ -43,9 +46,8 @@
             flex-flow: row wrap;
             justify-content: center;
             > li {
-                width: 31%;
+                width: 30%;
                 animation: 10s ease 0s infinite alternate none running serviceItemAnimation;
-                // transition: all 0.2s ease 0s;
                 padding: 40px;
                 margin: 0 15px 20px 15px;
                 border-radius: 20px;
@@ -75,6 +77,11 @@
                 }
                 .service-icon {
                     max-height: 70px;
+                }
+                @media screen and (max-width: 991px){
+                    width: 47%;
+                    padding: 20px 10px;
+                    margin: 0 5px 20px 5px;
                 }
             }
         }
