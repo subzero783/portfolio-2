@@ -87,16 +87,17 @@ class Timeline extends React.Component {
             font-size: 80px;
             position: absolute;
             top: -60px;
-            opacity: .1;
-            @media (max-width:767px) {
-                font-size: 45px;
-                top: -35px;
-            }
+            opacity: 0.2;
             @media (max-width:1439px) {
                 font-size: 40px;
                 top: -38px;
             }
-        `
+            @media (max-width:767px) {
+                font-size: 34px;
+                top: -35px;
+                opacity: 0.2;
+            }
+            `
 
 
         const selector = this.state.selector
