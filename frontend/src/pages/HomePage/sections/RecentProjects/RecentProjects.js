@@ -53,8 +53,22 @@ export default function RecentProjects(){
         autoplay: true,
         autoplaySpeed: 3000,
         loop: true,
-        slidesToShow: 3
+        slidesToShow: 3,
         // slidesToShow: this.state.width < 500 ? 1 : this.state.width > 500 && this.state.width <= 1024 ? 3 : 4,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
     }    
 
     useEffect(() => {

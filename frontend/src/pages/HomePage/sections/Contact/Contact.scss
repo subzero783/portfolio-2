@@ -65,7 +65,6 @@
                     > .info {
                         position: relative;
                         bottom: 30px;
-    
                         > .info-title {
                             font-size: 35px;
                             color: #fff;
@@ -107,6 +106,9 @@
                                 }
                             }
                         }
+                        @media screen and (max-width: 767px){
+                            bottom: 60px;
+                        }
                     }
                 }
             }
@@ -125,6 +127,9 @@
         font-family: Teko;
         color: #fff;
         text-align: left;
+        @media screen and (max-width: 767px){
+            font-size: 45px;
+        }
     }
     .input-element {
         margin: 20px 0;
