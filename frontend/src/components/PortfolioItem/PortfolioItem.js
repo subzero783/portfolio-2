@@ -84,6 +84,9 @@ const Heading = styled.h4`
     color: #fff;
     font-weight: 600;
     font-size: 25px;
+    @media screen and (max-width: 767px){
+        font-size: 18px;
+    }
 `
 
 const SubHeading = styled.h5`
@@ -91,6 +94,9 @@ const SubHeading = styled.h5`
     font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
+    @media screen and (max-width: 767px){
+        font-size: 16px;
+    }
 `
 
 const Image = styled.img`

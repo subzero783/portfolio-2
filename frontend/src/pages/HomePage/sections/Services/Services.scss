@@ -2,6 +2,7 @@
 #services {
     position: relative;
     padding: 100px 0;
+    overflow: hidden;
     > .services-bg-image-container {
         &:before {
             position: absolute;
