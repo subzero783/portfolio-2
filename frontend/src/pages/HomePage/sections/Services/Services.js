@@ -20,7 +20,7 @@ import serviceSeo from '../../../../images/services-icons/seo2.png'
 const page_scroll_2 = () => {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     if(
-        scrolled >= document.getElementById("services").offsetTop - 200
+        scrolled >= document.getElementById("services").offsetTop - 600
         &&
         scrolled <  document.getElementById("recent-projects").offsetTop
         ){
@@ -64,7 +64,7 @@ export default function Services(){
                     </div>
                     <div className="list-of-services">
                         <ul>
-                            <li data-aos="fade-up" data-aos-duration="1000">
+                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
                             {/* <li> */}
                                 <div className="service-content">
                                     <div className="service-icon-container">
@@ -74,7 +74,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>
-                            <li data-aos="fade-down" data-aos-duration="1000">
+                            <li data-aos="fade-down" data-aos-duration="1000" data-aos-offset="200">
                             {/* <li> */}
                                 <div className="service-content">
                                     <div className="service-icon-container">
@@ -84,7 +84,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>
-                            <li data-aos="fade-right" data-aos-duration="1000">
+                            <li data-aos="fade-right" data-aos-duration="1000" data-aos-offset="200">
                             {/* <li> */}
                                 <div className="service-content">
                                     <div className="service-icon-container">
@@ -94,7 +94,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>    
-                            <li data-aos="fade-left" data-aos-duration="1000">
+                            <li data-aos="fade-left" data-aos-duration="1000" data-aos-offset="200">
                             {/* <li> */}
                                 <div className="service-content">
                                     <div className="service-icon-container">
@@ -104,7 +104,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>    
-                            <li data-aos="fade-down-right" data-aos-duration="1000">
+                            <li data-aos="fade-down-right" data-aos-duration="1000" data-aos-offset="200">
                             {/* <li> */}
                                 <div className="service-content">
                                     <div className="service-icon-container">
@@ -114,7 +114,7 @@ export default function Services(){
                                     <div className="underline-1"></div>
                                 </div>
                             </li>    
-                            <li data-aos="fade-down-left" data-aos-duration="1000">
+                            <li data-aos="fade-down-left" data-aos-duration="1000" data-aos-offset="200">
                             {/* <li> */}
                                 <div className="service-content">
                                     <div className="service-icon-container">

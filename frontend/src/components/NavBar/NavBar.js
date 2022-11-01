@@ -59,7 +59,7 @@ export default function NavBar(){
 
   useEffect(() => {
     AOS.init({
-      duration : 2000
+      duration : 1000
     });
     AOS.refresh();
   }, []);

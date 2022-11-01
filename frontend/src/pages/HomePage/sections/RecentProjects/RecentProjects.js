@@ -29,7 +29,7 @@ import {activate_text_fade_down} from '../../../../functions';
 const page_scroll_2 = () => {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     if(
-        scrolled >= document.getElementById("recent-projects").offsetTop - 200
+        scrolled >= document.getElementById("recent-projects").offsetTop - 600
         &&
         scrolled <  document.getElementById("contact").offsetTop
         ){
