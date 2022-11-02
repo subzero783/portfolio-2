@@ -17,3 +17,20 @@ export function activate_text_fade_down(active, elements){
         });
     }
 }
+
+export function homeNavBarLink(e){
+    
+    e.preventDefault();
+
+    const url = new URL(window.location.href);
+    const pathName = url.pathname;
+    const hash = window.location.hash;
+
+    if( hash.length > 1 && pathName !== '/'){
+        window.location.href = '/';
+    }else{
+        window.scrollTo(0, 0);
+        window.history.replaceState(null, "Home Page", "/");
+    }
+
+}

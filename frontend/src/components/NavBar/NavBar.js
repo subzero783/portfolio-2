@@ -4,6 +4,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css';
 import {Link} from 'react-router-dom';
 import Glitch from '../Glitch/Glitch';
+import { homeNavBarLink } from '../../functions';
 import './NavBar.scss';
 
 const check_window_innerwidth = () => {
@@ -91,7 +92,7 @@ export default function NavBar(){
           >
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" onClick={homeNavBarLink}>Home</Link>
               </li>
               <li>
                 <a
