@@ -9,7 +9,7 @@ import { activate_text_fade_down } from '../../../../functions';
 const page_scroll_2 = () => {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     if(
-        scrolled >= document.getElementById("youtube-videos").offsetTop - 800
+        scrolled >= document.getElementById("developer-gus").offsetTop - 800
         &&
         scrolled < document.getElementById("about").offsetTop
         ){
@@ -44,32 +44,28 @@ export default function YouTubeVideos(){
     }, []);
 
     return(
-        <div id="youtube-videos">
+        <div id="developer-gus">
             <div className="container">
                 <div className="row">
                     <div id="youtube-videos-text" className="title-1">
-                        <h2>
-                            <div>M</div>
-                            <div>y</div>
-                            <div className="empty_text"></div>
-                            <div>Y</div>
-                            <div>o</div>
-                            <div>u</div>
-                            <div>T</div>
-                            <div>u</div>
-                            <div>b</div>
+                        <h2>                            
+                            <div>D</div>
                             <div>e</div>
-                            <div className="empty_text"></div>
-                            <div>C</div>
-                            <div>h</div>
-                            <div>a</div>
-                            <div>n</div>
-                            <div>n</div>
+                            <div>v</div>
                             <div>e</div>
                             <div>l</div>
+                            <div>o</div>
+                            <div>p</div>
+                            <div>e</div>
+                            <div>r</div>
+                            <div className="empty_text"></div>
+                            <div>G</div>
+                            <div>u</div>
+                            <div>s</div>
                         </h2>
                     </div>
-                    <h3 className="subtitle">Watch my latest videos</h3>
+                    <h3 className="subtitle">YouTube Channel</h3>
+                    <h4 id="watch-latest-videos">Watch my latest video<span>s</span></h4>
                     {/* Add video player with most recent video */}
 
                     {/* Add most recent 5 videos as thumbnail images to click and switch the main video above */}

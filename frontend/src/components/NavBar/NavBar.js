@@ -97,7 +97,7 @@ export default function NavBar(){
               <li>
                 <a
                   onClick={navbar_link_click}
-                  href='#youtube-videos'>Videos
+                  href='#developer-gus'>Videos
                 </a>
               </li>
               <li>
