@@ -23,7 +23,7 @@ const page_scroll_2 = () => {
 export default function YouTubeVideos(){
 
     const [videos, setVideos] = useState([]);
-    // const youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GOOGLE_API}&channelId=${process.env.REACT_APP_YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=20`;
+    
 
     window.addEventListener('scroll', page_scroll_2);
 
@@ -35,12 +35,13 @@ export default function YouTubeVideos(){
     }, []);
 
     useEffect(()=>{
-        // const fetchVideos = async(url) => {
-        //     const result = await fetch(url);
-        //     const body = await result.json();
-        //     console.log(body);
-        // }
-        // fetchVideos(youtubeURL);
+        const youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GOOGLE_API}&channelId=${process.env.REACT_APP_YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=20`;
+        const fetchVideos = async(url) => {
+            const result = await fetch(url);
+            const body = await result.json();
+            setVideos(body.items);
+        }
+        fetchVideos(youtubeURL);
     }, []);
 
     return(
@@ -67,14 +68,23 @@ export default function YouTubeVideos(){
                     <h3 className="subtitle">YouTube Channel</h3>
                     <h4 id="watch-latest-videos">Watch my latest video<span>s</span></h4>
                     {/* Add video player with most recent video */}
-
+                    <div id="player"></div>
+                    <div id="player-2">
+                        {
+                            videos[0] !== undefined ? 
+                            <iframe src={`https://www.youtube.com/embed/${videos[0].id.videoId}`} title={videos[0].snippet.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            : ''
+                        }
+                    </div>
                     {/* Add most recent 5 videos as thumbnail images to click and switch the main video above */}
-                    <button
+                    <a
                         href="https://www.youtube.com/channel/UChuhEhCujTGP1mfmPdtuVhA"
+                        rel="noopener noreferrer" 
                         className="button_1"
+                        target="_blank"
                     >
                         Watch More
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
