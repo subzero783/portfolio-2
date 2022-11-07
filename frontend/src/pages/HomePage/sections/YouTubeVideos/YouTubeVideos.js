@@ -22,8 +22,6 @@ const page_scroll_2 = () => {
 
 export default function YouTubeVideos(){
 
-    const youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GOOGLE_API}&channelId=${process.env.REACT_APP_YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=20`;
-
     const [videos, setVideos] = useState([]);
     
 
@@ -38,12 +36,13 @@ export default function YouTubeVideos(){
 
     useEffect(()=>{
         
-        const fetchVideos = async(url) => {
-            const result = await fetch(url);
-            const body = await result.json();
-            setVideos(body.items);
+        const fetchVideos = async() => {
+            const result = await fetch('/api/videos/');
+            const body = await result;
+            console.log(body);
+            setVideos(body);
         }
-        fetchVideos(youtubeURL);
+        fetchVideos();
     }, []);
 
     return(
