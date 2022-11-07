@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react';
 import Hero from '../../components/Hero/Hero';
 
 // Sections components
-import YouTubeVideos from './sections/YouTubeVideos/YouTubeVideos';
 import About from './sections/About/About';
 import Services from './sections/Services/Services';
 import RecentProjects from './sections/RecentProjects/RecentProjects';
@@ -42,8 +41,7 @@ function HomePage(){
                 {/* <p>message:</p>
                 <p>{message}</p> */}
                 <Hero />
-                <YouTubeVideos />
-                <About />
+                <About /> 
                 <Services />
                 <RecentProjects />
                 <Contact />
