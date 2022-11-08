@@ -41,21 +41,25 @@ app.get('/api/videos/', async(req, res)=>{
 
     const youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GOOGLE_API}&channelId=${process.env.YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=20`;
 
+    var body = '';
+
     https.get(youtubeURL, function(res){
 
-        var body = '';
     
         res.on('data', function(chunk){
             body += chunk;
         });
     
         res.on('end', function(){
-            var response= JSON.parse(body);
-            console.log("Got a response: ", response);
+            console.log(body);
         });
+
+        
     }).on('error', function(e){
-            console.log("Got an error: ", e);
+        console.log("Got an error: ", e);
     });
+
+    res.status(200).json(body);
 });
 
 app.get('*', (req, res) => {

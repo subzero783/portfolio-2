@@ -37,10 +37,16 @@ export default function YouTubeVideos(){
     useEffect(()=>{
         
         const fetchVideos = async() => {
+            
+            // const result = await fetch('/api/videos/');
+            // console.log(JSON.parse(result.body.items[0]));
+            // const body = result;
+            // setVideos(body);
+
             const result = await fetch('/api/videos/');
-            const body = await result;
+            const body = await result.json();
             console.log(body);
-            setVideos(body);
+                
         }
         fetchVideos();
     }, []);
