@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Glitch from '../../components/Glitch/Glitch';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Typewriter from 'typewriter-effect';
 import './Hero.scss';
 import Shapes from '../Shapes/Shapes';
@@ -30,11 +28,6 @@ export default function Hero(){
     }
 
     useEffect(() => {
-
-        AOS.init({
-            duration : 1000
-        });
-        AOS.refresh();
 
         setHeadlineContainer({
             width: window.innerWidth,
@@ -63,7 +56,6 @@ export default function Hero(){
             <div 
                 id="headline-container" 
                 className="animate parallax-hero-item"
-                data-aos="fade-up"
             >
                 <p className="subheading parallax-hero-item">Hello, I'm</p>
                 <div className="heading parallax-hero-item">

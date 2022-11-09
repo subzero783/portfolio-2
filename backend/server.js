@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const forceSSL = require('express-force-ssl');
+const https = require('https');
 const addContactEmail = require('./src/includes/addContactEmail');
 
 
@@ -35,6 +35,31 @@ app.get('/api/message/', async(req, res) => {
 
 app.get('/api/contact/', async(req, res)=>{
     addContactEmail(req, res);
+});
+
+app.get('/api/videos/', async(req, res)=>{
+
+    const youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GOOGLE_API}&channelId=${process.env.YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=20`;
+
+    var body = '';
+
+    https.get(youtubeURL, function(res){
+
+    
+        res.on('data', function(chunk){
+            body += chunk;
+        });
+    
+        res.on('end', function(){
+            console.log(body);
+        });
+
+        
+    }).on('error', function(e){
+        console.log("Got an error: ", e);
+    });
+
+    res.status(200).json(body);
 });
 
 app.get('*', (req, res) => {
