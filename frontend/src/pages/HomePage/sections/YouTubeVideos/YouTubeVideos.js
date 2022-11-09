@@ -1,5 +1,5 @@
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './YouTubeVideos.scss';
@@ -22,7 +22,7 @@ const page_scroll_2 = () => {
 
 export default function YouTubeVideos(){
 
-    const [videos, setVideos] = useState([]);
+    // const [videos, setVideos] = useState([]);
     
 
     window.addEventListener('scroll', page_scroll_2);
@@ -34,22 +34,22 @@ export default function YouTubeVideos(){
         });
     }, []);
 
-    useEffect(()=>{
+    // useEffect(()=>{
         
-        const fetchVideos = async() => {
+    //     const fetchVideos = async() => {
             
-            // const result = await fetch('/api/videos/');
-            // console.log(JSON.parse(result.body.items[0]));
-            // const body = result;
-            // setVideos(body);
+    //         const result = await fetch('/api/videos/');
+    //         console.log(JSON.parse(result.body.items[0]));
+    //         const body = result;
+    //         setVideos(body);
 
-            const result = await fetch('/api/videos/');
-            const body = await result.json();
-            console.log(body);
+    //         const result = await fetch('/api/videos/');
+    //         const body = await result.json();
+    //         console.log(body);
                 
-        }
-        fetchVideos();
-    }, []);
+    //     }
+    //     fetchVideos();
+    // }, []);
 
     return(
         <div id="developer-gus">
@@ -77,11 +77,13 @@ export default function YouTubeVideos(){
                     {/* Add video player with most recent video */}
                     <div id="player"></div>
                     <div id="player-2">
-                        {
+                        {/* {
                             videos[0] !== undefined ? 
                             <iframe src={`https://www.youtube.com/embed/${videos[0].id.videoId}`} title={videos[0].snippet.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             : ''
-                        }
+                        } */}
+                        <iframe src="https://www.youtube.com/embed/uVY8eaaaiMo" title="How to Install WordPress in CPanel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
                     </div>
                     {/* Add most recent 5 videos as thumbnail images to click and switch the main video above */}
                     <a
