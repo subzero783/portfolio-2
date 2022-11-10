@@ -42,7 +42,6 @@ export default function YouTubeVideos(){
             fetch(`/api/videos/`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
                     setVideos(data.items);
                 });
                 
@@ -80,9 +79,8 @@ export default function YouTubeVideos(){
                         {
                             videos[0] !== undefined ? 
                             <iframe src={`https://www.youtube.com/embed/${videos[0].id.videoId}`} title={videos[0].snippet.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                            : ''
+                            : <iframe className="not-from-response" src="https://www.youtube.com/embed/uVY8eaaaiMo" title="How to Install WordPress in CPanel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         }
-                        {/* <iframe src="https://www.youtube.com/embed/uVY8eaaaiMo" title="How to Install WordPress in CPanel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
 
                     </div>
                     {/* Add most recent 5 videos as thumbnail images to click and switch the main video above */}

@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const axios = require('axios');
-const https = require('https');
 const addContactEmail = require('./src/includes/addContactEmail');
 
 
@@ -17,8 +16,6 @@ app.set('forceSSLOptions', {
     httpsPort: 443,
     sslRequiredMessage: 'SSL Required.'
 });
-
-// app.use(forceSSL);
 
 app.use(cookieParser());
 
