@@ -59,7 +59,7 @@ const ItemContainer = styled.div`
     }
     &:hover {
         ${Text} {
-            transform: translateY(-45px);
+            transform: translateY(-100px);
         }
         img {
             transform: scale(1.1);
@@ -68,7 +68,7 @@ const ItemContainer = styled.div`
             opacity: 1 !important;
         }
         > a.repo-link {
-            transform: translateY(-45px);
+            transform: translateY(-100px);
         }
     }
     &.blue-shadow {
@@ -92,8 +92,10 @@ const Heading = styled.h4`
 const SubHeading = styled.h5`
     color: #fff;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
+    max-width: 250px;
+    margin: 0 auto;
     @media screen and (max-width: 767px){
         font-size: 16px;
     }
@@ -114,21 +116,27 @@ const Image = styled.img`
 `
 
 const RepoLink = styled.a`
-    transition: .5s;
-    text-transform: uppercase;
-    display: block;
-    &:hover, 
-    &:focus, 
-    &:active {
-        color: #000;
-    }
+    // transition: .5s;
+    // text-transform: uppercase;
+    // display: block;
+    // font-weight: 700;
+    // &:hover, 
+    // &:focus, 
+    // &:active {
+    //     color: #000;
+    // }
 `;
 
-export default function PortfolioItem({image, alt, link, ariaLabel, title, category, repoLink}){
+export default function PortfolioItem({image, alt, link,  title, category, repoLink}){
 
     return(
         <ItemContainer className="blue-shadow">
-            <a href={link} aria-label={ariaLabel} target="_blank" rel="noopener noreferrer">
+            <a 
+                href={link} 
+                aria-label={title} 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
                 <Image src={image} alt={alt} />
                 <TextContainer>
                     <Text>
@@ -140,12 +148,13 @@ export default function PortfolioItem({image, alt, link, ariaLabel, title, categ
             {
                 repoLink !== undefined ? 
                     <RepoLink 
-                        className="repo-link"
+                        className="repo-link button_1"
+                        rel="noopener noreferrer"
                         href={repoLink} 
-                        aria-label={ariaLabel} 
+                        aria-label={title} 
                         target="_blank"
                     >
-                        Code Link
+                        SEE CODE
                     </RepoLink>
                 : null
             }

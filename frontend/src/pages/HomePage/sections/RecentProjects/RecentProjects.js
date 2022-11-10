@@ -6,9 +6,9 @@ import 'aos/dist/aos.css';
 
 import './RecentProjects.scss';
 
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import Slider from 'react-slick';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 
 import PortfolioItem from '../../../../components/PortfolioItem/PortfolioItem';
 
@@ -41,35 +41,35 @@ const page_scroll_2 = () => {
 
 export default function RecentProjects(){
 
-    const slider_settings = {
-        dots: true,
-        swipe: true,
-        infinite: true,
-        pauseOnHover: false,
-        speed: 500,
-        // slidesToScroll: this.state.width < 500 ? 1 : 2,
-        slidesToScroll: 1, 
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        loop: true,
-        slidesToShow: 3,
-        // slidesToShow: this.state.width < 500 ? 1 : this.state.width > 500 && this.state.width <= 1024 ? 3 : 4,
-        responsive: [
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 2,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 2
-                }
-            }
-        ]
-    }    
+    // const slider_settings = {
+    //     dots: true,
+    //     swipe: true,
+    //     infinite: true,
+    //     pauseOnHover: true,
+    //     speed: 500,
+    //     // slidesToScroll: this.state.width < 500 ? 1 : 2,
+    //     slidesToScroll: 1, 
+    //     arrows: false,
+    //     autoplay: true,
+    //     autoplaySpeed: 6000,
+    //     loop: true,
+    //     slidesToShow: 3,
+    //     // slidesToShow: this.state.width < 500 ? 1 : this.state.width > 500 && this.state.width <= 1024 ? 3 : 4,
+    //     responsive: [
+    //         {
+    //             breakpoint: 991,
+    //             settings: {
+    //                 slidesToShow: 2,
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 767,
+    //             settings: {
+    //                 slidesToShow: 2
+    //             }
+    //         }
+    //     ]
+    // }    
 
     useEffect(() => {
         AOS.init({
@@ -103,14 +103,16 @@ export default function RecentProjects(){
                             <div>s</div>
                         </h2>
                     </div>
-                    <Slider {...slider_settings}>
-                    <PortfolioItem
+                    {/* <Slider {...slider_settings}> */}
+                    <div id="projects-grid">
+                        <PortfolioItem
                             key={1}
                             image={portfolioImage4}
                             alt="two iphones"
                             link={"https://careers.advantagesolutions.net/"}
                             title={"Advantage Solutions Careers"}
                             category={"WordPress Development"}
+                            // repoLink="https://developergus.com"
                         />
                         <PortfolioItem
                             key={2}
@@ -184,7 +186,8 @@ export default function RecentProjects(){
                             title={"Miracle Serv"}
                             category={"WordPress Development"}
                         />
-                    </Slider>
+                    </div>
+                    {/* </Slider> */}
                 </div>
             </div>
         </div>
