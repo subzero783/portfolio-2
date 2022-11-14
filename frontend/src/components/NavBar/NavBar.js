@@ -8,7 +8,7 @@ import { homeNavBarLink } from '../../functions';
 import './NavBar.scss';
 
 const check_window_innerwidth = () => {
-  if(window.innerWidth < 768){
+  if(window.innerWidth < 991){
     return "translate(0, -100%)";
   }else{
     return "";
@@ -21,7 +21,7 @@ const burger_click = (e) => {
 }
 
 const navbar_link_click = (e) => {
-  if(window.innerWidth < 768){
+  if(window.innerWidth < 991){
     document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
     document.getElementById("tn-nav").classList.toggle('burger--active');
   }

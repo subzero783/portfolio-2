@@ -8,7 +8,7 @@ div#navbar {
     z-index: 100;
     transition: all .45s ease;
 
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 991px){
         padding-top: 0;
         padding-bottom: 0;
         position: absolute;
@@ -24,7 +24,7 @@ div#navbar {
             flex-flow: row nowrap;
             justify-content: center;
             background-color: #000;
-            @media screen and (max-width: 767px){
+            @media screen and (max-width: 991px){
                 display: flex;
             }
             > div.extra {
@@ -106,7 +106,7 @@ div#navbar {
                 > .burger__patty:after {
                     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 }
-                @media screen and (max-width: 767px){
+                @media screen and (max-width: 991px){
                     display: flex;
                     > .burger__patty {
                         transform: scale(0.8);
@@ -160,7 +160,7 @@ div#navbar {
                 }
             }
         }
-        @media screen and (max-width: 767px){
+        @media screen and (max-width: 991px){
             #top-logo {
                 display: none;
             }
@@ -194,7 +194,7 @@ div#navbar {
     &.scrolled {
         background-color: rgba(0, 0, 0, 0.8);
         box-shadow: 0 1px 8px 3px rgba(0,0,0,0.3);
-        @media screen and (max-width: 767px){
+        @media screen and (max-width: 991px){
             box-shadow: unset;
             background-color: unset;
         }
