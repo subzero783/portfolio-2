@@ -36,8 +36,11 @@
         > .row.contact-info-row {
             margin-top: 150px;
             > .col {
-                @media (max-width: 500px) {
+                @media (max-width: 991px) {
                     margin-bottom: 140px;
+                    &:last-child {
+                        margin-bottom: 40px;
+                    }
                 }
                 > .info-part {
                     min-height: 250px;
@@ -121,6 +124,9 @@
         position: relative;
         z-index: 5;
         background-color: rgb(17, 17, 17);
+        .server-response {
+            margin-top: 20px;
+        }
     }
     .heading {
         font-size: 70px;

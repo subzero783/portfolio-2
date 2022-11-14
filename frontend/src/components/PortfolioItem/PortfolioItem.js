@@ -49,7 +49,7 @@ const ItemContainer = styled.div`
     }
     overflow: hidden;
     max-width: 95%;
-    margin: 40px auto;
+    margin: 40px 0 40px;
     border-radius: 10px;
     &.move-up {
         animation: ${MoveUp} 5s infinite alternate;

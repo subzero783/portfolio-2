@@ -24,7 +24,6 @@ const page_scroll_2 = () => {
 export default function YouTubeVideos(){
 
     const [videos, setVideos] = useState([]);
-    
 
     window.addEventListener('scroll', page_scroll_2);
 
@@ -74,7 +73,6 @@ export default function YouTubeVideos(){
                     <h3 className="subtitle">YouTube Channel</h3>
                     <h4 id="watch-latest-videos">Watch my latest video<span>s</span></h4>
                     {/* Add video player with most recent video */}
-                    <div id="player"></div>
                     <div id="player-2">
                         {
                             videos[0] !== undefined ? 
@@ -87,7 +85,7 @@ export default function YouTubeVideos(){
                     <a
                         href="https://www.youtube.com/channel/UChuhEhCujTGP1mfmPdtuVhA"
                         rel="noopener noreferrer" 
-                        className="button_1"
+                        className="button_1 watch_more_button"
                         target="_blank"
                     >
                         Watch More
