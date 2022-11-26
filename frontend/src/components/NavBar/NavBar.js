@@ -97,32 +97,39 @@ export default function NavBar(){
               <li>
                 <a
                   onClick={navbar_link_click}
-                  href='#developer-gus'>Videos
+                  href='/#developer-gus'>Videos
                 </a>
               </li>
+              {/* <li>
+                <a
+                  onClick={navbar_link_click}
+                  href="/blog">
+                    Blog
+                  </a>
+              </li> */}
               <li>
                 <a
                   onClick={navbar_link_click}
-                  href='#about'>About</a>
+                  href='/#about'>About</a>
               </li>
               <li>
                 <a
                   onClick={navbar_link_click}
-                  href='#recent-projects'>Portfolio</a>
+                  href='/#recent-projects'>Portfolio</a>
               </li>
               <li>
                 <a
                   onClick={navbar_link_click}
-                  href='#services'>Services</a>
+                  href='/#services'>Services</a>
               </li>
               <li>
-                <a href='#about'>Experience</a>
+                <a href='/#about'>Experience</a>
               </li>
               <li>
-                <a href='#about'>Skills</a>
+                <a href='/#about'>Skills</a>
               </li>
               <li>
-                <a href='#contact'>Contact</a>
+                <a href='/#contact'>Contact</a>
               </li>
               <li>
                 <a href="https://github.com/subzero783/portfolio-2" target="_blank" rel="noreferrer">Site Code</a>

@@ -37,7 +37,7 @@ app.get('/api/contact/', async(req, res)=>{
 
 app.get('/api/videos/', async(req, res)=>{
 
-    const youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GOOGLE_API}&channelId=${process.env.YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=5`;
+    const youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GOOGLE_API}&channelId=${process.env.YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=1`;
 
     axios.get(youtubeURL).then(resp => {
     

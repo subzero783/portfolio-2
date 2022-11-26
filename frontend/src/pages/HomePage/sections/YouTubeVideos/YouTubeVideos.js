@@ -71,7 +71,7 @@ export default function YouTubeVideos(){
                         </h2>
                     </div>
                     <h3 className="subtitle">YouTube Channel</h3>
-                    <h4 id="watch-latest-videos">Watch my latest video<span>s</span></h4>
+                    <h4 id="watch-latest-videos">Watch my most recent video</h4>
                     {/* Add video player with most recent video */}
                     <div id="player-2">
                         {

@@ -6,6 +6,7 @@ import Hero from '../../components/Hero/Hero';
 
 // Sections components
 import YouTubeVideos from './sections/YouTubeVideos/YouTubeVideos';
+import Blog from '../Blog/Blog';
 import About from './sections/About/About';
 import Services from './sections/Services/Services';
 import RecentProjects from './sections/RecentProjects/RecentProjects';
@@ -43,6 +44,7 @@ function HomePage(){
                 <p>{message}</p> */}
                 <Hero />
                 <YouTubeVideos />
+                <Blog />
                 <About />
                 <Services />
                 <RecentProjects />
