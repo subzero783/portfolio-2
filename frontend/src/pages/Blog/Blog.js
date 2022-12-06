@@ -8,16 +8,13 @@ import "./Blog.scss";
 
 export default function Blog() {
   const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
+  const particlesLoaded = useCallback(async (container) => {}, []);
 
   return (
     <div id="blog">
@@ -129,9 +126,20 @@ export default function Blog() {
           retina_detect: true,
         }}
       />
-      <section className="row">
-        <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"></div>
-        <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"></div>
+      <section id="heading" className="container">
+        <div className="row">
+          <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <h1>
+              <span>Developer Gus</span> Blog
+            </h1>
+            <h2 className="title">
+              <span>Watch and Read</span> My Latest
+              <br />
+              <span>Web Development</span> Content
+            </h2>
+          </div>
+          <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"></div>
+        </div>
       </section>
     </div>
   );
