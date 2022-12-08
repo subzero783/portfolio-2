@@ -8,16 +8,18 @@ import { posts } from "../../data/blog-posts";
 
 import "./Blog.scss";
 
-function b64_to_utf8(str) {
-  return decodeURIComponent(escape(window.atob(str)));
-}
+// function b64_to_utf8(str) {
+//   return decodeURIComponent(escape(window.atob(str)));
+// }
 
 function return_chars(numberOfChars, content) {
-  return content.substring(0, numberOfChars);
+  const theSubstring = content.substring(0, numberOfChars);
+  return theSubstring + "...";
 }
 
 function get_excerpt(base64String, numberOfChars) {
-  const theHTML = b64_to_utf8(base64String);
+  // const theHTML = b64_to_utf8(base64String);
+  const theHTML = base64String;
   return return_chars(numberOfChars, theHTML);
 }
 
@@ -30,8 +32,6 @@ export default function Blog() {
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {}, []);
-
-  console.log(posts);
 
   return (
     <div id="blog">
@@ -158,9 +158,9 @@ export default function Blog() {
           <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"></div>
         </div>
       </section>
-      <section id="blog-posts">
+      <section id="blog-posts" className="container">
         <div className="row">
-          <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 content-side">
+          <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 content-side">
             {posts.map((post) => (
               <div className="post" key={post.id}>
                 <a href="/" aria-label={post.title}>
@@ -169,7 +169,7 @@ export default function Blog() {
                 <div
                   className="post-excerpt"
                   dangerouslySetInnerHTML={{
-                    __html: get_excerpt(post.content, 400),
+                    __html: get_excerpt(post.content, 100),
                   }}
                 />
               </div>
@@ -189,7 +189,7 @@ export default function Blog() {
               </div>
             </div> */}
           </div>
-          <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
+          <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 sidebar"></div>
         </div>
       </section>
     </div>
