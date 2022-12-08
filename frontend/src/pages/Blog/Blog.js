@@ -165,13 +165,13 @@ export default function Blog() {
               <div className="post" key={post.id}>
                 <a href="/" aria-label={post.title}>
                   <h2>{post.title}</h2>
-                  <div
-                    className="post-excerpt"
-                    dangerouslySetInnerHTML={{
-                      __html: get_excerpt(post.content, 400),
-                    }}
-                  />
                 </a>
+                <div
+                  className="post-excerpt"
+                  dangerouslySetInnerHTML={{
+                    __html: get_excerpt(post.content, 400),
+                  }}
+                />
               </div>
             ))}
             {/* <div className="row">
