@@ -6,6 +6,8 @@ import { loadFull } from "tsparticles";
 
 import { posts } from "../../data/blog-posts";
 
+import moment from "moment";
+
 import "./Blog.scss";
 
 // function b64_to_utf8(str) {
@@ -21,6 +23,11 @@ function get_excerpt(base64String, numberOfChars) {
   // const theHTML = b64_to_utf8(base64String);
   const theHTML = base64String;
   return return_chars(numberOfChars, theHTML);
+}
+
+function formatted_date(theDate) {
+  const newDate = new Date(theDate);
+  return moment(newDate).format("MMMM Do YYYY");
 }
 
 export default function Blog() {
@@ -166,6 +173,15 @@ export default function Blog() {
                 <a href="/" aria-label={post.title}>
                   <h2>{post.title}</h2>
                 </a>
+                <div className="extra-info">
+                  <div className="date-and-author">
+                    <div className="the-date">{formatted_date(post.date)}</div>
+                    <div className="extra-space">
+                      <span> </span>|<span> </span>
+                    </div>
+                    <div className="the-author">By: {post.author}</div>
+                  </div>
+                </div>
                 <div
                   className="post-excerpt"
                   dangerouslySetInnerHTML={{

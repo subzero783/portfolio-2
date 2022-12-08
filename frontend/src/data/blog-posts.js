@@ -2,7 +2,7 @@ export const posts = [
   {
     id: 1,
     title: "How to Install WordPress in CPanel",
-    date: "08/22/2022",
+    date: "8/22/2022",
     author: "Developer Gus",
     categories: ["WordPress", "CPanel"],
     content:

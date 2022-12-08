@@ -56,7 +56,19 @@
                     font-size: 26px;
                 }
             }
+            .extra-info {
+                > .date-and-author {
+                    > div {
+                        display: inline-block;
+                    }
+                    span {
+                        width: 10px;
+                        display: inline-block;
+                    }
+                }
+            }
             .post-excerpt {
+                margin-top: 10px;
                 p {
                     margin-bottom: 0;
                 }
