@@ -175,11 +175,23 @@ export default function Blog() {
                 </a>
                 <div className="extra-info">
                   <div className="date-and-author">
-                    <div className="the-date">{formatted_date(post.date)}</div>
+                    <div className="the-date">
+                      <p>{formatted_date(post.date)}</p>
+                    </div>
                     <div className="extra-space">
                       <span> </span>|<span> </span>
                     </div>
-                    <div className="the-author">By: {post.author}</div>
+                    <div className="the-author">
+                      <p>By: {post.author}</p>
+                    </div>
+                  </div>
+                  <div className="categories">
+                    <p>Categories: </p>
+                    <div className="categories-list">
+                      {post.categories.map((category) => (
+                        <a className="category">{category}</a>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 <div
