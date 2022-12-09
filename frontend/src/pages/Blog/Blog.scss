@@ -52,8 +52,15 @@
             margin-bottom: 70px;
             > a {
                 text-decoration: none;
+                transition: all 0.5s ease-in-out;
                 > h2 {
                     font-size: 26px;
+                }
+                &:focus,
+                &:hover,
+                &:active {
+                    text-decoration: underline;
+                    color: #fff;
                 }
             }
             .extra-info {
@@ -74,6 +81,7 @@
                     > .categories-list {
                         display: inline-block;
                         > a {
+                            cursor: pointer;
                             text-decoration: none;
                             display: inline-block;
                             margin-right: 4px;
@@ -86,12 +94,18 @@
                                     display: none;
                                 }
                             }
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                text-decoration: underline;
+                                color: #fff;
+                            }
                         }
                     }
                 }
             }
             .post-excerpt {
-                margin-top: 10px;
+                margin-top: 20px;
                 p {
                     margin-bottom: 0;
                 }
@@ -100,6 +114,13 @@
                     line-height: 17px;
                     margin: 0;
                 }
+            }
+            .read_more {
+                max-width: 150px;
+                margin-top: 30px;
+                margin-left: 0;
+                margin-right: auto;
+                display: block;
             }
         }
     }

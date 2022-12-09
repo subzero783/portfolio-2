@@ -188,8 +188,10 @@ export default function Blog() {
                   <div className="categories">
                     <p>Categories: </p>
                     <div className="categories-list">
-                      {post.categories.map((category) => (
-                        <a className="category">{category}</a>
+                      {post.categories.map((category, index) => (
+                        <a className="category" key={index}>
+                          {category}
+                        </a>
                       ))}
                     </div>
                   </div>
@@ -200,6 +202,9 @@ export default function Blog() {
                     __html: get_excerpt(post.content, 100),
                   }}
                 />
+                <a className="button_1 read_more" href="/">
+                  Read More
+                </a>
               </div>
             ))}
             {/* <div className="row">
