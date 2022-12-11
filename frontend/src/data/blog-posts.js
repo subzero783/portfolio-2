@@ -1,8 +1,9 @@
 export const posts = [
   {
     id: 1,
+    active: true,
     title: "How to Install WordPress in CPanel",
-    date: "8/22/2022",
+    date: "2022/8/22",
     author: "Developer Gus",
     categories: ["WordPress", "CPanel"],
     content:
@@ -10,8 +11,9 @@ export const posts = [
   },
   {
     id: 2,
+    active: false,
     title: "How to Customize a HubSpot Form with CSS and JavaScript",
-    date: "12/05/2022",
+    date: "2022/12/05",
     author: "Developer Gus",
     categories: ["HubSpot", "CSS", "JavaScript", "jQuery"],
     content:

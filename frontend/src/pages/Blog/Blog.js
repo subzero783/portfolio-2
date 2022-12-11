@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useState, useCallback } from "react";
 
 import Particles from "react-tsparticles";
 
@@ -13,6 +13,10 @@ import "./Blog.scss";
 // function b64_to_utf8(str) {
 //   return decodeURIComponent(escape(window.atob(str)));
 // }
+
+function custom_sort(a, b) {
+  return new Date(a.date).getTime() - new Date(b.date).getTime();
+}
 
 function return_chars(numberOfChars, content) {
   const theSubstring = content.substring(0, numberOfChars);
@@ -30,7 +34,7 @@ function formatted_date(theDate) {
   return moment(newDate).format("MMMM Do YYYY");
 }
 
-export default function Blog() {
+export default function Blog(youtubeVideos) {
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -39,6 +43,8 @@ export default function Blog() {
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {}, []);
+
+  posts.sort(custom_sort);
 
   return (
     <div id="blog">
@@ -152,7 +158,7 @@ export default function Blog() {
       />
       <section id="heading" className="container">
         <div className="row">
-          <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+          <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
             <h1>
               <span>Developer Gus</span> Blog
             </h1>
@@ -162,65 +168,83 @@ export default function Blog() {
               <span>Web Development</span> Content
             </h2>
           </div>
-          <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"></div>
+          <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>
         </div>
       </section>
       <section id="blog-posts" className="container">
         <div className="row">
           <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 content-side">
-            {posts.map((post) => (
-              <div className="post" key={post.id}>
-                <a href="/" aria-label={post.title}>
-                  <h2>{post.title}</h2>
-                </a>
-                <div className="extra-info">
-                  <div className="date-and-author">
-                    <div className="the-date">
-                      <p>{formatted_date(post.date)}</p>
-                    </div>
-                    <div className="extra-space">
-                      <span> </span>|<span> </span>
-                    </div>
-                    <div className="the-author">
-                      <p>By: {post.author}</p>
-                    </div>
-                  </div>
-                  <div className="categories">
-                    <p>Categories: </p>
-                    <div className="categories-list">
-                      {post.categories.map((category, index) => (
-                        <a className="category" key={index}>
-                          {category}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="post-excerpt"
-                  dangerouslySetInnerHTML={{
-                    __html: get_excerpt(post.content, 100),
-                  }}
-                />
-                <a className="button_1 read_more" href="/">
-                  Read More
-                </a>
-              </div>
-            ))}
-            {/* <div className="row">
-              <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                <!--
-                Title
-                Date: Month, day year | By: Author
-                Categories: Example, Example
-                Reading Time: 7 mins
-                (Excerpt)...
-                Read More >
-                -->
-              </div>
-              <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-              </div>
-            </div> */}
+            {posts.map((post, index) => {
+              // if (post.active) {
+              //   return (
+              //     <div className="row" key={index}>
+              //       <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 post-text">
+              //         <div className="post" key={post.id}>
+              //           <a
+              //             href="/"
+              //             aria-label={post.title}
+              //             className="title-link"
+              //           >
+              //             <h2>{post.title}</h2>
+              //           </a>
+              //           <div className="extra-info">
+              //             <div className="date-and-author">
+              //               <div className="the-date">
+              //                 <p>{formatted_date(post.date)}</p>
+              //               </div>
+              //               <div className="extra-space">
+              //                 <span> </span>|<span> </span>
+              //               </div>
+              //               <div className="the-author">
+              //                 <p>By: {post.author}</p>
+              //               </div>
+              //             </div>
+              //             <div className="categories">
+              //               <p>Categories: </p>
+              //               <div className="categories-list">
+              //                 {post.categories.map((category, index) => (
+              //                   <a href="/" className="category" key={index}>
+              //                     {category}
+              //                   </a>
+              //                 ))}
+              //               </div>
+              //             </div>
+              //           </div>
+              //           <div
+              //             className="post-excerpt"
+              //             dangerouslySetInnerHTML={{
+              //               __html: get_excerpt(post.content, 100),
+              //             }}
+              //           />
+              //           <a className="button_1 read_more" href="/">
+              //             Read More
+              //           </a>
+              //         </div>
+              //       </div>
+              //       <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 post-thumbnail">
+              //         <div className="thumbnail-container">
+              //           {videos[index].id.videoId !== undefined ? (
+              //             <img
+              //               src={videos[index].snippet.thumbnails.high.url}
+              //               alt={videos[index].snippet.title}
+              //             />
+              //           ) : (
+              //             <iframe
+              //               src={`https://www.youtube.com/embed/${videos[index].id.videoId}`}
+              //               title={videos[index].snippet.title}
+              //               frameBorder="0"
+              //               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              //               allowFullScreen
+              //             ></iframe>
+              //           )}
+              //         </div>
+              //       </div>
+              //     </div>
+              //   );
+              // } else {
+              //   return null;
+              // }
+            })}
           </div>
           <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 sidebar"></div>
         </div>

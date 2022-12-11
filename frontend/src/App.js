@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Blog from "./pages/Blog/Blog";
@@ -13,14 +13,31 @@ import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
 
 function App() {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      fetch(`/api/videos/`)
+        .then((response) => response.json())
+        .then((data) => {
+          setVideos(data.items);
+        });
+    };
+    fetchVideos();
+  }, []);
+
   return (
     <Router>
       <div className="App">
         <NavBar />
         <div id="page-body">
           <Routes>
-            <Route exact path="/" element={<HomePage />} />
-            <Route path="/blog" element={<Blog />} />
+            <Route
+              exact
+              path="/"
+              element={<HomePage youtubeVideos={videos} />}
+            />
+            <Route path="/blog" element={<Blog youtubeVideos={videos} />} />
             {/* <Route path="/about" element={AboutPage}/>
             <Route path="/articles" element={ArticlesListPage}/>
             <Route path="/article/:name" element={ArticlePage}/>
