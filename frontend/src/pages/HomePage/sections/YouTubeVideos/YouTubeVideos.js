@@ -1,9 +1,9 @@
-// import React, {useEffect} from 'react';
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./YouTubeVideos.scss";
 import { activate_text_fade_down } from "../../../../functions";
+import { Context } from "../../../../App";
 
 const page_scroll_2 = () => {
   var scrolled = window.pageYOffset || document.documentElement.scrollTop;
@@ -23,8 +23,8 @@ const page_scroll_2 = () => {
   }
 };
 
-export default function YouTubeVideos(youtubeVideos) {
-  const videos = youtubeVideos;
+export default function YouTubeVideos() {
+  const videos = useContext(Context);
 
   window.addEventListener("scroll", page_scroll_2);
 
@@ -69,14 +69,7 @@ export default function YouTubeVideos(youtubeVideos) {
                 allowFullScreen
               ></iframe>
             ) : (
-              <iframe
-                className="not-from-response"
-                src="https://www.youtube.com/embed/uVY8eaaaiMo"
-                title="How to Install WordPress in CPanel"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              ""
             )}
           </div>
           {/* Add most recent 5 videos as thumbnail images to click and switch the main video above */}

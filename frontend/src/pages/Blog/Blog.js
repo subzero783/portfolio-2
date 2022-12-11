@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from "react";
+import React, { useContext, useCallback, useState, useEffect } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
@@ -6,10 +6,6 @@ import moment from "moment";
 import { Context } from "../../App";
 
 import "./Blog.scss";
-
-// function b64_to_utf8(str) {
-//   return decodeURIComponent(escape(window.atob(str)));
-// }
 
 function custom_sort(a, b) {
   return new Date(a.date).getTime() - new Date(b.date).getTime();
@@ -20,9 +16,8 @@ function return_chars(numberOfChars, content) {
   return theSubstring + "...";
 }
 
-function get_excerpt(base64String, numberOfChars) {
-  // const theHTML = b64_to_utf8(base64String);
-  const theHTML = base64String;
+function get_excerpt(string, numberOfChars) {
+  const theHTML = string;
   return return_chars(numberOfChars, theHTML);
 }
 
@@ -32,6 +27,14 @@ function formatted_date(theDate) {
 }
 
 export default function Blog() {
+  // const [videos, setVideos] = useState([]);
+
+  const videos = useContext(Context);
+
+  // useEffect(() => {
+  //   setVideos(getVideos);
+  // }, []);
+
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -42,8 +45,6 @@ export default function Blog() {
   const particlesLoaded = useCallback(async (container) => {}, []);
 
   posts.sort(custom_sort);
-
-  const videos = useContext(Context);
 
   return (
     <div id="blog">
@@ -172,7 +173,7 @@ export default function Blog() {
       </section>
       <section id="blog-posts" className="container">
         <div className="row">
-          <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 content-side">
+          <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 content-side">
             {posts.map((post, index) => {
               if (post.active) {
                 return (
@@ -245,7 +246,7 @@ export default function Blog() {
               }
             })}
           </div>
-          <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 sidebar"></div>
+          <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
         </div>
       </section>
     </div>

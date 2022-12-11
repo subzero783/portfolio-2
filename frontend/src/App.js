@@ -35,11 +35,7 @@ function App() {
         <div id="page-body">
           <Context.Provider value={videos}>
             <Routes>
-              <Route
-                exact
-                path="/"
-                element={<HomePage youtubeVideos={videos} />}
-              />
+              <Route exact path="/" element={<HomePage />} />
               <Route path="/blog" element={<Blog />} />
               {/* <Route path="/about" element={AboutPage}/>
             <Route path="/articles" element={ArticlesListPage}/>
