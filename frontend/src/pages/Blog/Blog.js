@@ -1,12 +1,9 @@
-import React, { useState, useCallback } from "react";
-
+import React, { useContext, useCallback } from "react";
 import Particles from "react-tsparticles";
-
 import { loadFull } from "tsparticles";
-
 import { posts } from "../../data/blog-posts";
-
 import moment from "moment";
+import { Context } from "../../App";
 
 import "./Blog.scss";
 
@@ -34,7 +31,7 @@ function formatted_date(theDate) {
   return moment(newDate).format("MMMM Do YYYY");
 }
 
-export default function Blog(youtubeVideos) {
+export default function Blog() {
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -45,6 +42,8 @@ export default function Blog(youtubeVideos) {
   const particlesLoaded = useCallback(async (container) => {}, []);
 
   posts.sort(custom_sort);
+
+  const videos = useContext(Context);
 
   return (
     <div id="blog">
@@ -175,75 +174,75 @@ export default function Blog(youtubeVideos) {
         <div className="row">
           <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 content-side">
             {posts.map((post, index) => {
-              // if (post.active) {
-              //   return (
-              //     <div className="row" key={index}>
-              //       <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 post-text">
-              //         <div className="post" key={post.id}>
-              //           <a
-              //             href="/"
-              //             aria-label={post.title}
-              //             className="title-link"
-              //           >
-              //             <h2>{post.title}</h2>
-              //           </a>
-              //           <div className="extra-info">
-              //             <div className="date-and-author">
-              //               <div className="the-date">
-              //                 <p>{formatted_date(post.date)}</p>
-              //               </div>
-              //               <div className="extra-space">
-              //                 <span> </span>|<span> </span>
-              //               </div>
-              //               <div className="the-author">
-              //                 <p>By: {post.author}</p>
-              //               </div>
-              //             </div>
-              //             <div className="categories">
-              //               <p>Categories: </p>
-              //               <div className="categories-list">
-              //                 {post.categories.map((category, index) => (
-              //                   <a href="/" className="category" key={index}>
-              //                     {category}
-              //                   </a>
-              //                 ))}
-              //               </div>
-              //             </div>
-              //           </div>
-              //           <div
-              //             className="post-excerpt"
-              //             dangerouslySetInnerHTML={{
-              //               __html: get_excerpt(post.content, 100),
-              //             }}
-              //           />
-              //           <a className="button_1 read_more" href="/">
-              //             Read More
-              //           </a>
-              //         </div>
-              //       </div>
-              //       <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 post-thumbnail">
-              //         <div className="thumbnail-container">
-              //           {videos[index].id.videoId !== undefined ? (
-              //             <img
-              //               src={videos[index].snippet.thumbnails.high.url}
-              //               alt={videos[index].snippet.title}
-              //             />
-              //           ) : (
-              //             <iframe
-              //               src={`https://www.youtube.com/embed/${videos[index].id.videoId}`}
-              //               title={videos[index].snippet.title}
-              //               frameBorder="0"
-              //               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              //               allowFullScreen
-              //             ></iframe>
-              //           )}
-              //         </div>
-              //       </div>
-              //     </div>
-              //   );
-              // } else {
-              //   return null;
-              // }
+              if (post.active) {
+                return (
+                  <div className="row" key={index}>
+                    <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 post-text">
+                      <div className="post" key={post.id}>
+                        <a
+                          href="/"
+                          aria-label={post.title}
+                          className="title-link"
+                        >
+                          <h2>{post.title}</h2>
+                        </a>
+                        <div className="extra-info">
+                          <div className="date-and-author">
+                            <div className="the-date">
+                              <p>{formatted_date(post.date)}</p>
+                            </div>
+                            <div className="extra-space">
+                              <span> </span>|<span> </span>
+                            </div>
+                            <div className="the-author">
+                              <p>By: {post.author}</p>
+                            </div>
+                          </div>
+                          <div className="categories">
+                            <p>Categories: </p>
+                            <div className="categories-list">
+                              {post.categories.map((category, index) => (
+                                <a href="/" className="category" key={index}>
+                                  {category}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="post-excerpt"
+                          dangerouslySetInnerHTML={{
+                            __html: get_excerpt(post.content, 100),
+                          }}
+                        />
+                        <a className="button_1 read_more" href="/">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                    <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 post-thumbnail">
+                      <div className="thumbnail-container">
+                        {videos[index].id.videoId !== undefined ? (
+                          <img
+                            src={videos[index].snippet.thumbnails.high.url}
+                            alt={videos[index].snippet.title}
+                          />
+                        ) : (
+                          <iframe
+                            src={`https://www.youtube.com/embed/${videos[index].id.videoId}`}
+                            title={videos[index].snippet.title}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          ></iframe>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else {
+                return null;
+              }
             })}
           </div>
           <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 sidebar"></div>

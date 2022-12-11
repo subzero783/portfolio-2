@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Blog from "./pages/Blog/Blog";
@@ -11,6 +11,8 @@ import Blog from "./pages/Blog/Blog";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
+
+export const Context = createContext();
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -31,21 +33,23 @@ function App() {
       <div className="App">
         <NavBar />
         <div id="page-body">
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={<HomePage youtubeVideos={videos} />}
-            />
-            <Route path="/blog" element={<Blog youtubeVideos={videos} />} />
-            {/* <Route path="/about" element={AboutPage}/>
+          <Context.Provider value={videos}>
+            <Routes>
+              <Route
+                exact
+                path="/"
+                element={<HomePage youtubeVideos={videos} />}
+              />
+              <Route path="/blog" element={<Blog />} />
+              {/* <Route path="/about" element={AboutPage}/>
             <Route path="/articles" element={ArticlesListPage}/>
             <Route path="/article/:name" element={ArticlePage}/>
             <Route path="/user/signup" element={SignUpPage}/>
             <Route path="/user/login" element={LoginPage}/>
             <Route path="/user/dashboard" element={UserDashboard}/> */}
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </Context.Provider>
         </div>
       </div>
     </Router>
