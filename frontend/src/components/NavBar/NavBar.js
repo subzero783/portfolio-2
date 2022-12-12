@@ -23,14 +23,18 @@ const burger_click = (e) => {
 
 const navbar_link_click = (e) => {
   if (window.innerWidth < 991) {
+    console.log('less than 991');
     document
       .getElementsByClassName("burger")[0]
       .classList.toggle("burger--active");
     document.getElementById("tn-nav").classList.toggle("burger--active");
   }
+
+  onWindowResize();
 };
 
 const onWindowResize = () => {
+  console.log('onWindowResize');
   document.getElementById("tn-nav").classList.remove("burger--active");
   document
     .getElementsByClassName("burger")[0]
@@ -104,7 +108,7 @@ export default function NavBar() {
                 </a>
               </li>
               <li>
-                <Link to="/blog">Blog</Link>
+                <Link to="/blog" onClick={navbar_link_click}>Blog</Link>
               </li>
               {/* <li>
                 <a
@@ -135,7 +139,7 @@ export default function NavBar() {
                 <a href='/#about'>Skills</a>
               </li> */}
               <li>
-                <a href="/#contact">Contact</a>
+                <a onClick={navbar_link_click} href="/#contact">Contact</a>
               </li>
               <li>
                 <a

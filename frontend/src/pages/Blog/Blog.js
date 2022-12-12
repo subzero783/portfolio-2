@@ -4,6 +4,7 @@ import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
 import moment from "moment";
 import { Context } from "../../App";
+import {isEmpty} from '../../functions';
 
 import "./Blog.scss";
 
@@ -225,7 +226,7 @@ export default function Blog() {
                     <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 post-thumbnail">
                       <div className="thumbnail-container">
                         {
-                          videos !== undefined && videos !== null ? 
+                          videos !== undefined && videos !== null && !isEmpty(videos) ? 
                           videos[index].id.videoId !== undefined ? (
                             <img
                               src={videos[index].snippet.thumbnails.high.url}
