@@ -27,3 +27,7 @@ export function homeNavBarLink(e) {
     window.history.replaceState(null, "Home Page", "/");
   }
 }
+
+export function isEmpty(obj) {
+  return Object.keys(obj).length === 0;
+}
