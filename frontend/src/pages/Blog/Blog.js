@@ -225,7 +225,7 @@ export default function Blog() {
                     <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 post-thumbnail">
                       <div className="thumbnail-container">
                         {
-                          videos !== undefined && videos !== null && videos.length !== 0 ? 
+                          videos !== undefined && videos !== null ? 
                           videos[index].id.videoId !== undefined ? (
                             <img
                               src={videos[index].snippet.thumbnails.high.url}
