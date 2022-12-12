@@ -1,4 +1,4 @@
-import React, { useContext, useCallback, useState, useEffect } from "react";
+import React, { useContext, useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
@@ -30,6 +30,7 @@ export default function Blog() {
   // const [videos, setVideos] = useState([]);
 
   const videos = useContext(Context);
+
 
   // useEffect(() => {
   //   setVideos(getVideos);
@@ -223,20 +224,24 @@ export default function Blog() {
                     </div>
                     <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 post-thumbnail">
                       <div className="thumbnail-container">
-                        {videos[index].id.videoId !== undefined ? (
-                          <img
-                            src={videos[index].snippet.thumbnails.high.url}
-                            alt={videos[index].snippet.title}
-                          />
-                        ) : (
-                          <iframe
-                            src={`https://www.youtube.com/embed/${videos[index].id.videoId}`}
-                            title={videos[index].snippet.title}
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          ></iframe>
-                        )}
+                        {
+                          videos !== undefined && videos !== null && videos.length !== 0 ? 
+                          videos[index].id.videoId !== undefined ? (
+                            <img
+                              src={videos[index].snippet.thumbnails.high.url}
+                              alt={videos[index].snippet.title}
+                            />
+                          ) : (
+                            // <iframe
+                            //   src={`https://www.youtube.com/embed/${videos[index].id.videoId}`}
+                            //   title={videos[index].snippet.title}
+                            //   frameBorder="0"
+                            //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            //   allowFullScreen
+                            // ></iframe>
+                            ""
+                          ) : ""
+                        }
                       </div>
                     </div>
                   </div>

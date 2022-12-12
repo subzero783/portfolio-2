@@ -22,7 +22,12 @@ function App() {
       fetch(`/api/videos/`)
         .then((response) => response.json())
         .then((data) => {
-          setVideos(data.items);
+          if(data !== undefined && data !== null){
+
+            setVideos(data.items);
+          }else{
+            setVideos(undefined);
+          }
         });
     };
     fetchVideos();
