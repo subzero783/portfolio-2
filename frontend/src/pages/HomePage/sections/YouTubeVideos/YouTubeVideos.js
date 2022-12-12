@@ -60,17 +60,22 @@ export default function YouTubeVideos() {
           <h4 id="watch-latest-videos">Watch my most recent video</h4>
           {/* Add video player with most recent video */}
           <div id="player-2">
-            {videos[0] !== undefined ? (
-              <iframe
-                src={`https://www.youtube.com/embed/${videos[0].id.videoId}`}
-                title={videos[0].snippet.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            ) : (
-              <iframe className="not-from-response" src="https://www.youtube.com/embed/uVY8eaaaiMo" title="How to Install WordPress in CPanel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            )}
+            {
+            videos !== undefined && videos !== null ? 
+              videos[0] !== undefined ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${videos[0].id.videoId}`}
+                  title={videos[0].snippet.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <iframe className="not-from-response" src="https://www.youtube.com/embed/uVY8eaaaiMo" title="How to Install WordPress in CPanel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              ) : (
+                <iframe className="not-from-response" src="https://www.youtube.com/embed/uVY8eaaaiMo" title="How to Install WordPress in CPanel" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              )
+            }
           </div>
           {/* Add most recent 5 videos as thumbnail images to click and switch the main video above */}
           <a

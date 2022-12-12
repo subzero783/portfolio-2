@@ -22,10 +22,10 @@ function App() {
       fetch(`/api/videos/`)
         .then((response) => response.json())
         .then((data) => {
-          if(data !== undefined && data !== null){
-
+          if(data !== undefined && data !== null && data.length !== 0){
             setVideos(data.items);
           }else{
+            console.log('NO YouTube videos');
             setVideos(undefined);
           }
         });
