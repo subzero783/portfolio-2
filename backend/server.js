@@ -36,9 +36,14 @@ app.get("/api/contact/", async (req, res) => {
 app.get("/api/videos/", async (req, res) => {
   const youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.GOOGLE_API}&channelId=${process.env.YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=10`;
 
-  axios.get(youtubeURL).then((resp) => {
-    res.status(200).json(resp.data);
-  });
+  axios.get(youtubeURL)
+    .then((resp) => {
+      res.status(200).json(resp.data);
+    })
+    .catch(error=>{
+      console.log('Could not fetch YouTube Videos');
+      res.status(200).json({});
+    })
 });
 
 app.get("*", (req, res) => {
