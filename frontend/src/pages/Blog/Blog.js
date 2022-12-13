@@ -12,6 +12,11 @@ function custom_sort(a, b) {
   return new Date(a.date).getTime() - new Date(b.date).getTime();
 }
 
+function formatted_date(theDate) {
+  const newDate = new Date(theDate);
+  return moment(newDate).format("MMMM Do YYYY");
+}
+
 function return_chars(numberOfChars, content) {
   const theSubstring = content.substring(0, numberOfChars);
   return theSubstring + "...";
@@ -22,16 +27,11 @@ function get_excerpt(string, numberOfChars) {
   return return_chars(numberOfChars, theHTML);
 }
 
-function formatted_date(theDate) {
-  const newDate = new Date(theDate);
-  return moment(newDate).format("MMMM Do YYYY");
-}
 
 export default function Blog() {
   // const [videos, setVideos] = useState([]);
 
   const videos = useContext(Context);
-
 
   // useEffect(() => {
   //   setVideos(getVideos);
