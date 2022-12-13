@@ -2,6 +2,7 @@ export const posts = [
   {
     id: 1,
     active: true,
+    url: 'how-to-install-wordpress-in-cpanel',
     title: "How to Install WordPress in CPanel",
     date: "2022/8/22",
     author: "Developer Gus",
@@ -12,6 +13,7 @@ export const posts = [
   {
     id: 2,
     active: false,
+    url: 'how-to-customize-a-hubspot-form-with-css-and-javascript',
     title: "How to Customize a HubSpot Form with CSS and JavaScript",
     date: "2022/12/05",
     author: "Developer Gus",

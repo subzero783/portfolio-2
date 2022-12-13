@@ -50,6 +50,14 @@
         margin-top: 100px;
         z-index: 2;
         position: relative;
+        .content-side {
+            > .row {
+                @media screen and (max-width: 991px){
+                    display: flex;
+                    flex-flow: column-reverse nowrap;
+                }
+            }
+        }
         .post {
             text-align: left;
             margin-bottom: 70px;
@@ -143,9 +151,12 @@
                     text-decoration: none;
                 }
             }
-            .thumbnail-container {
-                > img {
-                    width: 100%;
+        }
+        .thumbnail-container { 
+            > img {
+                width: 100%;
+                @media screen and (max-width: 991px){
+                    max-width: 500px;
                 }
             }
         }
