@@ -146,7 +146,7 @@ export default function BlogPost() {
                 }}
             />
             <section id="heading" className="container">
-                
+                <h1>Whats up</h1>
             </section>
         </div>
     );
