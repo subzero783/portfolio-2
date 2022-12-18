@@ -19,7 +19,7 @@ function formatted_date(theDate) {
 
 function return_chars(numberOfChars, content) {
   const theSubstring = content.substring(0, numberOfChars);
-  return theSubstring + "...";
+  return theSubstring + '<span class="dots">...</span>';
 }
 
 function get_excerpt(string, numberOfChars) {
@@ -183,7 +183,7 @@ export default function Blog() {
                     <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 post-text">
                       <div className="post" key={post.id}>
                         <a
-                          href="/"
+                          href={`/blog/${post.url}/`}
                           aria-label={post.title}
                           className="title-link"
                         >
@@ -198,11 +198,11 @@ export default function Blog() {
                               <span> </span>|<span> </span>
                             </div>
                             <div className="the-author">
-                              <p>By: {post.author}</p>
+                              <p><span>Author:</span> {post.author}</p>
                             </div>
                           </div>
                           <div className="categories">
-                            <p>Categories: </p>
+                            <p><span>Categories:</span> </p>
                             <div className="categories-list">
                               {post.categories.map((category, index) => (
                                 <a href="/" className="category" key={index}>
@@ -215,10 +215,10 @@ export default function Blog() {
                         <div
                           className="post-excerpt"
                           dangerouslySetInnerHTML={{
-                            __html: get_excerpt(post.content, 100),
+                            __html: get_excerpt(post.content, 200),
                           }}
                         />
-                        <a className="button_1 read_more" href="/">
+                        <a className="button_1 read_more" href={`/blog/${post.url}/`}>
                           Read More
                         </a>
                       </div>

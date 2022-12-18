@@ -69,13 +69,14 @@
                     max-width: fit-content;
                     font-size: 26px;
                     margin-bottom: 2px;
+                    color: rgb(4, 229, 229);
                 }
                 &:after {
                     content: "";
                     width: 0px;
                     height: 1px;
                     display: block;
-                    background: #fff;
+                    background: rgb(4, 229, 229);
                     transition: 400ms;
                 }
                 &:focus,
@@ -92,15 +93,27 @@
                     > div {
                         display: inline-block;
                     }
-                    span {
-                        width: 10px;
-                        display: inline-block;
+                    .extra-space {
+                        span {
+                            width: 10px;
+                            display: inline-block;
+                        }
+                    }
+                    .the-author {
+                        > p {
+                            > span {
+                                color: rgb(4, 229, 229);
+                            }
+                        }
                     }
                 }
                 > .categories {
                     > p {
                         display: inline-block;
                         margin-right: 5px;
+                        > span {
+                            color: rgb(4, 229, 229);
+                        }
                     }
                     > .categories-list {
                         display: inline-block;
@@ -130,6 +143,9 @@
             }
             .post-excerpt {
                 margin-top: 20px;
+                .dots {
+                    color:rgb(4, 229, 229);
+                }
                 p {
                     margin-bottom: 0;
                 }
