@@ -1,4 +1,10 @@
-import React, { useContext, useCallback } from "react";
+import React, { 
+    useState, 
+    useContext, 
+    useCallback,
+    useEffect,
+    useLayoutEffect
+} from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
@@ -15,14 +21,20 @@ function formatted_date(theDate) {
     return moment(newDate).format("MMMM Do YYYY");
 }
 
+function get_post_path(path){
+    const delimiter = '/', 
+    start = 0;
+
+    const parts = path.split(delimiter).slice(start);
+    return parts[2];
+}
+
 export default function BlogPost() {
-    // const [videos, setVideos] = useState([]);
-  
+
+    const [postUrl, setPostUrl] = useState('');
+    const [postObjContent, setPostObjContent] = useState([]);
+    const [postMainText, setPostMainText] = useState('');
     const videos = useContext(Context);
-  
-    // useEffect(() => {
-    //   setVideos(getVideos);
-    // }, []);
   
     const particlesInit = useCallback(async (engine) => {
       // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -34,6 +46,20 @@ export default function BlogPost() {
     const particlesLoaded = useCallback(async (container) => {}, []);
   
     posts.sort(custom_sort);
+
+    useEffect(()=>{
+
+        const get_post_content = async () => {
+            setPostUrl(get_post_path(window.location.pathname));
+
+            const postObj = posts.find(({ url }) => url === postUrl );
+        
+            setPostObjContent(postObj);
+            setPostMainText(postObj.content);
+        };
+        get_post_content();
+
+    }, [postObjContent]);
 
     return(
         <div id="blog-post">
@@ -147,6 +173,29 @@ export default function BlogPost() {
             />
             <section id="heading" className="container">
                 <h1>Whats up</h1>
+                <div className="row">
+                    <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h1 className="post-title">
+                            <span></span>
+                        </h1>
+                    </div>
+                    <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>
+                </div>
+            </section>
+            <section id="post-content-and-sidebar" className="container">
+                <div className="row">
+                    <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 content-side">
+                        <div className="post-video">
+
+                        </div>
+                        <div className="post-text">
+                            
+                            <div dangerouslySetInnerHTML={{__html: postMainText}} />
+                            
+                        </div>
+                    </div>
+                    <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
+                </div>
             </section>
         </div>
     );
