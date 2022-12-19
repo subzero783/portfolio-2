@@ -34,6 +34,7 @@ export default function BlogPost() {
     const [postUrl, setPostUrl] = useState('');
     const [postObjContent, setPostObjContent] = useState([]);
     const [postMainText, setPostMainText] = useState('');
+    const [postTitle, setPostTitle] = useState('');
     const videos = useContext(Context);
   
     const particlesInit = useCallback(async (engine) => {
@@ -55,11 +56,12 @@ export default function BlogPost() {
             const postObj = posts.find(({ url }) => url === postUrl );
         
             setPostObjContent(postObj);
+            setPostTitle(postObj.title)
             setPostMainText(postObj.content);
         };
         get_post_content();
 
-    }, [postObjContent]);
+    }, [postObjContent, postUrl]);
 
     return(
         <div id="blog-post">
@@ -172,11 +174,10 @@ export default function BlogPost() {
                 }}
             />
             <section id="heading" className="container">
-                <h1>Whats up</h1>
                 <div className="row">
                     <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                         <h1 className="post-title">
-                            <span></span>
+                            <span>{postTitle}</span>
                         </h1>
                     </div>
                     <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>
