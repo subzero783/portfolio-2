@@ -96,11 +96,16 @@
                 }
             }
             .post-video {
-                max-width: 875px;
+                overflow: hidden;
+                padding-top: 56.25%; /* 16:9*/
+                position: relative;
                 > iframe {
+                    border: 0;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
                     width: 100%;
-                    min-height: 630px;
-                    margin-right: 100%;
+                    height: 100%;
                 }
             }
             .post-text {

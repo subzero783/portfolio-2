@@ -230,14 +230,16 @@ export default function BlogPost() {
                             {
                                 get_single_video(postVideoId, postTitle)
                             }
-                            <a
-                                href="https://www.youtube.com/channel/UChuhEhCujTGP1mfmPdtuVhA"
-                                rel="noopener noreferrer"
-                                className="button_1"
-                                target="_blank"
-                            >
-                                More Videos
-                            </a>
+                        </div>
+                        <div>
+                        <a
+                            href="https://www.youtube.com/channel/UChuhEhCujTGP1mfmPdtuVhA"
+                            rel="noopener noreferrer"
+                            className="button_1"
+                            target="_blank"
+                        >
+                            More Videos
+                        </a>
                         </div>
                         <div className="post-text">
                             
