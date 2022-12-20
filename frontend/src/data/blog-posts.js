@@ -1,6 +1,7 @@
 export const posts = [
   {
     id: 1,
+    video_id: 'uVY8eaaaiMo',
     active: true,
     url: 'how-to-install-wordpress-in-cpanel',
     title: "How to Install WordPress in CPanel",
@@ -12,6 +13,7 @@ export const posts = [
   },
   {
     id: 2,
+    video_id: '0',
     active: false,
     url: 'how-to-customize-a-hubspot-form-with-css-and-javascript',
     title: "How to Customize a HubSpot Form with CSS and JavaScript",
