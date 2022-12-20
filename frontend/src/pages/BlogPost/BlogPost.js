@@ -1,15 +1,12 @@
 import React, { 
-    useState, 
-    useContext, 
+    useState,
     useCallback,
-    useEffect,
-    useLayoutEffect
+    useEffect
 } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
 import moment from "moment";
-import { Context } from "../../App";
 import "./BlogPost.scss";
 
 function custom_sort(a, b) {
@@ -29,13 +26,29 @@ function get_post_path(path){
     return parts[2];
 }
 
+function get_single_video( videoId, videoTitle ){
+    const theIframe = (
+        <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title={videoTitle}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    );
+    return theIframe;
+}
+
 export default function BlogPost() {
 
     const [postUrl, setPostUrl] = useState('');
     const [postObjContent, setPostObjContent] = useState([]);
     const [postMainText, setPostMainText] = useState('');
     const [postTitle, setPostTitle] = useState('');
-    const videos = useContext(Context);
+    const [postVideoId, setPostVideoId] = useState('');
+    const [postDate, setPostDate] = useState('');
+    const [postAuthor, setPostAuthor] = useState('');
+    const [postCategories, setPostCategories] = useState([]);
   
     const particlesInit = useCallback(async (engine) => {
       // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -56,8 +69,12 @@ export default function BlogPost() {
             const postObj = posts.find(({ url }) => url === postUrl );
         
             setPostObjContent(postObj);
+            setPostVideoId(postObj.video_id);
             setPostTitle(postObj.title)
             setPostMainText(postObj.content);
+            setPostDate(postObj.date);
+            setPostAuthor(postObj.author);
+            setPostCategories(postObj.categories);
         };
         get_post_content();
 
@@ -179,6 +196,29 @@ export default function BlogPost() {
                         <h1 className="post-title">
                             <span>{postTitle}</span>
                         </h1>
+                        <div className="extra-info">
+                          <div className="date-and-author">
+                            <div className="the-date">
+                              <p>{formatted_date(postDate)}</p>
+                            </div>
+                            <div className="extra-space">
+                              <span> </span>|<span> </span>
+                            </div>
+                            <div className="the-author">
+                              <p><span>Author:</span> {postAuthor}</p>
+                            </div>
+                          </div>
+                          <div className="categories">
+                            <p><span>Categories:</span> </p>
+                            <div className="categories-list">
+                              {postCategories.map((category, index) => (
+                                <a href="/" className="category" key={index}>
+                                  {category}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
                     </div>
                     <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>
                 </div>
@@ -187,7 +227,17 @@ export default function BlogPost() {
                 <div className="row">
                     <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 content-side">
                         <div className="post-video">
-
+                            {
+                                get_single_video(postVideoId, postTitle)
+                            }
+                            <a
+                                href="https://www.youtube.com/channel/UChuhEhCujTGP1mfmPdtuVhA"
+                                rel="noopener noreferrer"
+                                className="button_1"
+                                target="_blank"
+                            >
+                                More Videos
+                            </a>
                         </div>
                         <div className="post-text">
                             
