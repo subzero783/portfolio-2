@@ -27,15 +27,23 @@ function get_excerpt(string, numberOfChars) {
   return return_chars(numberOfChars, theHTML);
 }
 
+function get_video_thumbnail( videos, video_id ){
+  const thumbnail = videos.map((video)=>{
+    if(video.id.videoId === video_id){
+      return <img
+        src={video.snippet.thumbnails.high.url}
+        alt={video.snippet.title}
+      />
+    }else{
+      return null;
+    }
+  });
+  return thumbnail;
+}
 
 export default function Blog() {
-  // const [videos, setVideos] = useState([]);
 
   const videos = useContext(Context);
-
-  // useEffect(() => {
-  //   setVideos(getVideos);
-  // }, []);
 
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -227,14 +235,7 @@ export default function Blog() {
                       <div className="thumbnail-container">
                         {
                           videos !== undefined && videos !== null && !isEmpty(videos) ? 
-                          videos[index].id.videoId !== undefined ? (
-                            <img
-                              src={videos[index].snippet.thumbnails.high.url}
-                              alt={videos[index].snippet.title}
-                            />
-                          ) : (
-                            ""
-                          ) : ""
+                          get_video_thumbnail(videos, post.video_id) : ""
                         }
                       </div>
                     </div>
