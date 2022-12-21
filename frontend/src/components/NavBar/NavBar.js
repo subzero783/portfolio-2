@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import {Link} from 'react-scroll';
 import Glitch from "../Glitch/Glitch";
 import { homeNavBarLink } from "../../functions";
 import "./NavBar.scss";
@@ -23,7 +24,6 @@ const burger_click = (e) => {
 
 const navbar_link_click = (e) => {
   if (window.innerWidth < 991) {
-    console.log('less than 991');
     document
       .getElementsByClassName("burger")[0]
       .classList.toggle("burger--active");
