@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import { Link } from "react-router-dom";
-import {Link} from 'react-scroll';
+import { Link } from "react-scroll";
 import Glitch from "../Glitch/Glitch";
 import { homeNavBarLink } from "../../functions";
 import "./NavBar.scss";
@@ -16,17 +16,14 @@ const check_window_innerwidth = () => {
 };
 
 const burger_click = (e) => {
-  document
-    .getElementsByClassName("burger")[0]
-    .classList.toggle("burger--active");
+  document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
   document.getElementById("tn-nav").classList.toggle("burger--active");
 };
 
 const navbar_link_click = (e) => {
   if (window.innerWidth < 991) {
-    document
-      .getElementsByClassName("burger")[0]
-      .classList.toggle("burger--active");
+    console.log("less than 991");
+    document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
     document.getElementById("tn-nav").classList.toggle("burger--active");
   }
 
@@ -34,11 +31,9 @@ const navbar_link_click = (e) => {
 };
 
 const onWindowResize = () => {
-  console.log('onWindowResize');
+  console.log("onWindowResize");
   document.getElementById("tn-nav").classList.remove("burger--active");
-  document
-    .getElementsByClassName("burger")[0]
-    .classList.remove("burger--active");
+  document.getElementsByClassName("burger")[0].classList.remove("burger--active");
   document.getElementById("tn-nav").style.transform = check_window_innerwidth();
 };
 window.addEventListener("resize", onWindowResize);
@@ -94,8 +89,7 @@ export default function NavBar() {
             id="tn-nav"
             style={{
               transform: check_window_innerwidth(),
-            }}
-          >
+            }}>
             <ul>
               <li>
                 <Link to="/" onClick={homeNavBarLink}>
@@ -108,7 +102,9 @@ export default function NavBar() {
                 </a>
               </li>
               <li>
-                <Link to="/blog" onClick={navbar_link_click}>Blog</Link>
+                <Link to="/blog" onClick={navbar_link_click}>
+                  Blog
+                </Link>
               </li>
               {/* <li>
                 <a
@@ -139,14 +135,12 @@ export default function NavBar() {
                 <a href='/#about'>Skills</a>
               </li> */}
               <li>
-                <a onClick={navbar_link_click} href="/#contact">Contact</a>
+                <a onClick={navbar_link_click} href="/#contact">
+                  Contact
+                </a>
               </li>
               <li>
-                <a
-                  href="https://github.com/subzero783/portfolio-2"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://github.com/subzero783/portfolio-2" target="_blank" rel="noreferrer">
                   Site Code
                 </a>
               </li>
