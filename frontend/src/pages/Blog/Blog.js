@@ -4,12 +4,12 @@ import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
 import moment from "moment";
 import { Context } from "../../App";
-import {isEmpty} from '../../functions';
+import { isEmpty } from "../../functions";
 
 import "./Blog.scss";
 
 function custom_sort(a, b) {
-  return new Date(a.date).getTime() - new Date(b.date).getTime();
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
 }
 
 function formatted_date(theDate) {
@@ -27,14 +27,11 @@ function get_excerpt(string, numberOfChars) {
   return return_chars(numberOfChars, theHTML);
 }
 
-function get_video_thumbnail( videos, video_id ){
-  const thumbnail = videos.map((video)=>{
-    if(video.id.videoId === video_id){
-      return <img
-        src={video.snippet.thumbnails.high.url}
-        alt={video.snippet.title}
-      />
-    }else{
+function get_video_thumbnail(videos, video_id) {
+  const thumbnail = videos.map((video) => {
+    if (video.id.videoId === video_id) {
+      return <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} />;
+    } else {
       return null;
     }
   });
@@ -42,7 +39,6 @@ function get_video_thumbnail( videos, video_id ){
 }
 
 export default function Blog() {
-
   const videos = useContext(Context);
 
   const particlesInit = useCallback(async (engine) => {
@@ -190,11 +186,7 @@ export default function Blog() {
                   <div className="row" key={index}>
                     <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 post-text">
                       <div className="post" key={post.id}>
-                        <a
-                          href={`/blog/${post.url}/`}
-                          aria-label={post.title}
-                          className="title-link"
-                        >
+                        <a href={`/blog/${post.url}/`} aria-label={post.title} className="title-link">
                           <h2>{post.title}</h2>
                         </a>
                         <div className="extra-info">
@@ -206,11 +198,15 @@ export default function Blog() {
                               <span> </span>|<span> </span>
                             </div>
                             <div className="the-author">
-                              <p><span>Author:</span> {post.author}</p>
+                              <p>
+                                <span>Author:</span> {post.author}
+                              </p>
                             </div>
                           </div>
                           <div className="categories">
-                            <p><span>Categories:</span> </p>
+                            <p>
+                              <span>Categories:</span>{" "}
+                            </p>
                             <div className="categories-list">
                               {post.categories.map((category, index) => (
                                 <a href="/" className="category" key={index}>
@@ -232,12 +228,7 @@ export default function Blog() {
                       </div>
                     </div>
                     <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 post-thumbnail">
-                      <div className="thumbnail-container">
-                        {
-                          videos !== undefined && videos !== null && !isEmpty(videos) ? 
-                          get_video_thumbnail(videos, post.video_id) : ""
-                        }
-                      </div>
+                      <div className="thumbnail-container">{videos !== undefined && videos !== null && !isEmpty(videos) ? get_video_thumbnail(videos, post.video_id) : ""}</div>
                     </div>
                   </div>
                 );
