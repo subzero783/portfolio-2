@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Blog from "./pages/Blog/Blog";
 import BlogPost from "./pages/BlogPost/BlogPost";
@@ -12,15 +12,15 @@ import BlogPost from "./pages/BlogPost/BlogPost";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import NavBar from "./components/NavBar/NavBar";
 
-import HubspotFormCSSJS from "./pages/NewsletterSignup/NewsletterSignup";
+import NewsletterSignup from "./pages/NewsletterSignup/NewsletterSignup";
 
 import "./App.scss";
-import NewsletterSignup from "./pages/NewsletterSignup/NewsletterSignup";
 
 export const Context = createContext();
 
 function App() {
   const [videos, setVideos] = useState([]);
+  const [currentLocation, setCurrentLocation] = useState();
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -35,12 +35,19 @@ function App() {
           }
         });
     };
+
+    const getCurrentLocation = () => {
+      let location = window.location.pathname.split("/");
+      setCurrentLocation(location[1]);
+    };
+
+    getCurrentLocation();
     fetchVideos();
   }, []);
 
   return (
     <Router>
-      <div className="App">
+      <div className={`App ${currentLocation}`}>
         <NavBar />
         <div id="page-body">
           <Context.Provider value={videos}>

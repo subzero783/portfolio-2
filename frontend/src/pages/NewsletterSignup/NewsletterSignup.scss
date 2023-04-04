@@ -1,34 +1,64 @@
+.hubspot-form div#navbar {
+    background-color: #fff;
+    @media screen and (max-width: 991px){
+        background-color: unset;
+    }
+}
+
+.hubspot-form .glitch,
+.hubspot-form div#navbar .logo-and-nav-container #tn-nav > ul > li > a {
+    color: #000;
+    @media screen and (max-width: 991px) {
+        color: rgb(255, 255, 255);
+    }
+}
+
 #hubspot-form-css-js {
-    height: 100vh;
     .container-1 {
         top: 0;
-        z-index: 2;
         width: 100%;
         height: 100%;
-        max-width: unset;
-        padding-top: 100px;
+        padding-top: 80px;
         position: relative;
-        background-size: cover;
-        background-position: center;
-        background-image: url('../../images/bg-1.jpeg');
-        &:before {
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.2);
-        }
         > .row {
             z-index: 1;
             > .col {
+                padding-top: 100px;
+                padding-bottom: 120px;
                 margin: 0 auto;
             }
         }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
+            font-weight: 300;
+            color: #0effdd;
+        }
         #hubspotForm {
             z-index: 100;
+            max-width: 400px;
+            margin: 0 auto;
+            // background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 auto;
+            padding: 20px 30px;
+            border-radius: 10px;
         }
     }
+    .contact-info-container {
+        background-color: #fff;
+        .container {
+            padding-top: 40px;
+            .row.contact-info-row {
+                margin-top: 90px;
+                z-index: 1;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+.particles {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
 }
