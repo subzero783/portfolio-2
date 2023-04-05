@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import { Link } from "react-router-dom";
-import { Link } from "react-scroll";
+
 import Glitch from "../Glitch/Glitch";
 import { homeNavBarLink } from "../../functions";
 import "./NavBar.scss";
@@ -22,7 +21,6 @@ const burger_click = (e) => {
 
 const navbar_link_click = (e) => {
   if (window.innerWidth < 991) {
-    console.log("less than 991");
     document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
     document.getElementById("tn-nav").classList.toggle("burger--active");
   }
@@ -31,7 +29,6 @@ const navbar_link_click = (e) => {
 };
 
 const onWindowResize = () => {
-  console.log("onWindowResize");
   document.getElementById("tn-nav").classList.remove("burger--active");
   document.getElementsByClassName("burger")[0].classList.remove("burger--active");
   document.getElementById("tn-nav").style.transform = check_window_innerwidth();
@@ -92,9 +89,9 @@ export default function NavBar() {
             }}>
             <ul>
               <li>
-                <Link to="/" onClick={homeNavBarLink}>
+                <a href="/" onClick={homeNavBarLink}>
                   Home
-                </Link>
+                </a>
               </li>
               <li>
                 <a onClick={navbar_link_click} href="/#developer-gus">
@@ -102,17 +99,10 @@ export default function NavBar() {
                 </a>
               </li>
               <li>
-                <Link to="/blog" onClick={navbar_link_click}>
+                <a onClick={navbar_link_click} href="/blog">
                   Blog
-                </Link>
+                </a>
               </li>
-              {/* <li>
-                <a
-                  onClick={navbar_link_click}
-                  href="/blog">
-                    Blog
-                  </a>
-              </li> */}
               <li>
                 <a onClick={navbar_link_click} href="/#about">
                   About
@@ -128,12 +118,6 @@ export default function NavBar() {
                   Services
                 </a>
               </li>
-              {/* <li>
-                <a href='/#about'>Experience</a>
-              </li>
-              <li>
-                <a href='/#about'>Skills</a>
-              </li> */}
               <li>
                 <a onClick={navbar_link_click} href="/#contact">
                   Contact
