@@ -28,8 +28,6 @@ function HomePage() {
     <>
       <MetaInfo title={pageTitle} description={pageDescription} />
       <div id="homepage-container">
-        {/* <p>message:</p>
-                <p>{message}</p> */}
         <Hero />
         <YouTubeVideos />
         <About />
