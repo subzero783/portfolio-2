@@ -5,6 +5,7 @@ import { posts } from "../../data/blog-posts";
 import moment from "moment";
 import { Context } from "../../App";
 import { isEmpty } from "../../functions";
+import ContactInfo from "../../components/ContactInfo/ContactInfo";
 
 import "./Blog.scss";
 
@@ -240,6 +241,9 @@ export default function Blog() {
           <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
         </div>
       </section>
+      <div class="container contact-info-container">
+        <ContactInfo />
+      </div>
     </div>
   );
 }
