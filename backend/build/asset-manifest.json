@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.58f09df2.css",
-    "main.js": "/static/js/main.a6d9ed1e.js",
+    "main.css": "/static/css/main.73638b77.css",
+    "main.js": "/static/js/main.0b0f9c89.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/green.jpg": "/static/media/green.5ee8968f37fc415a460c.jpg",
     "static/media/Teko-SemiBold.eot": "/static/media/Teko-SemiBold.4c47aef54e7ed24e40a9.eot",
@@ -107,12 +107,12 @@
     "static/media/watch.jpeg": "/static/media/watch.405ee7ae795ef234d210.jpeg",
     "static/media/iphone.jpeg": "/static/media/iphone.68a86180145028d2c92d.jpeg",
     "index.html": "/index.html",
-    "main.58f09df2.css.map": "/static/css/main.58f09df2.css.map",
-    "main.a6d9ed1e.js.map": "/static/js/main.a6d9ed1e.js.map",
+    "main.73638b77.css.map": "/static/css/main.73638b77.css.map",
+    "main.0b0f9c89.js.map": "/static/js/main.0b0f9c89.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.58f09df2.css",
-    "static/js/main.a6d9ed1e.js"
+    "static/css/main.73638b77.css",
+    "static/js/main.0b0f9c89.js"
   ]
 }
