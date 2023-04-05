@@ -3,10 +3,6 @@ import { validate } from "react-email-validator";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import email2 from "../../../../images/contact-icons/email2.png";
-import phone from "../../../../images/contact-icons/phone.png";
-import thumbsUp from "../../../../images/contact-icons/thumbs-up.png";
-
 import "./Contact.scss";
 import ContactInfo from "../../../../components/ContactInfo/ContactInfo";
 
