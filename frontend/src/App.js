@@ -13,6 +13,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import NavBar from "./components/NavBar/NavBar";
 
 import NewsletterSignup from "./pages/NewsletterSignup/NewsletterSignup";
+import ThankYouPage from "./pages/ThankYouPage/ThankYouPage";
 
 import "./App.scss";
 
@@ -53,7 +54,7 @@ function App() {
           <Context.Provider value={videos}>
             <Routes>
               <Route exact path="/" element={<HomePage />} />
-              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/" element={<Blog />} />
               <Route path="/blog/:post" element={<BlogPost />} />
               {/* <Route path="/about" element={AboutPage}/>
             <Route path="/articles" element={ArticlesListPage}/>
@@ -61,7 +62,8 @@ function App() {
             <Route path="/user/signup" element={SignUpPage}/>
             <Route path="/user/login" element={LoginPage}/>
             <Route path="/user/dashboard" element={UserDashboard}/> */}
-              <Route path="/hubspot-form" element={<NewsletterSignup />} />
+              <Route path="/hubspot-form/" element={<NewsletterSignup />} />
+              <Route path="/thank-you/:item" element={<ThankYouPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Context.Provider>

@@ -31,3 +31,11 @@ export function homeNavBarLink(e) {
 export function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
+
+export function get_current_path(path, partNumber) {
+  const delimiter = "/",
+    start = 0;
+
+  const parts = path.split(delimiter).slice(start);
+  return parts[partNumber];
+}
