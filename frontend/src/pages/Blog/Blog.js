@@ -241,7 +241,7 @@ export default function Blog() {
           <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
         </div>
       </section>
-      <div class="container contact-info-container">
+      <div className="container contact-info-container">
         <ContactInfo />
       </div>
     </div>

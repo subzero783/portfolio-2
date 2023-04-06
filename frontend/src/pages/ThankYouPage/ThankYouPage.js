@@ -1,70 +1,43 @@
-import React, { useState, useEffect, useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import "./NewsletterSignup.scss";
+// import React, { useEffect, useCallback } from "react";
+import React from "react";
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles";
+import "./ThankYouPage.scss";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
-import { get_current_path } from "../../functions";
-import { useNavigate } from "react-router-dom";
+import HeroVideo from "../../components/HeroVideo/HeroVideo";
 
-export default function NewsletterSignup() {
-  const [currentPath, setCurrentPath] = useState("");
+export default function ThankYouPage() {
+  //   const particlesInit = useCallback(async (engine) => {
+  //     await loadFull(engine);
+  //   }, []);
 
-  const particlesInit = useCallback(async (engine) => {
-    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(engine);
-  }, []);
+  //   const particlesLoaded = useCallback(async (container) => {}, []);
 
-  const particlesLoaded = useCallback(async (container) => {}, []);
+  //   useEffect(() => {
+  //     first;
 
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    setCurrentPath(get_current_path(window.location.pathname, 1));
-
-    const script = document.createElement("script");
-    script.src = "https://js.hsforms.net/forms/embed/v2.js";
-    document.body.appendChild(script);
-
-    script.addEventListener("load", () => {
-      // @TS-ignore
-      if (window.hbspt) {
-        // @TS-ignore
-        window.hbspt.forms.create({
-          region: "na1",
-          portalId: "24264669",
-          formId: "cb244bed-53bf-4df0-b4d1-451858e2fa4c",
-          target: "#hubspotForm",
-          onFormSubmitted: ($form) => {
-            setTimeout(() => {
-              navigate(`/thank-you/${currentPath}`);
-            }, 1000);
-          },
-        });
-      }
-    });
-  }, [navigate]);
+  //     return () => {
+  //       second;
+  //     };
+  //   }, [third]);
 
   return (
-    <div>
-      <div id="hubspot-form-css-js">
-        <div className="container container-1">
-          <div className="row">
-            <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-              <h1>Your Freebie Awaits! Just Sign Up with Your Email to Claim It.</h1>
-              <br></br>
-              <div id="hubspotForm"></div>
-            </div>
-          </div>
-        </div>
-        <div className="contact-info-container">
-          <div className="container">
-            <ContactInfo />
+    <div id="thank-you-page">
+      {/* <img className="wallpaper" src={email2} alt="Email icon" /> */}
+      <HeroVideo />
+      <div className="container">
+        <div className="row">
+          <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <h1>We’re excited to share updates we think you’ll find valuable. Below is your freebie!</h1>
           </div>
         </div>
       </div>
-      <Particles
+      <div className="contact-info-container">
+        <div className="container">
+          <ContactInfo />
+        </div>
+      </div>
+      {/* <Particles
         init={particlesInit}
         loaded={particlesLoaded}
         className="particles"
@@ -171,7 +144,7 @@ export default function NewsletterSignup() {
           },
           retina_detect: true,
         }}
-      />
+      /> */}
     </div>
   );
 }

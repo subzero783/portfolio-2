@@ -1,0 +1,51 @@
+.thank-you div#navbar {
+    background-color: #fff;
+    @media screen and (max-width: 991px){
+        background-color: unset;
+    }
+}
+
+.thank-you .glitch,
+.thank-you div#navbar .logo-and-nav-container #tn-nav > ul > li > a {
+    color: #000;
+    @media screen and (max-width: 991px) {
+        color: rgb(255, 255, 255);
+    }
+}
+
+#thank-you-page {
+    padding-top: 80px;
+    position: relative;
+    > .container {
+        > .row {
+            z-index: 1;
+            > .col {
+                padding-top: 100px;
+                padding-bottom: 120px;
+                margin: 0 auto;
+            }
+        }
+    }
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 42px;
+        font-weight: 300;
+        color: #0effdd;
+    }
+    .contact-info-container {
+        background-color: #fff;
+        .container {
+            padding-top: 40px;
+            .row.contact-info-row {
+                margin-top: 90px;
+                z-index: 1;
+                padding-bottom: 20px;
+            }
+        }
+    }
+    .particles {
+        position: fixed;
+        z-index: -1;
+        width: 100%;
+    }
+}
