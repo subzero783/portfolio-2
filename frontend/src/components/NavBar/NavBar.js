@@ -15,6 +15,10 @@ const check_window_innerwidth = () => {
 };
 
 const burger_click = (e) => {
+  if (window.innerWidth < 991) {
+    document.getElementsByClassName("logo-and-nav-container")[0].classList.toggle("active");
+  }
+
   document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
   document.getElementById("tn-nav").classList.toggle("burger--active");
 };
@@ -24,7 +28,6 @@ const navbar_link_click = (e) => {
     document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
     document.getElementById("tn-nav").classList.toggle("burger--active");
   }
-
   onWindowResize();
 };
 

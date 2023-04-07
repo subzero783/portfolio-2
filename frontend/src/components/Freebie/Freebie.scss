@@ -9,7 +9,7 @@
             transition: 0.5s ease-in-out all;
             h2 {            
                 margin-bottom: 1px;
-                font-size: 22px;
+                font-size: 16px;
                 font-weight: 400;
                 max-width: fit-content;
                 font-family: 'Poppins', sans-serif;
@@ -19,16 +19,15 @@
                 width: 0px;
                 height: 1px;
                 display: block;
-                background: rgb(4, 229, 229);
+                background: rgb(255, 255, 255);
                 transition: 400ms;
                 
             }
             &:hover,
             &:active,
             &:focus {
-                color: rgb(4, 229, 229);
                 &:after {
-                    width: 100%;
+                    width: 90%;
                 }
             }
         }

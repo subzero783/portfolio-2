@@ -3,9 +3,10 @@ div#navbar {
     position: fixed;
     width: 100%;
     padding: 20px 0 25px;
+    z-index: 1;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100;
     transition: all .45s ease;
 
     @media screen and (max-width: 991px){
@@ -24,6 +25,12 @@ div#navbar {
             flex-flow: row nowrap;
             justify-content: center;
             background-color: #000;
+
+            -webkit-animation: fadeInFromNone 0.5s ease-out;
+            -moz-animation: fadeInFromNone 0.5s ease-out;
+            -o-animation: fadeInFromNone 0.5s ease-out;
+            animation: fadeInFromNone 0.5s ease-out;
+
             @media screen and (max-width: 991px){
                 display: flex;
             }
@@ -124,6 +131,13 @@ div#navbar {
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
+        z-index: -1;
+        @media screen and (max-width: 991px){
+            display: none;
+            &.active {
+                display: flex;
+            }
+        }
         #top-logo {
             width: 20%;
             > .glitch {
@@ -167,7 +181,6 @@ div#navbar {
             }
             #tn-nav {
                 width: 100%;
-                // transform: translate(0, -100%);
                 transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 background-color: #000;
                 > ul {
@@ -199,5 +212,74 @@ div#navbar {
             box-shadow: unset;
             background-color: unset;
         }
+    }
+}
+
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
     }
 }
