@@ -1,7 +1,4 @@
-// import React, { useEffect, useCallback } from "react";
 import React, { useEffect, useState } from "react";
-// import Particles from "react-tsparticles";
-// import { loadFull } from "tsparticles";
 import "./ThankYouPage.scss";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
@@ -17,7 +14,6 @@ export default function ThankYouPage() {
 
   return (
     <div id="thank-you-page">
-      {/* <img className="wallpaper" src={email2} alt="Email icon" /> */}
       <HeroVideo />
       <div className="container">
         <div className="row">
