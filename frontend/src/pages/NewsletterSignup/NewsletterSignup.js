@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import "./NewsletterSignup.scss";
@@ -7,8 +7,6 @@ import { get_current_path } from "../../functions";
 import { useNavigate } from "react-router-dom";
 
 export default function NewsletterSignup() {
-  const [currentPath, setCurrentPath] = useState("");
-
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -21,8 +19,6 @@ export default function NewsletterSignup() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setCurrentPath(get_current_path(window.location.pathname, 1));
-
     const script = document.createElement("script");
     script.src = "https://js.hsforms.net/forms/embed/v2.js";
     document.body.appendChild(script);
@@ -38,7 +34,7 @@ export default function NewsletterSignup() {
           target: "#hubspotForm",
           onFormSubmitted: ($form) => {
             setTimeout(() => {
-              navigate(`/thank-you/${currentPath}`);
+              navigate(`/thank-you/${get_current_path(window.location.pathname, 1)}`);
             }, 1000);
           },
         });
