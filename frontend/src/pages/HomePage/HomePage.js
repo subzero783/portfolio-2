@@ -14,8 +14,7 @@ import MetaInfo from "../../components/MetaInfo/MetaInfo";
 function HomePage() {
   const [pageTitle, setPageTitle] = useState(null);
   const [pageDescription, setPageDescription] = useState(null);
-  // const [pageFeaturedImage, setPageFeaturedImage] = useState(null)
-  // const [message, setMessage] = useState('');
+  // const [pageFeaturedImage, setPageFeaturedImage] = useState(null);
 
   useEffect(() => {
     setPageTitle("Developer Gus | Full Stack Web Developer");

@@ -1,22 +1,11 @@
-import React, { useContext, useCallback } from "react";
+import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
-import moment from "moment";
-import { Context } from "../../App";
-import { isEmpty } from "../../functions";
+import { formatted_date, custom_sort } from "../../functions";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
 
 import "./Blog.scss";
-
-function custom_sort(a, b) {
-  return new Date(b.date).getTime() - new Date(a.date).getTime();
-}
-
-function formatted_date(theDate) {
-  const newDate = new Date(theDate);
-  return moment(newDate).format("MMMM Do YYYY");
-}
 
 function return_chars(numberOfChars, content) {
   const theSubstring = content.substring(0, numberOfChars);
@@ -28,20 +17,18 @@ function get_excerpt(string, numberOfChars) {
   return return_chars(numberOfChars, theHTML);
 }
 
-function get_video_thumbnail(videos, video_id) {
-  const thumbnail = videos.map((video) => {
-    if (video.id.videoId === video_id) {
-      return <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} />;
+function get_video_thumbnail(video_id) {
+  const thumbnail = posts.map((video, index) => {
+    if (video.video_id === video_id) {
+      return <iframe src={`https://www.youtube.com/embed/${posts[index].video_id}`} title={posts[index].title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>;
     } else {
-      return null;
+      return "";
     }
   });
   return thumbnail;
 }
 
 export default function Blog() {
-  const videos = useContext(Context);
-
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -180,12 +167,12 @@ export default function Blog() {
       </section>
       <section id="blog-posts" className="container">
         <div className="row">
-          <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 content-side">
+          <div className="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 content-side">
             {posts.map((post, index) => {
               if (post.active) {
                 return (
                   <div className="row" key={index}>
-                    <div className="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 post-text">
+                    <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 post-text">
                       <div className="post" key={post.id}>
                         <a href={`/blog/${post.url}/`} aria-label={post.title} className="title-link">
                           <h2>{post.title}</h2>
@@ -228,8 +215,8 @@ export default function Blog() {
                         </a>
                       </div>
                     </div>
-                    <div className="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 post-thumbnail">
-                      <div className="thumbnail-container">{videos !== undefined && videos !== null && !isEmpty(videos) ? get_video_thumbnail(videos, post.video_id) : ""}</div>
+                    <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 post-thumbnail">
+                      <div className="thumbnail-container">{get_video_thumbnail(post.video_id)}</div>
                     </div>
                   </div>
                 );
@@ -238,7 +225,6 @@ export default function Blog() {
               }
             })}
           </div>
-          <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
         </div>
       </section>
       <div className="container contact-info-container">
