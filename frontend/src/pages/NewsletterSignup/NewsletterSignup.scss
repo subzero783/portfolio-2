@@ -30,6 +30,9 @@
             font-size: 42px;
             font-weight: 300;
             color: #0effdd;
+            @media screen and (max-width: 768px){
+                font-size: 28px;
+            }
         }
         #hubspotForm {
             z-index: 100;
