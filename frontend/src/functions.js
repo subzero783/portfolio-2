@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export function activate_text_fade_down(active, elements) {
   if (active) {
     var i = 0.4;
@@ -38,4 +40,18 @@ export function get_current_path(path, partNumber) {
 
   const parts = path.split(delimiter).slice(start);
   return parts[partNumber];
+}
+
+export function get_single_video(videoId, videoTitle) {
+  const theIframe = <iframe src={`https://www.youtube.com/embed/${videoId}`} title={videoTitle} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>;
+  return theIframe;
+}
+
+export function custom_sort(a, b) {
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+}
+
+export function formatted_date(theDate) {
+  const newDate = new Date(theDate);
+  return moment(newDate).format("MMMM Do YYYY");
 }

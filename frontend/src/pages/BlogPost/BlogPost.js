@@ -2,23 +2,8 @@ import React, { useState, useCallback, useEffect } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
-import moment from "moment";
-import { get_current_path } from "../../functions";
+import { get_current_path, get_single_video, custom_sort, formatted_date } from "../../functions";
 import "./BlogPost.scss";
-
-function custom_sort(a, b) {
-  return new Date(a.date).getTime() - new Date(b.date).getTime();
-}
-
-function formatted_date(theDate) {
-  const newDate = new Date(theDate);
-  return moment(newDate).format("MMMM Do YYYY");
-}
-
-function get_single_video(videoId, videoTitle) {
-  const theIframe = <iframe src={`https://www.youtube.com/embed/${videoId}`} title={videoTitle} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>;
-  return theIframe;
-}
 
 export default function BlogPost() {
   const [postUrl, setPostUrl] = useState("");

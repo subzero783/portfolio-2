@@ -17,6 +17,10 @@
                 margin-bottom: 16px;
             }
         }
+        > h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 70px;
+        }
     }
     p.subheading {
         font-size: 24px;
@@ -52,7 +56,7 @@
         .button_1 {
             max-width: 300px;
             margin-right: 10px;
-            font-size: 14px;
+            font-size: 12px;
             &:last-of-type {
                 margin-right: 0;
             }
