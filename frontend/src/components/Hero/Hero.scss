@@ -20,6 +20,7 @@
         > h1 {
             font-family: 'Teko', sans-serif;
             font-size: 70px;
+            line-height: 60px;
         }
     }
     p.subheading {
@@ -57,15 +58,20 @@
             max-width: 300px;
             margin-right: 10px;
             font-size: 12px;
-            &:last-of-type {
-                margin-right: 0;
+            &:last-of-type { 
+                margin-right: 0; 
             }
         }
         @media screen and (max-width: 991px){
             margin-top: 10px;
             flex-flow: column nowrap;
             .button_1 {
-                margin-right: 0;
+                margin-right: auto;
+                margin-left: auto;
+                &:last-of-type {
+                    margin-right: auto;
+                    margin-left: auto;
+                }
             }
         }
     }
