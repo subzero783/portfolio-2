@@ -21,6 +21,18 @@ function HomePage() {
     setPageDescription(
       "Full Stack Web developer with over 5 years of experience in producing pixel-perfect websites and solutions with advanced knowledge in coding. Eager to support development teams with top-notch coding skills. In previous roles, was able to adopt new CMS platforms such as HubSpot and also new coding technologies such as NodeJS, ReactJS and API Integrations."
     );
+
+    const go_to_section = () => {
+      const sectionHref = window.location.href;
+      const n = sectionHref.lastIndexOf("#");
+      const result = sectionHref.substring(n + 1);
+      const theSection = document.getElementById(result);
+      theSection.scrollIntoView({ behavior: "smooth" });
+    };
+
+    if (window.location.href.includes("#")) {
+      go_to_section();
+    }
   }, []);
 
   return (

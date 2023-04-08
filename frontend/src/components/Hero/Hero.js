@@ -50,7 +50,7 @@ export default function Hero() {
       <div id="headline-container" className="animate parallax-hero-item">
         <p className="subheading parallax-hero-item">Hello, I'm</p>
         <div className="heading parallax-hero-item">
-          <h1 class="homepage-h1">Gustavo Amezcua</h1>
+          <h1 className="homepage-h1">Gustavo Amezcua</h1>
           <div className="type teko-font">
             <Typewriter
               options={{

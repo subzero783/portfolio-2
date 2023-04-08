@@ -14,7 +14,7 @@ const page_scroll_2 = () => {
   }
 };
 
-export default function YouTubeVideos() {
+const YouTubeVideos = () => {
   window.addEventListener("scroll", page_scroll_2);
 
   useEffect(() => {
@@ -56,4 +56,6 @@ export default function YouTubeVideos() {
       </div>
     </div>
   );
-}
+};
+
+export default YouTubeVideos;

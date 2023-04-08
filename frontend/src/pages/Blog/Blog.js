@@ -9,7 +9,7 @@ import "./Blog.scss";
 
 function return_chars(numberOfChars, content) {
   const theSubstring = content.substring(0, numberOfChars);
-  return theSubstring + '<span class="dots">...</span>';
+  return theSubstring + '<span className="dots">...</span>';
 }
 
 function get_excerpt(string, numberOfChars) {

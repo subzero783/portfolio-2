@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-import Glitch from "../Glitch/Glitch";
 import { homeNavBarLink } from "../../functions";
+import Glitch from "../Glitch/Glitch";
 import "./NavBar.scss";
 
 const check_window_innerwidth = () => {
@@ -18,17 +17,8 @@ const burger_click = (e) => {
   if (window.innerWidth < 991) {
     document.getElementsByClassName("logo-and-nav-container")[0].classList.toggle("active");
   }
-
   document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
   document.getElementById("tn-nav").classList.toggle("burger--active");
-};
-
-const navbar_link_click = (e) => {
-  if (window.innerWidth < 991) {
-    document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
-    document.getElementById("tn-nav").classList.toggle("burger--active");
-  }
-  onWindowResize();
 };
 
 const onWindowResize = () => {
@@ -56,7 +46,14 @@ const on_window_page_scroll = () => {
   }
 };
 
-export default function NavBar() {
+const NavBar = () => {
+  const navbar_link_click = (e) => {
+    if (window.innerWidth < 991) {
+      document.getElementsByClassName("burger")[0].classList.toggle("burger--active");
+      document.getElementById("tn-nav").classList.toggle("burger--active");
+    }
+  };
+
   window.addEventListener("scroll", on_window_page_scroll);
 
   useEffect(() => {
@@ -137,4 +134,6 @@ export default function NavBar() {
       </div>
     </div>
   );
-}
+};
+
+export default NavBar;
