@@ -1,7 +1,6 @@
-
 #developer-gus {
     padding: 150px 0;
-    background-color: #000;
+    background-color: #fff;
     > .container {
         > .row {
             > #player-2 {
@@ -10,7 +9,7 @@
                     width: 100%;
                     max-width: 800px;
                     min-height: 500px;
-                    @media screen and (max-width: 768px){
+                    @media screen and (max-width: 768px) {
                         min-height: 315px;
                     }
                 }
@@ -26,18 +25,20 @@
         > h2 {
             text-align: center;
             > div.empty_text ~ div {
-                color: rgb(4, 229, 229);
+                color: #0475e5;
             }
         }
     }
-    h3, 
+    h3,
     h4 {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
     }
     .subtitle {
         margin-top: -10px;
+        color: #000;
     }
     #watch-latest-videos {
         margin-bottom: 40px;
+        color: #000;
     }
 }

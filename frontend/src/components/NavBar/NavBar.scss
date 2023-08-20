@@ -1,15 +1,14 @@
-
 div#navbar {
     position: fixed;
     width: 100%;
     padding: 20px 0 25px;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    transition: all .45s ease;
+    transition: all 0.45s ease;
 
-    @media screen and (max-width: 991px){
+    @media screen and (max-width: 991px) {
         padding-top: 0;
         padding-bottom: 0;
         position: absolute;
@@ -24,21 +23,19 @@ div#navbar {
             display: none;
             flex-flow: row nowrap;
             justify-content: center;
-            background-color: #000;
+            background-color: #fff;
 
             -webkit-animation: fadeInFromNone 0.5s ease-out;
-            -moz-animation: fadeInFromNone 0.5s ease-out;
-            -o-animation: fadeInFromNone 0.5s ease-out;
             animation: fadeInFromNone 0.5s ease-out;
 
-            @media screen and (max-width: 991px){
+            @media screen and (max-width: 991px) {
                 display: flex;
             }
             > div.extra {
                 width: 20%;
             }
             > .top-logo-container {
-                background-color: #000;
+                background-color: #fff;
                 width: 80%;
                 z-index: 1;
                 > #top-logo {
@@ -57,7 +54,7 @@ div#navbar {
                 }
             }
             > .burger {
-                background-color: #000;
+                background-color: #fff;
                 width: 20%;
                 position: relative;
                 display: none;
@@ -88,7 +85,7 @@ div#navbar {
                     position: relative;
                     height: 2px;
                     width: 40px;
-                    background: white;
+                    background: #000;
                     &:before {
                         content: "";
                         position: absolute;
@@ -96,7 +93,7 @@ div#navbar {
                         left: 0;
                         height: 2px;
                         width: 100%;
-                        background: white;
+                        background: #000;
                     }
                     &:after {
                         content: "";
@@ -105,15 +102,15 @@ div#navbar {
                         left: 0;
                         height: 2px;
                         width: 100%;
-                        background: white;
+                        background: #000;
                     }
                 }
-                > .burger__patty, 
+                > .burger__patty,
                 > .burger__patty:before,
                 > .burger__patty:after {
                     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 }
-                @media screen and (max-width: 991px){
+                @media screen and (max-width: 991px) {
                     display: flex;
                     > .burger__patty {
                         transform: scale(0.8);
@@ -124,7 +121,6 @@ div#navbar {
                 }
             }
         }
-
     }
     .logo-and-nav-container {
         display: flex;
@@ -132,7 +128,7 @@ div#navbar {
         align-items: center;
         justify-content: center;
         z-index: -1;
-        @media screen and (max-width: 991px){
+        @media screen and (max-width: 991px) {
             display: none;
             &.active {
                 display: flex;
@@ -166,7 +162,7 @@ div#navbar {
                         padding: 5px;
                         transition: all 0.5s ease 0s;
                         text-decoration: unset;
-                        &:hover, 
+                        &:hover,
                         &:active,
                         &:focus {
                             color: rgb(4, 229, 229);
@@ -175,14 +171,14 @@ div#navbar {
                 }
             }
         }
-        @media screen and (max-width: 991px){
+        @media screen and (max-width: 991px) {
             #top-logo {
                 display: none;
             }
             #tn-nav {
                 width: 100%;
                 transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                background-color: #000;
+                background-color: #fff;
                 > ul {
                     flex-flow: column nowrap;
                     padding-bottom: 10px;
@@ -192,10 +188,11 @@ div#navbar {
                             width: 100%;
                             display: block;
                             margin: 10px 0;
-                            font-family: 'Poppins', sans-serif;
+                            font-family: "Poppins", sans-serif;
                             text-transform: uppercase;
                             padding: 10px 15px;
                             line-height: 0;
+                            color: #000;
                         }
                     }
                 }
@@ -206,51 +203,28 @@ div#navbar {
         }
     }
     &.scrolled {
-        background-color: rgba(0, 0, 0, 0.8);
-        box-shadow: 0 1px 8px 3px rgba(0,0,0,0.3);
-        @media screen and (max-width: 991px){
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.3);
+        #tn-nav {
+            > ul {
+                > li {
+                    > a {
+                        color: #000;
+                    }
+                }
+            }
+        }
+        .glitch {
+            color: #0475e5;
+        }
+        @media screen and (max-width: 991px) {
             box-shadow: unset;
             background-color: unset;
         }
     }
 }
 
-
 @-webkit-keyframes fadeInFromNone {
-    0% {
-        display: none;
-        opacity: 0;
-    }
-
-    1% {
-        display: block;
-        opacity: 0;
-    }
-
-    100% {
-        display: block;
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes fadeInFromNone {
-    0% {
-        display: none;
-        opacity: 0;
-    }
-
-    1% {
-        display: block;
-        opacity: 0;
-    }
-
-    100% {
-        display: block;
-        opacity: 1;
-    }
-}
-
-@-o-keyframes fadeInFromNone {
     0% {
         display: none;
         opacity: 0;

@@ -1,8 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
-
 body {
-  background-color: #000;
+  background-color: #fff;
   color: #fff;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -26,8 +25,7 @@ p {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .main-logo {
@@ -40,25 +38,25 @@ code {
 .text-1 {
   font-size: 16px;
   font-weight: 300;
-  color: rgb(197, 197, 197);
-  font-family: 'Poppins', sans-serif;
+  color: #000;
+  font-family: "Poppins", sans-serif;
   text-align: left;
 }
 
 .text-2 {
   font-size: 30px;
   font-weight: 500;
-  font-family: 'Teko', sans-serif;
+  font-family: "Teko", sans-serif;
   color: rgb(255, 255, 255);
 }
 
 .title-1 {
-  color: #fff;
+  color: #0475e5;
   margin-bottom: 16px;
   h2 {
-    font-family: 'Teko', sans-serif;
+    font-family: "Teko", sans-serif;
     font-size: 70px;
-    color: rgb(255, 255, 255);
+    color: #0475e5;
     text-align: left;
     > div {
       opacity: 0;
@@ -75,7 +73,7 @@ code {
         opacity: 1;
       }
     }
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 767px) {
       font-size: 45px;
     }
   }
@@ -102,14 +100,15 @@ code {
   margin: 16px auto 0;
   padding: 20px 30px;
   border-radius: 5px;
+  -webkit-animation: gradientAnimation 2s ease-in-out infinite;
   animation: gradientAnimation 2s ease-in-out infinite;
   background: linear-gradient(120deg, #04e5e5, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   background-size: 300% 300%;
   position: relative;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
-  &:hover, 
-  &:active, 
+  &:hover,
+  &:active,
   &:focus {
     background-color: rgb(0, 0, 0);
     color: #fff;
@@ -120,7 +119,7 @@ code {
     }
   }
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 70%;
     transform: scaleX(0);
@@ -135,14 +134,25 @@ code {
 
 // Fonts
 .teko-font {
-  font-family: 'Teko', sans-serif;
+  font-family: "Teko", sans-serif;
 }
 .poppins-font {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-
 // Animations
+
+@-webkit-keyframes gradientAnimation {
+  0% {
+    background-position: 15% 0%;
+  }
+  50% {
+    background-position: 85% 100%;
+  }
+  100% {
+    background-position: 15% 0%;
+  }
+}
 
 @keyframes gradientAnimation {
   0% {

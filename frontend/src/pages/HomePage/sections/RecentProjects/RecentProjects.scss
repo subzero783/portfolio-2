@@ -1,8 +1,7 @@
-
 #recent-projects {
     position: relative;
     padding: 100px 0;
-    background-color: #050505;
+    background-color: #fff;
     overflow: hidden;
     > .container {
         > .row {
@@ -11,7 +10,7 @@
                 > h2 {
                     text-align: center;
                     > div.empty_text ~ div {
-                        color: rgb(4, 229, 229);
+                        color: #0475e5;
                     }
                 }
             }
@@ -22,18 +21,18 @@
                 > div {
                     width: 31%;
                     margin-right: 15px;
-                    &:nth-child(3n){
+                    &:nth-child(3n) {
                         margin-right: 0;
                     }
                     &:last-child {
                         margin-right: auto;
                     }
-                    @media screen and (max-width: 767px){
+                    @media screen and (max-width: 767px) {
                         width: 45%;
-                        &:nth-child(3n){
+                        &:nth-child(3n) {
                             margin-right: 15px;
                         }
-                        &:nth-child(2n){
+                        &:nth-child(2n) {
                             margin-right: 0;
                         }
                         &:last-child {
