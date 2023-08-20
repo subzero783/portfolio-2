@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
+import ContactInfo from "../../components/ContactInfo/ContactInfo";
 import { get_current_path, get_single_video, custom_sort, formatted_date } from "../../functions";
 import "./BlogPost.scss";
 
@@ -156,9 +157,7 @@ export default function BlogPost() {
       <section id="heading" className="container">
         <div className="row">
           <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h1 className="post-title">
-              <span>{postTitle}</span>
-            </h1>
+            <h1 className="post-title">{postTitle}</h1>
             <div className="extra-info">
               <div className="date-and-author">
                 <div className="the-date">
@@ -206,6 +205,9 @@ export default function BlogPost() {
           <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
         </div>
       </section>
+      <div className="container contact-info-container">
+        <ContactInfo />
+      </div>
     </div>
   );
 }

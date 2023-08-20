@@ -20,7 +20,14 @@ function get_excerpt(string, numberOfChars) {
 function get_video_thumbnail(video_id) {
   const thumbnail = posts.map((video, index) => {
     if (video.video_id === video_id) {
-      return <iframe src={`https://www.youtube.com/embed/${posts[index].video_id}`} title={posts[index].title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>;
+      return (
+        <iframe
+          className="embed-responsive-item"
+          src={`https://www.youtube.com/embed/${posts[index].video_id}`}
+          title={posts[index].title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen></iframe>
+      );
     } else {
       return "";
     }
@@ -166,66 +173,62 @@ export default function Blog() {
         </div>
       </section>
       <section id="blog-posts" className="container">
-        <div className="row">
-          <div className="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 content-side">
-            {posts.map((post, index) => {
-              if (post.active) {
-                return (
-                  <div className="row" key={index}>
-                    <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 post-text">
-                      <div className="post" key={post.id}>
-                        <a href={`/blog/${post.url}/`} aria-label={post.title} className="title-link">
-                          <h2>{post.title}</h2>
-                        </a>
-                        <div className="extra-info">
-                          <div className="date-and-author">
-                            <div className="the-date">
-                              <p>{formatted_date(post.date)}</p>
-                            </div>
-                            <div className="extra-space">
-                              <span> </span>|<span> </span>
-                            </div>
-                            <div className="the-author">
-                              <p>
-                                <span>Author:</span> {post.author}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="categories">
-                            <p>
-                              <span>Categories:</span>{" "}
-                            </p>
-                            <div className="categories-list">
-                              {post.categories.map((category, index) => (
-                                <a href="/" className="category" key={index}>
-                                  {category}
-                                </a>
-                              ))}
-                            </div>
-                          </div>
+        {posts.map((post, index) => {
+          if (post.active) {
+            return (
+              <div className="g-row" key={index}>
+                <div className="post-text">
+                  <div className="post" key={post.id}>
+                    <a href={`/blog/${post.url}/`} aria-label={post.title} className="title-link">
+                      <h2>{post.title}</h2>
+                    </a>
+                    <div className="extra-info">
+                      <div className="date-and-author">
+                        <div className="the-date">
+                          <p>{formatted_date(post.date)}</p>
                         </div>
-                        <div
-                          className="post-excerpt"
-                          dangerouslySetInnerHTML={{
-                            __html: get_excerpt(post.content, 200),
-                          }}
-                        />
-                        <a className="button_1 read_more" href={`/blog/${post.url}/`}>
-                          Read More
-                        </a>
+                        <div className="extra-space">
+                          <span> </span>|<span> </span>
+                        </div>
+                        <div className="the-author">
+                          <p>
+                            <span>Author:</span> {post.author}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="categories">
+                        <p>
+                          <span>Categories:</span>{" "}
+                        </p>
+                        <div className="categories-list">
+                          {post.categories.map((category, index) => (
+                            <a href="/" className="category" key={index}>
+                              {category}
+                            </a>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 post-thumbnail">
-                      <div className="thumbnail-container">{get_video_thumbnail(post.video_id)}</div>
-                    </div>
+                    <div
+                      className="post-excerpt"
+                      dangerouslySetInnerHTML={{
+                        __html: get_excerpt(post.content, 200),
+                      }}
+                    />
+                    <a className="button_1 read_more" href={`/blog/${post.url}/`}>
+                      Read More
+                    </a>
                   </div>
-                );
-              } else {
-                return null;
-              }
-            })}
-          </div>
-        </div>
+                </div>
+                <div className="post-thumbnail">
+                  <div className="thumbnail-container embed-responsive-16by9">{get_video_thumbnail(post.video_id)}</div>
+                </div>
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
       </section>
       <div className="container contact-info-container">
         <ContactInfo />
