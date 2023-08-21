@@ -181,18 +181,22 @@ div#navbar {
                 background-color: #fff;
                 > ul {
                     flex-flow: column nowrap;
-                    padding-bottom: 10px;
+                    padding-bottom: 5px;
                     > li {
                         width: 100%;
                         > a {
-                            width: 100%;
+                            width: 90%;
                             display: block;
-                            margin: 10px 0;
+                            margin: 0 auto;
                             font-family: "Poppins", sans-serif;
                             text-transform: uppercase;
-                            padding: 10px 15px;
+                            padding: 15px 15px 15px;
+                            border-bottom: 1px solid rgba(4, 117, 229, 0.2);
                             line-height: 0;
                             color: #000;
+                        }
+                        &:last-child > a {
+                            border-bottom: unset;
                         }
                     }
                 }
@@ -255,5 +259,23 @@ div#navbar {
     100% {
         display: block;
         opacity: 1;
+    }
+}
+.blog {
+    #navbar {
+        .glitch {
+            color: #0475e5;
+        }
+        .logo-and-nav-container {
+            #tn-nav {
+                > ul {
+                    > li {
+                        > a {
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

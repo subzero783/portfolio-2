@@ -123,11 +123,6 @@ const NavBar = () => {
                   Contact
                 </a>
               </li>
-              <li>
-                <a href="https://github.com/subzero783/portfolio-2" target="_blank" rel="noreferrer">
-                  Site Code
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
