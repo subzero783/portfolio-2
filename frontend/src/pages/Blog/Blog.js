@@ -160,13 +160,11 @@ export default function Blog() {
       <section id="heading" className="container">
         <div className="row">
           <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h1>
-              <span>Developer Gus</span> Blog
-            </h1>
+            <h1>Developer Gus blog</h1>
             <h2 className="title">
-              <span>Watch and Read</span> My Latest
+              Watch and read my latest
               <br />
-              <span>Web Development</span> Content
+              web development content
             </h2>
           </div>
           <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>

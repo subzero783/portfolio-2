@@ -1,0 +1,66 @@
+<p>
+  Today I'm going to show you how to customize a HubSpot form with your own CSS and JavaScript code. 
+</p>
+<br/>
+<h2>Required Before Getting Started</h2> 
+<p>I do want to say one thing before getting started. If I mention any links in this video you can find them in the description as well so let's get right to the point and show you the steps on how this is achieved.
+</p>
+<br />
+<h2>Creating a HubSpot Account</h2>
+<p>
+  So the first step to customizing a HubSpot form with your custom code is to have a HubSpot account to do that I will head over to hubspot.com and then I'm going to click on the button that says get started free. I will then sign up. I already created my account so I will log in using that one. 
+</p>
+<br/>
+<h2>How to Create a HubSpot Form</h2>
+<p>By clicking on the create form button, I then choose the embedded form check box and click on the next button at the top right after that I click on the registration form template which has an email, first name, last name, and phone number fields. I then click on the start button. I need to remove all the HubSpot default styling of this new form I just created as it comes with the CSS or otherwise known as styling from HubSpot. I do that by clicking on the style and preview tab. Then I need to click on the toggle at the top left called set as raw HTML form if there is a lock icon next to the toggle then you need to sign up for the 14-day trial or sign up for the marketing Hub or CMS Hub professional or Enterprise subscription with your HubSpot account. That's the only way you can remove that lock icon and be able to remove the default form styling. This is needed so that I can add my own custom CSS and JavaScript code, otherwise I won't be able to once I click on the toggle called set as raw HTML form.</p> 
+<br/>
+<h2>Embedding the Form</h2>
+<p>
+Then I need to embed the code of this form in my website. I do that by clicking on the update button on the top right then I click on the publish button and then I copy all of the code that appears above the copy button by clicking on that same button. I will then head over to my WordPress website create a new page and paste all of the form code but before doing that I click on the text tab of the text editor because what I'm pasting is not just text but HTML and JavaScript code. So we want to make sure WordPress knows this is code and not simple text. I will publish the page and then view it.</p>
+<br/>
+<h2>Adding CSS to the Form</h2>
+<p>As you can see the form has no styling at all so let me fix that by first creating a style element with only the type attribute with a value of text forward slash CSS. After that I'm going to take all the CSS that I wrote and put it in a CSS minifier online but before doing that I have to replace the HubSpot form element ID that you see here as a selector in the CSS with the new form ID that I created in HubSpot. So I just find and replace all instances of the old form ID now I copy all the CSS and put it in the CSS minifier online. I then copy the minified CSS and paste it into the WordPress page text editor in between the style tags. I finally update the page and then view the front end to see what we did. As you can see my custom styling is being applied.</p>
+<br/>
+<h2>Adding JavaScript and jQuery to the Form</h2>
+<p>The next thing I want to add is my JavaScript code. More specifically it's jQuery code so to use jQuery I need to add the Jquery CDN script tag in the text editor. We can just Google jQuery CDN. Click this link and I'm going to copy it and go over to my web page. I paste it before the HubSpot form code. Now I'm going to copy my custom jQuery code and paste it inside the HubSpot form code by adding a global form event called on form ready. I finally update the page and view the front-end. As you can see, my jQuery code adds some custom functionality to make the label elements move whenever I click on each field to type something.</p>
+<br/>
+<h2>Conclusion</h2>
+<p>
+  So that's how you can customize a HubSpot form with your own CSS and JavaScript or jQuery code. Make sure to follow my channel for more HubSpot and web development tutorials. You could be earning more than sixty five thousand dollars a year in salary or much much more just by helping others with their website. 
+</p>
+<br />
+<h2>My Code</h2>
+<h4>HubSpot Form CSS</h4>
+<p>
+  (1) <a href="https://gist.github.com/subzero783/275d3a627eeb6d43aa9be825045758df" aria-label="https://gist.github.com/subzero783/275d3a627eeb6d43aa9be825045758df" target="_blank" rel="noreferrer noopener">https://gist.github.com/subzero783/275d3a627eeb6d43aa9be825045758df</a>
+</p>
+<h4>HubSpot Form JavaScript/jQuery</h4>
+<p>
+  (2) <a href="https://gist.github.com/subzero783/05334473a4d903e83a48b03699a2bbe6" aria-label="https://gist.github.com/subzero783/05334473a4d903e83a48b03699a2bbe6" target="_blank" rel="noreferrer noopener">https://gist.github.com/subzero783/05334473a4d903e83a48b03699a2bbe6</a>
+</p>
+<br/>
+<h3>References</h3>
+<h4>HubSpot</h4>
+<p>
+  (1) <a href="https://www.hubspot.com/" aria-label="https://www.hubspot.com/" target="_blank" rel="noreferrer noopener">https://www.hubspot.com/</a>
+</p>
+<h4>jQuery CDN</h4>
+<p>
+  (2) <a href="https://releases.jquery.com/" aria-label="https://releases.jquery.com/" target="_blank" rel="noreferrer noopener">https://releases.jquery.com/</a>
+</p>
+<h4>HubSpot article on how to share a HubSpot form using an external site</h4>
+<p>
+  (3) <a href="https://knowledge.hubspot.com/forms/how-can-i-share-a-hubspot-form-if-im-using-an-external-site" aria-label="https://knowledge.hubspot.com/forms/how-can-i-share-a-hubspot-form-if-im-using-an-external-site" target="_blank" rel="noreferrer noopener">https://knowledge.hubspot.com/forms/how-can-i-share-a-hubspot-form-if-im-using-an-external-site</a>
+</p>
+<h4>HubSpot Pricing</h4>
+<p>
+  (4) <a href="https://www.hubspot.com/pricing/marketing/starter?products=marketing-hub-starter_1&term=annual" aria-label="https://www.hubspot.com/pricing/marketing/starter?products=marketing-hub-starter_1&term=annual" target="_blank" rel="noreferrer noopener">https://www.hubspot.com/pricing/marketing/starter?products=marketing-hub-starter_1&term=annual</a>
+</p>
+<h4>CSS Minifier</h4>
+<p>
+  (5) <a href="https://www.toptal.com/developers/cssminifier" aria-label="https://www.toptal.com/developers/cssminifier" target="_blank" rel="noreferrer noopener">https://www.toptal.com/developers/cssminifier</a>
+</p>
+<h4>How to Customize a HubSpot Form Embed Code</h4>
+<p>
+  (6) <a href="https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options" aria-label="https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options" target="_blank" rel="noreferrer noopener">https://legacydocs.hubspot.com/docs/methods/forms/advanced_form_options</a>
+</p>
