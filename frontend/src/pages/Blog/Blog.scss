@@ -19,7 +19,6 @@
             line-height: 1.1em;
             letter-spacing: 0.5px;
             font-family: Teko;
-            text-transform: uppercase;
             @media screen and (max-width: 991px) {
                 font-size: 40px;
                 line-height: 1.1em;
@@ -33,8 +32,8 @@
             line-height: 40px;
             font-family: Teko;
             color: #000;
-            text-transform: uppercase;
             text-align: left;
+            font-weight: 400;
             @media screen and (max-width: 991px) {
                 font-size: 28px;
                 line-height: 1.1em;
@@ -99,8 +98,9 @@
                     max-width: fit-content;
                     font-size: 24px;
                     margin-bottom: 2px;
-                    color: #000;
+                    color: #0475e5;
                     transition: all 0.5s ease 0s;
+                    font-weight: 600;
                 }
                 // &:after {
                 //     content: "";
@@ -165,7 +165,7 @@
                             text-decoration: none;
                             display: inline-block;
                             margin-right: 4px;
-                            color: #3c3c3c;
+                            color: #0475e5;
                             transition: all 0.5s ease 0s;
                             &:after {
                                 content: ",";
@@ -180,7 +180,7 @@
                             &:active,
                             &:focus {
                                 text-decoration: underline;
-                                color: #04e5e5;
+                                color: #000;
                             }
                         }
                     }

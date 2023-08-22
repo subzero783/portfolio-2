@@ -19,7 +19,6 @@
             line-height: 1.1em;
             letter-spacing: 0.5px;
             font-family: Teko;
-            text-transform: uppercase;
             @media screen and (max-width: 991px) {
                 font-size: 40px;
                 line-height: 1.1em;
@@ -66,7 +65,7 @@
                         text-decoration: none;
                         display: inline-block;
                         margin-right: 4px;
-                        color: #3c3c3c;
+                        color: #0475e5;
                         transition: all 0.5s ease 0s;
                         &:after {
                             content: ",";
@@ -81,7 +80,7 @@
                         &:active,
                         &:focus {
                             text-decoration: underline;
-                            color: rgb(4, 229, 229);
+                            color: #000;
                         }
                     }
                 }
@@ -117,6 +116,16 @@
                 text-align: left;
                 font-family: "Poppins", sans-serif;
                 color: #000;
+                a {
+                    color: #0475e5;
+                    transition: all 0.5s ease 0s;
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        text-decoration: underline;
+                        color: #000;
+                    }
+                }
             }
         }
     }
