@@ -4,6 +4,7 @@ import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
 import { formatted_date, custom_sort } from "../../functions";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
+import MetaInfo from "../../components/MetaInfo/MetaInfo";
 
 import "./Blog.scss";
 
@@ -36,6 +37,7 @@ function get_video_thumbnail(video_id) {
 }
 
 export default function Blog() {
+
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -49,6 +51,7 @@ export default function Blog() {
 
   return (
     <div id="blog">
+      <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS."/>
       <Particles
         init={particlesInit}
         loaded={particlesLoaded}

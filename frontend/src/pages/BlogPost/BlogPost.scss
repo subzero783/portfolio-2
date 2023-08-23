@@ -15,22 +15,24 @@
         h1 {
             text-align: left;
             color: #0475e5;
-            font-size: 48px;
+            font-size: 30px;
             line-height: 1.1em;
             letter-spacing: 0.5px;
-            font-family: Teko;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
             @media screen and (max-width: 991px) {
-                font-size: 40px;
+                font-size: 26px;
                 line-height: 1.1em;
             }
             @media screen and (max-width: 768px) {
-                font-size: 32px;
+                font-size: 20px;
             }
         }
         .extra-info {
             text-align: left;
             font-family: "Poppins", sans-serif;
             color: #000;
+            margin-top: 20px;
             p {
                 color: #3c3c3c;
                 > span {

@@ -48,7 +48,7 @@ const YouTubeVideos = () => {
           <h3 className="subtitle">YouTube Channel</h3>
           <h4 id="watch-latest-videos">Watch my most recent video</h4>
           {/* Add video player with most recent video */}
-          <div id="player-2">{<iframe src={`https://www.youtube.com/embed/${posts[1].video_id}`} title={posts[1].title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}</div>
+          <div id="player-2">{<iframe src={`https://www.youtube.com/embed/${posts[2].video_id}`} title={posts[1].title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}</div>
           <a href="https://www.youtube.com/channel/UChuhEhCujTGP1mfmPdtuVhA" rel="noopener noreferrer" className="button_1 watch_more_button" target="_blank">
             Watch More
           </a>
