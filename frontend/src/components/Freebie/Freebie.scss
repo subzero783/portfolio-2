@@ -7,12 +7,12 @@
             max-width: fit-content;
             text-decoration: unset;
             transition: 0.5s ease-in-out all;
-            h2 {            
+            h2 {
                 margin-bottom: 1px;
                 font-size: 16px;
                 font-weight: 400;
                 max-width: fit-content;
-                font-family: 'Poppins', sans-serif;
+                font-family: "Montserrat", sans-serif;
             }
             &:after {
                 content: "";
@@ -21,7 +21,6 @@
                 display: block;
                 background: rgb(255, 255, 255);
                 transition: 400ms;
-                
             }
             &:hover,
             &:active,
@@ -31,6 +30,5 @@
                 }
             }
         }
-
     }
 }

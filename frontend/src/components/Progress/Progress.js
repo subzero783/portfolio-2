@@ -10,15 +10,17 @@ class ProgressBar extends React.Component {
     `;
     const Text = styled.p`
       font-size: 17px;
-      font-family: Poppins;
-      color: #000;
+      font-family: "Montserrat", sans-serif;
+      color: #838383;
+      font-weight: 500;
     `;
 
     const Value = styled.span`
       font-size: 17px;
-      font-family: Poppins;
-      color: #000;
+      font-family: "Montserrat", sans-serif;
+      color: #838383;
       float: right;
+      font-weight: 500;
     `;
     const ColorAnimation = keyframes`
             0%  {background: #04e5e5;}

@@ -162,10 +162,11 @@ div#navbar {
                         padding: 5px;
                         transition: all 0.5s ease 0s;
                         text-decoration: unset;
+                        font-family: "Montserrat", sans-serif;
                         &:hover,
                         &:active,
                         &:focus {
-                            color: rgb(4, 229, 229);
+                            color: #000;
                         }
                     }
                 }
@@ -188,7 +189,7 @@ div#navbar {
                             width: 90%;
                             display: block;
                             margin: 0 auto;
-                            font-family: "Poppins", sans-serif;
+                            font-family: "Montserrat", sans-serif;
                             text-transform: uppercase;
                             padding: 15px 15px 15px;
                             border-bottom: 1px solid rgba(4, 117, 229, 0.2);
@@ -213,7 +214,7 @@ div#navbar {
             > ul {
                 > li {
                     > a {
-                        color: #000;
+                        color: #838383;
                     }
                 }
             }

@@ -1,7 +1,7 @@
 .thank-you div#navbar,
 .hubspot-form div#navbar {
     background-color: #fff;
-    @media screen and (max-width: 991px){
+    @media screen and (max-width: 991px) {
         background-color: unset;
     }
 }
@@ -31,7 +31,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.4);
+        background: rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -55,11 +55,11 @@
         }
     }
     h1 {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 42px;
         font-weight: 300;
         color: #0effdd;
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 768px) {
             font-size: 28px;
         }
     }
@@ -74,5 +74,4 @@
             }
         }
     }
-
 }

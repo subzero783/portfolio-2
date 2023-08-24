@@ -1,8 +1,6 @@
-
 #hero {
     display: flex;
     flex-flow: column nowrap;
-    -webkit-box-align: center;
     align-items: center;
     overflow: hidden;
     position: relative;
@@ -18,9 +16,10 @@
             }
         }
         > h1 {
-            font-family: 'Teko', sans-serif;
-            font-size: 70px;
-            line-height: 60px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 34px;
+            line-height: 32px;
+            font-weight: 400;
         }
     }
     p.subheading {
@@ -29,24 +28,24 @@
         color: rgb(204, 204, 204);
         text-transform: uppercase;
         letter-spacing: 4px;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Montserrat", sans-serif;
     }
     .type {
-        font-size: 50px;
-        line-height: 50px;
         color: #fff;
         text-transform: uppercase;
         margin-left: 6px;
-        @media screen and (min-width:767px){
-            font-size: 34px;
-            line-height: 38px;
-        }
-        @media (max-width:767px) {
-            font-size: 26px;
-            line-height: 28px;
+        margin-top: 15px;
+        font-weight: 400;
+        @media screen and (min-width: 767px) {
+            font-size: 24px;
+            line-height: 22px;
         }
         span {
-            font-family: Teko;
+            font-family: "Montserrat", sans-serif;
+            font-size: 24px;
+            line-height: 22px;
+            font-weight: 400;
+            letter-spacing: 4px;
         }
     }
     .hero-buttons-container {
@@ -58,11 +57,11 @@
             max-width: 300px;
             margin-right: 10px;
             font-size: 12px;
-            &:last-of-type { 
-                margin-right: 0; 
+            &:last-of-type {
+                margin-right: 0;
             }
         }
-        @media screen and (max-width: 991px){
+        @media screen and (max-width: 991px) {
             margin-top: 10px;
             flex-flow: column nowrap;
             .button_1 {
@@ -82,19 +81,17 @@
         width: 100%;
         margin: auto;
         display: flex;
-        -webkit-box-align: center;
         align-items: center;
-        -webkit-box-pack: center;
         justify-content: center;
         flex-direction: column;
-        @media screen and (max-width: 991px){
+        @media screen and (max-width: 991px) {
             max-width: 600px;
             .glitch {
                 font-size: 60px;
                 line-height: 65px;
             }
         }
-        @media screen and (max-width: 767px){
+        @media screen and (max-width: 767px) {
             max-width: 400px;
             height: 400px;
             .glitch {
@@ -105,7 +102,7 @@
                 font-size: 18px;
             }
         }
-        @media screen and (max-width: 576px){
+        @media screen and (max-width: 576px) {
             max-width: 350px;
             .button_1 {
                 max-width: 180px;
@@ -113,7 +110,7 @@
             }
         }
         &:after {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -122,9 +119,33 @@
             border-radius: 5px;
             background: linear-gradient(120deg, #04e5e5, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
             background-size: 300% 300%;
-            clip-path: polygon(0% 100%, 10px 100%, 10px 10px, calc(100% - 10px) 10px, calc(100% - 10px) calc(100% - 10px), 10px calc(100% - 10px), 10px 100%, 100% 100%, 100% 0%, 0% 0%);
+            -webkit-clip-path: polygon(
+                0% 100%,
+                10px 100%,
+                10px 10px,
+                calc(100% - 10px) 10px,
+                calc(100% - 10px) calc(100% - 10px),
+                10px calc(100% - 10px),
+                10px 100%,
+                100% 100%,
+                100% 0%,
+                0% 0%
+            );
+            clip-path: polygon(
+                0% 100%,
+                10px 100%,
+                10px 10px,
+                calc(100% - 10px) 10px,
+                calc(100% - 10px) calc(100% - 10px),
+                10px calc(100% - 10px),
+                10px 100%,
+                100% 100%,
+                100% 0%,
+                0% 0%
+            );
         }
         &.animate:after {
+            -webkit-animation: gradientAnimation 2s ease-in-out infinite;
             animation: gradientAnimation 2s ease-in-out infinite;
         }
     }

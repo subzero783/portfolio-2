@@ -65,31 +65,35 @@ class Timeline extends React.Component {
 
     const Heading = styled.h4`
       font-size: 25px;
-      font-weight: bold;
+      font-weight: 600;
       color: #000;
       margin-bottom: 5px;
+      font-family: "Montserrat", sans-serif;
     `;
 
     const Company = styled.h5`
-      font-size: 15px;
-      font-weight: 900;
+      font-size: 18px;
+      font-weight: 600;
       color: #000;
       margin-bottom: 5px;
+      font-family: "Montserrat", sans-serif;
     `;
     const Text = styled.div`
-      font-size: 12px;
-      font-weight: 300;
+      font-size: 14px;
+      font-weight: 400;
       color: #000;
+      font-family: "Montserrat", sans-serif;
     `;
 
     const Years = styled.h5`
       color: #000;
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: 2px;
-      font-size: 80px;
+      font-size: 74px;
       position: absolute;
       top: -60px;
       opacity: 0.2;
+      font-family: "Montserrat", sans-serif;
       @media (max-width: 1439px) {
         font-size: 40px;
         top: -38px;

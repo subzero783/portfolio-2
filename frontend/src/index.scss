@@ -39,24 +39,24 @@ code {
   font-size: 16px;
   font-weight: 400;
   color: #000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: left;
 }
 
 .text-2 {
   font-size: 22px;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: rgb(255, 255, 255);
 }
 
 .title-1 {
-  color: #0475e5;
+  color: #000;
   margin-bottom: 16px;
   h2 {
-    font-family: "Poppins", sans-serif;
-    font-size: 60px;
-    color: #0475e5;
+    font-family: "Epic Ride", sans-serif;
+    font-size: 44px;
+    color: #000;
     text-align: left;
     > div {
       opacity: 0;
@@ -66,7 +66,7 @@ code {
       transition-timing-function: ease-in-out;
       transition-property: all;
       &.empty_text {
-        width: 20px;
+        width: 10px;
       }
       &.come_down {
         transform: translateY(0);
@@ -105,7 +105,7 @@ code {
   background: linear-gradient(120deg, #04e5e5, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   background-size: 300% 300%;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   &:hover,
   &:active,
@@ -136,8 +136,8 @@ code {
 .teko-font {
   font-family: "Teko", sans-serif;
 }
-.poppins-font {
-  font-family: "Poppins", sans-serif;
+.Montserrat-font {
+  font-family: "Montserrat", sans-serif;
 }
 
 // Animations

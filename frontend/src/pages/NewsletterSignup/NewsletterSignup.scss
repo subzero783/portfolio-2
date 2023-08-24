@@ -1,6 +1,6 @@
 .hubspot-form div#navbar {
     background-color: #fff;
-    @media screen and (max-width: 991px){
+    @media screen and (max-width: 991px) {
         background-color: unset;
     }
 }
@@ -26,11 +26,11 @@
             }
         }
         h1 {
-            font-family: 'Poppins', sans-serif;
+            font-family: "Montserrat", sans-serif;
             font-size: 42px;
             font-weight: 300;
             color: #0effdd;
-            @media screen and (max-width: 768px){
+            @media screen and (max-width: 768px) {
                 font-size: 28px;
             }
         }
