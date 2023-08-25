@@ -1,16 +1,19 @@
 #recent-projects {
     position: relative;
     padding: 100px 0;
-    background-color: #fff;
     overflow: hidden;
     > .container {
+        padding: 80px 0;
+        background-color: #f9f9f9;
         > .row {
+            padding-left: 30px;
+            padding-right: 30px;
             > .title-1 {
                 z-index: 1;
                 > h2 {
                     text-align: center;
                     > div.empty_text ~ div {
-                        color: #0475e5;
+                        color: #000;
                     }
                 }
             }

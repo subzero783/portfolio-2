@@ -31,7 +31,7 @@
                 > h2 {
                     text-align: center;
                     > div.empty_text ~ div {
-                        color: #0475e5;
+                        color: #000;
                     }
                 }
             }
@@ -64,7 +64,7 @@
                 h4 {
                     text-align: center;
                     @media screen and (max-width: 767px) {
-                        font-size: 22px;
+                        font-size: 14px;
                     }
                 }
                 .service-icon-container {

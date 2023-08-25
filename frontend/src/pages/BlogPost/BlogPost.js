@@ -193,25 +193,30 @@ export default function BlogPost() {
                 </div>
               </div>
             </div>
-            <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>
           </div>
         </section>
-        <section id="post-content-and-sidebar" className="container">
+        <section id="post-video" className="container">
           <div className="row">
-            <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 content-side">
+            <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12e">
               <div className="post-video">{get_single_video(postVideoId, postTitle)}</div>
               <div>
                 <a href="https://www.youtube.com/channel/UChuhEhCujTGP1mfmPdtuVhA" rel="noopener noreferrer" className="button_1" target="_blank">
                   More Videos
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+        <div className="container text-side">
+          <div className="row">
+            <div className="col col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
               <div className="post-text">
                 <div dangerouslySetInnerHTML={{ __html: postMainText }} />
               </div>
             </div>
             <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
           </div>
-        </section>
+        </div>
         <div className="container contact-info-container">
           <ContactInfo />
         </div>

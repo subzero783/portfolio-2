@@ -163,7 +163,7 @@ export default function Blog() {
       <section id="heading" className="container">
         <div className="row">
           <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h1>Developer Gus blog</h1>
+            <h1>Developer Gus Blog</h1>
             <h2 className="title">
               Watch and read my latest
               <br />

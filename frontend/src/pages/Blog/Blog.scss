@@ -15,10 +15,10 @@
         h1 {
             text-align: left;
             color: #0475e5;
-            font-size: 48px;
+            font-size: 54px;
             line-height: 1.1em;
             letter-spacing: 0.5px;
-            font-family: "Montserrat", sans-serif;
+            font-family: "Epic Ride", sans-serif;
             font-weight: 500;
             @media screen and (max-width: 991px) {
                 font-size: 40px;
@@ -29,10 +29,11 @@
             }
         }
         h2.title {
-            font-size: 30px;
-            line-height: 32px;
             font-family: "Montserrat", sans-serif;
-            color: #000;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #838383;
             text-align: left;
             font-weight: 500;
             @media screen and (max-width: 991px) {
@@ -103,14 +104,11 @@
                     max-width: -webkit-fit-content;
                     max-width: -moz-fit-content;
                     max-width: fit-content;
-                    font-size: 26px;
+                    font-size: 20px;
                     margin-bottom: 2px;
                     color: #0475e5;
                     transition: all 0.5s ease 0s;
-                    font-weight: 600;
-                    @media screen and (max-width: 991px) {
-                        font-size: 22px;
-                    }
+                    font-weight: 500;
                     @media screen and (max-width: 991px) {
                         font-size: 18px;
                     }
@@ -222,6 +220,9 @@
                 margin-left: 0;
                 margin-right: auto;
                 display: block;
+                font-size: 12px;
+                font-weight: 500;
+                text-align: center;
                 &:hover,
                 &:active,
                 &:focus {

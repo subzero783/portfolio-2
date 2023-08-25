@@ -166,7 +166,7 @@ div#navbar {
                         &:hover,
                         &:active,
                         &:focus {
-                            color: #000;
+                            color: #04e5e5;
                         }
                     }
                 }
@@ -215,6 +215,11 @@ div#navbar {
                 > li {
                     > a {
                         color: #838383;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: #000;
+                        }
                     }
                 }
             }
@@ -273,6 +278,27 @@ div#navbar {
                     > li {
                         > a {
                             color: #000;
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                color: #0475e5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.scrolled {
+            #tn-nav {
+                > ul {
+                    > li {
+                        > a {
+                            color: #838383;
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                color: #000;
+                            }
                         }
                     }
                 }
