@@ -84,6 +84,7 @@ const Heading = styled.h4`
     color: #fff;
     font-weight: 600;
     font-size: 25px;
+    font-family: "Montserrat", sans-serif;
     @media screen and (max-width: 767px){
         font-size: 18px;
     }
@@ -96,6 +97,7 @@ const SubHeading = styled.h5`
     text-transform: uppercase;
     max-width: 250px;
     margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
     @media screen and (max-width: 767px){
         font-size: 16px;
     }

@@ -83,6 +83,9 @@ class Timeline extends React.Component {
       font-weight: 400;
       color: #000;
       font-family: "Montserrat", sans-serif;
+      ul {
+        list-style: disc;
+      }
     `;
 
     const Years = styled.h5`
