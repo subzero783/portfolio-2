@@ -23,11 +23,15 @@
                     height: 70%;
                     border: 0;
                     transform: translate(-50%, -50%);
+                    @media screen and (max-width: 768px) {
+                        width: 90%;
+                        height: 90%;
+                    }
                 }
             }
-            .watch_more_button {
-                margin-top: -40px;
-            }
+            // .watch_more_button {
+            //     margin-top: -40px;
+            // }
         }
     }
     .title-1 {
@@ -48,11 +52,14 @@
         text-transform: uppercase;
         letter-spacing: 4px;
         color: #838383;
+        @media screen and (max-width: 768px) {
+            font-size: 18px;
+        }
     }
     .subtitle {
         margin-top: -10px;
     }
-    #watch-latest-videos {
-        margin-bottom: -40px;
-    }
+    // #watch-latest-videos {
+    //     margin-bottom: -40px;
+    // }
 }

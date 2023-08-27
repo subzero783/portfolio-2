@@ -63,6 +63,7 @@
             }
         }
         > ul {
+            list-style-type: disc;
             > li[data-extra-content="skills"] {
                 flex-flow: row wrap;
                 > div {

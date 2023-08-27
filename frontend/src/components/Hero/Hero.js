@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Typewriter from "typewriter-effect";
+// import Typewriter from "typewriter-effect";
 import "./Hero.scss";
 import Shapes from "../Shapes/Shapes";
 
@@ -51,7 +51,7 @@ export default function Hero() {
         <p className="subheading parallax-hero-item">Hello, I'm</p>
         <div className="heading parallax-hero-item">
           <h1 className="homepage-h1">Gustavo Amezcua</h1>
-          <div className="type teko-font">
+          {/* <div className="type teko-font">
             <Typewriter
               options={{
                 strings: ["Front-End Developer", "Back-End Developer", "Full-Stack Developer", "WordPress Developer", "UX Developer", "Web Designer"],
@@ -59,9 +59,10 @@ export default function Hero() {
                 loop: true,
               }}
             />
-          </div>
+          </div> */}
+          <h2 className="homepage-subtitle">Full-Stack Developer</h2>
           <div className="hero-buttons-container">
-            <a href="https://docs.google.com/document/d/1DvOP_pcP5jvvcKz7qN-4QGLck8vYdMlu/edit?usp=sharing&ouid=102193198745538813297&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="button_1">
+            <a href="https://docs.google.com/document/d/1vZDXLw3tCFMW-DBfajAk5plSWgCAejvU/edit?usp=sharing&ouid=102193198745538813297&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="button_1">
               Download Resume
             </a>
             <a href="#recent-projects" className="button_1">
