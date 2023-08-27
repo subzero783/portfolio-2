@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.ceae2ca9.css",
+    "main.css": "/static/css/main.16549b38.css",
     "main.js": "/static/js/main.bd4ebe40.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/green.jpg": "/static/media/green.5ee8968f37fc415a460c.jpg",
@@ -183,12 +183,12 @@
     "static/media/EpicRide.woff": "/static/media/EpicRide.95ff8c6e9e2ce117f757.woff",
     "static/media/EpicRide.woff2": "/static/media/EpicRide.b9c60d1ce269dd58bb5e.woff2",
     "index.html": "/index.html",
-    "main.ceae2ca9.css.map": "/static/css/main.ceae2ca9.css.map",
+    "main.16549b38.css.map": "/static/css/main.16549b38.css.map",
     "main.bd4ebe40.js.map": "/static/js/main.bd4ebe40.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ceae2ca9.css",
+    "static/css/main.16549b38.css",
     "static/js/main.bd4ebe40.js"
   ]
 }
