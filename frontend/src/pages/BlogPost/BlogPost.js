@@ -209,12 +209,11 @@ export default function BlogPost() {
         </section>
         <div className="container text-side">
           <div className="row">
-            <div className="col col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
+            <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
               <div className="post-text">
                 <div dangerouslySetInnerHTML={{ __html: postMainText }} />
               </div>
             </div>
-            <div className="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 sidebar"></div>
           </div>
         </div>
         <div className="container contact-info-container">

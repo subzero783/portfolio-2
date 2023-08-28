@@ -121,12 +121,19 @@
     .text-side {
         z-index: 2;
         position: relative;
+        > .row {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            > .col {
+                margin: 0 auto;
+            }
+        }
         .post-text {
             margin-top: 50px;
+            margin-bottom: 50px;
             text-align: left;
             font-family: "Montserrat", sans-serif;
             color: #000;
-            background-color: #fff;
             a {
                 color: #0475e5;
                 transition: all 0.5s ease 0s;
@@ -140,9 +147,15 @@
             h2 {
                 font-size: 24px;
             }
+            h3 {
+                font-size: 20px;
+            }
             p {
                 font-weight: 400;
                 font-family: "Poppins", sans-serif;
+            }
+            strong {
+                font-weight: 600;
             }
         }
     }
