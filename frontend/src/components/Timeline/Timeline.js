@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import htmlParse from "html-react-parser";
+import htmlParser from 'html-react-parser';
 
-class Timeline extends React.Component {
+class Timeline extends React.Component { 
   constructor(props) {
     super(props);
     this.state = {
@@ -117,7 +117,14 @@ class Timeline extends React.Component {
           <Years>{data[selector].date}</Years>
           <Heading>{data[selector].title}</Heading>
           <Company>{data[selector].institution}</Company>
-          <Text>{htmlParse(data[selector].description)}</Text>
+          <Text>{htmlParser(data[selector].description)}</Text>
+          {/* <Text>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data[selector].description,
+            }}
+          />
+          </Text> */}
         </Details>
         <TimelineSelectors>
           {Object.keys(this.props.data).map((value, index) => (

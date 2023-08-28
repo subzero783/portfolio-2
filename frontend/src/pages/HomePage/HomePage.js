@@ -31,7 +31,7 @@ function HomePage() {
 
   return (
     <>
-      <MetaInfo title="Developer Gus | Full Stack Web Developer" description= "Full Stack Web developer with over 5 years of experience in producing pixel-perfect websites and solutions with advanced knowledge in coding. Eager to support development teams with top-notch coding skills. In previous roles, was able to adopt new CMS platforms such as HubSpot and also new coding technologies such as NodeJS, ReactJS and API Integrations." />
+      <MetaInfo title="Developer Gus | Full Stack Web Developer" description= "Full-stack web developer with over 6 years of experience in producing pixel-perfect websites and solutions with advanced knowledge in coding. Eager to support development teams with top-notch coding skills. In previous roles, was able to adopt new CMS platforms such as HubSpot and also new coding technologies such as NodeJS, ReactJS and API Integrations." />
       <div id="homepage-container">
         <Hero />
         <YouTubeVideos />

@@ -43,7 +43,7 @@ export function get_current_path(path, partNumber) {
 }
 
 export function get_single_video(videoId, videoTitle) {
-  const theIframe = <iframe src={`https://www.youtube.com/embed/${videoId}`} title={videoTitle} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>;
+  const theIframe = <iframe src={`https://www.youtube-nocookie.com/embed/${videoId}`} title={videoTitle} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>;
   return theIframe;
 }
 

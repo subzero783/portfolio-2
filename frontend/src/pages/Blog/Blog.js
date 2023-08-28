@@ -24,7 +24,7 @@ function get_video_thumbnail(video_id) {
       return (
         <iframe
           className="embed-responsive-item"
-          src={`https://www.youtube.com/embed/${posts[index].video_id}`}
+          src={`https://www.youtube-nocookie.com/embed/${posts[index].video_id}`}
           title={posts[index].title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen></iframe>
