@@ -138,19 +138,18 @@
                 margin-top: 20px;
                 p {
                     color: #3c3c3c;
-                    > span {
-                        font-weight: 600;
-                    }
                 }
                 > .date-and-author {
                     > div {
                         display: inline-block;
+                        color: #3c3c3c;
                     }
                     .the-date > p {
-                        font-weight: 600;
-                        color: #000;
+                        color: #3c3c3c;
                     }
                     .extra-space {
+                        position: relative;
+                        top: -2px;
                         span {
                             width: 10px;
                             display: inline-block;
@@ -159,7 +158,7 @@
                     .the-author {
                         > p {
                             > span {
-                                color: #000;
+                                color: #3c3c3c;
                             }
                         }
                     }

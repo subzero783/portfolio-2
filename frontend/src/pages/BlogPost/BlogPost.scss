@@ -19,12 +19,12 @@
             }
         }
         h1 {
-            color: #000;
-            font-size: 26px;
-            line-height: 1.1em;
-            letter-spacing: 0.5px;
-            text-align: center;
             font-family: "Montserrat", sans-serif;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #838383;
+            text-align: center;
             font-weight: 500;
             @media screen and (max-width: 991px) {
                 font-size: 22px;
@@ -41,20 +41,15 @@
             margin-top: 20px;
             p {
                 color: #3c3c3c;
-                > span {
-                    font-weight: 600;
-                    color: #000;
-                }
             }
             > .date-and-author {
                 > div {
                     display: inline-block;
-                }
-                .the-date > p {
-                    font-weight: 600;
-                    color: #000;
+                    color: #3c3c3c;
                 }
                 .extra-space {
+                    position: relative;
+                    top: -2px;
                     span {
                         width: 10px;
                         display: inline-block;
