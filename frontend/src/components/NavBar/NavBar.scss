@@ -191,6 +191,9 @@ div#navbar {
                         padding-bottom: 10px;
                         width: 100%;
                         border-bottom: 1px solid rgba(4, 117, 229, 0.2);
+                        &:last-of-type {
+                            border-bottom: unset;
+                        }
                         > a {
                             width: 90%;
                             display: block;
