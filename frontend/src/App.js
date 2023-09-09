@@ -1,15 +1,8 @@
-// import React, { useState, useEffect, createContext } from "react";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Blog from "./pages/Blog/Blog";
 import BlogPost from "./pages/BlogPost/BlogPost";
-// import AboutPage from './pages/AboutPage';
-// import ArticlesListPage from './pages/ArticlesListPage';
-// import ArticlePage from './pages/ArticlePage';
-// import SignUpPage from  './pages/SignUpPage';
-// import LoginPage from  './pages/LoginPage';
-// import UserDashboard from  './pages/UserDashboard';
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import NavBar from "./components/NavBar/NavBar";
 
@@ -38,6 +31,7 @@ function App() {
     //     });
     // };
 
+    //
     const getCurrentLocation = () => {
       let location = window.location.pathname.split("/");
       setCurrentLocation(location[1]);
