@@ -63,6 +63,7 @@ async function addContactEmail(req, res) {
         console.log("User Email sent");
       })
       .catch((error) => {
+        console.log("SendGrid did not send email");
         console.error(error);
       });
 
