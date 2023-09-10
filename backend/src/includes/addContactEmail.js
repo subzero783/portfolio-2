@@ -73,8 +73,8 @@ async function addContactEmail(req, res) {
       })
       .catch((error) => {
         console.log("userEmail SendGrid did not send email");
-        console.error(error);
-        myLogger.log(error);
+        console.log(JSON.stringify(error.response.body.errors));
+        console.log(error.response.headers);
       });
 
     const htmlEmailAdmin = adminHTMLEmail(queryObject.email, queryObject.name, queryObject.message);
