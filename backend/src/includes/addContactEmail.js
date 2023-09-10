@@ -2,14 +2,6 @@ const express = require("express");
 const router = express.Router();
 router.use(express.json());
 
-const fs = require("fs");
-const { Console } = require("console");
-// make a new logger
-const myLogger = new Console({
-  stdout: fs.createWriteStream("normalStdout.txt"),
-  stderr: fs.createWriteStream("errStdErr.txt"),
-});
-
 const dotenv = require("dotenv");
 
 const client = require("./databaseConnect");
@@ -93,7 +85,8 @@ async function addContactEmail(req, res) {
       })
       .catch((error) => {
         console.log("adminEmail SendGrid did not send email");
-        console.error(error);
+        console.log(JSON.stringify(error.response.body.errors));
+        console.log(error.response.headers);
       });
   } finally {
     await client.close();
