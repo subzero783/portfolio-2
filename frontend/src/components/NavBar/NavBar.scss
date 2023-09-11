@@ -127,7 +127,7 @@ div#navbar {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         z-index: -1;
         @media screen and (max-width: 991px) {
             display: none;
@@ -144,13 +144,10 @@ div#navbar {
             }
         }
         #tn-nav {
-            width: 80%;
             > ul {
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
-                margin-left: auto;
-                justify-content: flex-end;
                 > li {
                     > a {
                         background: none;
@@ -171,6 +168,23 @@ div#navbar {
                         }
                     }
                 }
+            }
+        }
+        .social-media {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            > li {
+                margin-right: 10px;
+                // > a {
+                //     &:hover,
+                //     &:active,
+                //     &:focus {
+                //         -webkit-filter: invert(32%) sepia(52%) saturate(5987%) hue-rotate(198deg) brightness(98%)
+                //             contrast(97%);
+                //         filter: invert(32%) sepia(52%) saturate(5987%) hue-rotate(198deg) brightness(98%) contrast(97%);
+                //     }
+                // }
             }
         }
         @media screen and (max-width: 991px) {

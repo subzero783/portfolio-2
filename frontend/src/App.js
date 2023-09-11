@@ -51,12 +51,8 @@ function App() {
             <Route exact path="/" element={<HomePage />} />
             <Route path="/blog/" element={<Blog />} />
             <Route path="/blog/:post" element={<BlogPost />} />
-            {/* <Route path="/about" element={AboutPage}/>
-            <Route path="/articles" element={ArticlesListPage}/>
-            <Route path="/article/:name" element={ArticlePage}/>
-            <Route path="/user/signup" element={SignUpPage}/>
-            <Route path="/user/login" element={LoginPage}/>
-            <Route path="/user/dashboard" element={UserDashboard}/> */}
+            {/* <Route path="/blog/:category" element={<Blog />} /> */}
+            {/* <Route path="/about" element={AboutPage}/> */}
             <Route path="/hubspot-form/" element={<NewsletterSignup />} />
             <Route path="/thank-you/:item" element={<ThankYouPage />} />
             <Route path="*" element={<NotFoundPage />} />

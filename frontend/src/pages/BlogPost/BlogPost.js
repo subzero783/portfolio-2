@@ -31,7 +31,6 @@ export default function BlogPost() {
   posts.sort(custom_sort);
 
   useEffect(() => {
-
     const get_post_content = async () => {
       setPostUrl(get_current_path(window.location.pathname, 2));
 
@@ -51,7 +50,7 @@ export default function BlogPost() {
 
   return (
     <>
-      <MetaInfo title={postTitle} description={postDescription}/>
+      <MetaInfo title={postTitle} description={postDescription} />
       <div id="blog-post">
         <Particles
           init={particlesInit}
@@ -163,7 +162,7 @@ export default function BlogPost() {
         />
         <section id="heading" className="container">
           <div className="row">
-            <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div className="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <h1 className="post-title">{postTitle}</h1>
               <div className="extra-info">
                 <div className="date-and-author">
