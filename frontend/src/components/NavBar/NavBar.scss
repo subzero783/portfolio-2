@@ -133,6 +133,8 @@ div#navbar {
             display: none;
             &.active {
                 display: flex;
+                flex-flow: column nowrap;
+                box-shadow: 0 9px 8px 3px rgba(0, 0, 0, 0.3);
             }
         }
         #top-logo {
@@ -176,15 +178,12 @@ div#navbar {
             align-items: center;
             > li {
                 margin-right: 10px;
-                // > a {
-                //     &:hover,
-                //     &:active,
-                //     &:focus {
-                //         -webkit-filter: invert(32%) sepia(52%) saturate(5987%) hue-rotate(198deg) brightness(98%)
-                //             contrast(97%);
-                //         filter: invert(32%) sepia(52%) saturate(5987%) hue-rotate(198deg) brightness(98%) contrast(97%);
-                //     }
-                // }
+            }
+            @media screen and (max-width: 991px) {
+                justify-content: center;
+                padding: 0 0 10px 0;
+                background-color: #fff;
+                width: 100%;
             }
         }
         @media screen and (max-width: 991px) {
@@ -195,7 +194,6 @@ div#navbar {
                 width: 100%;
                 transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 background-color: #fff;
-                box-shadow: 0 9px 8px 3px rgba(0, 0, 0, 0.3);
                 > ul {
                     flex-flow: column nowrap;
                     padding-bottom: 5px;
