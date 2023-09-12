@@ -50,7 +50,7 @@ export default function BlogPost() {
 
   return (
     <>
-      <MetaInfo title={postTitle} description={postDescription} />
+      <MetaInfo title={postTitle} description={postDescription} canonical={`https://developergus.com/blog/${postUrl}/`} />
       <div id="blog-post">
         <Particles
           init={particlesInit}

@@ -21,14 +21,7 @@ function get_excerpt(string, numberOfChars) {
 function get_video_thumbnail(video_id) {
   const thumbnail = posts.map((video, index) => {
     if (video.video_id === video_id) {
-      return (
-        <iframe
-          className="embed-responsive-item"
-          src={`https://www.youtube-nocookie.com/embed/${posts[index].video_id}`}
-          title={posts[index].title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen></iframe>
-      );
+      return <iframe className="embed-responsive-item" src={`https://www.youtube-nocookie.com/embed/${posts[index].video_id}`} title={posts[index].title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>;
     } else {
       return "";
     }
@@ -37,7 +30,6 @@ function get_video_thumbnail(video_id) {
 }
 
 export default function Blog() {
-
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -51,7 +43,7 @@ export default function Blog() {
 
   return (
     <div id="blog">
-      <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS."/>
+      <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical="https://developergus.com/blog/" />
       <Particles
         init={particlesInit}
         loaded={particlesLoaded}

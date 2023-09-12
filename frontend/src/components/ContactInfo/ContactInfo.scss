@@ -1,6 +1,16 @@
 .row.contact-info-row {
     margin-top: 150px;
+    display: flex;
+    flex-flow: row nowrap;
+    @media screen and (max-width: 991px) {
+        flex-flow: column nowrap;
+    }
     > .col {
+        padding: 0;
+        margin-right: 10px;
+        &:last-of-type {
+            margin-right: 0;
+        }
         @media (max-width: 991px) {
             margin-bottom: 140px;
             &:last-child {
