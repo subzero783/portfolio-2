@@ -47,12 +47,6 @@ app.get("/api/videos/", async (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  var host = req.header("host");
-  if (host.match(/^www\..*/i)) {
-    next();
-  } else {
-    res.redirect(301, "https://www." + host);
-  }
   res.sendFile(path.join(__dirname + "/build/index.html"));
 });
 
