@@ -73,7 +73,7 @@
         height: 100%;
         position: relative;
         z-index: 2;
-        background-color: rgb(17, 17, 17);
+        background-color: #f9f9f9;
         .server-response {
             margin-top: 20px;
         }
@@ -81,7 +81,7 @@
     .heading {
         font-size: 40px;
         font-family: "Montserrat", sans-serif;
-        color: #fff;
+        color: #000;
         text-align: left;
         @media screen and (max-width: 767px) {
             font-size: 45px;
