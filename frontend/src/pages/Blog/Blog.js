@@ -43,7 +43,7 @@ export default function Blog() {
 
   return (
     <div id="blog">
-      <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical="https://developergus.com/blog/" />
+      <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical="https://www.developergus.com/blog/" />
       <Particles
         init={particlesInit}
         loaded={particlesLoaded}
