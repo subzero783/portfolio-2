@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.89d73315.css",
-    "main.js": "/static/js/main.e94373ca.js",
+    "main.css": "/static/css/main.37c1f1db.css",
+    "main.js": "/static/js/main.b508397b.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/green.jpg": "/static/media/green.5ee8968f37fc415a460c.jpg",
     "static/media/Teko-SemiBold.eot": "/static/media/Teko-SemiBold.4c47aef54e7ed24e40a9.eot",
@@ -183,12 +183,12 @@
     "static/media/EpicRide.woff": "/static/media/EpicRide.95ff8c6e9e2ce117f757.woff",
     "static/media/EpicRide.woff2": "/static/media/EpicRide.b9c60d1ce269dd58bb5e.woff2",
     "index.html": "/index.html",
-    "main.89d73315.css.map": "/static/css/main.89d73315.css.map",
-    "main.e94373ca.js.map": "/static/js/main.e94373ca.js.map",
+    "main.37c1f1db.css.map": "/static/css/main.37c1f1db.css.map",
+    "main.b508397b.js.map": "/static/js/main.b508397b.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89d73315.css",
-    "static/js/main.e94373ca.js"
+    "static/css/main.37c1f1db.css",
+    "static/js/main.b508397b.js"
   ]
 }
