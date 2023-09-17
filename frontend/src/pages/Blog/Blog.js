@@ -165,11 +165,12 @@ export default function Blog() {
           <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>
         </div>
       </section>
-      <section id="blog-posts" className="container">
+      <ul id="blog-posts" className="container">
         {posts.map((post, index) => {
           if (post.active) {
+            console.log(index+1);
             return (
-              <div className="g-row" key={index}>
+              <li key={index+1} className="g-row">
                 <div className="post-text">
                   <div className="post" key={post.id}>
                     <a href={`/blog/${post.url}/`} aria-label={post.title} className="title-link">
@@ -216,13 +217,13 @@ export default function Blog() {
                 <div className="post-thumbnail">
                   <div className="thumbnail-container embed-responsive-16by9">{get_video_thumbnail(post.video_id)}</div>
                 </div>
-              </div>
+              </li>
             );
           } else {
             return null;
           }
         })}
-      </section>
+      </ul>
       <div className="container contact-info-container">
         <ContactInfo />
       </div>
