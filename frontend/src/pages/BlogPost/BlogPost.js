@@ -10,13 +10,14 @@ import "./BlogPost.scss";
 export default function BlogPost() {
   const [postUrl, setPostUrl] = useState("");
   const [postObjContent, setPostObjContent] = useState([]);
-  const [postMainText, setPostMainText] = useState("");
+  // const [postMainText, setPostMainText] = useState("");
   const [postTitle, setPostTitle] = useState("");
   const [postDescription, setPostDescription] = useState("");
   const [postVideoId, setPostVideoId] = useState("");
   const [postDate, setPostDate] = useState("");
   const [postAuthor, setPostAuthor] = useState("");
   const [postCategories, setPostCategories] = useState([]);
+  const [htmlFile, setHtmlFile] = useState("");
   // Meta Info
 
   const particlesInit = useCallback(async (engine) => {
@@ -40,14 +41,32 @@ export default function BlogPost() {
       setPostVideoId(postObj.video_id);
       setPostTitle(postObj.title);
       setPostDescription(postObj.description);
-      setPostMainText(postObj.content);
+      // setPostMainText(postObj.content);
       setPostDate(postObj.date);
       setPostAuthor(postObj.author);
       setPostCategories(postObj.categories);
+
+      const fetchHtmlFile = async () => {
+        fetch(`/api/html/${postUrl}`)
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (html) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, "text/html");
+            // console.dir(doc.all[2].outerHTML);
+            doc = doc.all[2].outerHTML;
+            if (doc !== undefined && doc !== null) {
+              setHtmlFile(doc);
+            } else {
+              console.log("NO html doc");
+            }
+          });
+      };
+      fetchHtmlFile();
     };
     get_post_content();
   }, [postObjContent, postUrl]);
-
   return (
     <>
       <MetaInfo title={postTitle} description={postDescription} canonical={`https://www.developergus.com/blog/${postUrl}/`} />
@@ -210,7 +229,7 @@ export default function BlogPost() {
           <div className="row">
             <div className="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
               <div className="post-text">
-                <div dangerouslySetInnerHTML={{ __html: postMainText }} />
+                <div dangerouslySetInnerHTML={{ __html: htmlFile }} />
               </div>
             </div>
           </div>
