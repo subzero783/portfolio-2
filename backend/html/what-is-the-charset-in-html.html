@@ -1,0 +1,45 @@
+<p>Hello, and welcome to our article on what is the charset in HTML. Let's get started! </p>
+<p>Charset, short for character set, defines which characters are used when a webpage is rendered. It's an important attribute because it ensures that text displays correctly across different browsers and international settings.</p>
+<p>The charset is a part of the HTML meta tag, and it is specified using the "charset" attribute. In most cases, this will be set to UTF-8, which stands for Unicode Transformation Format 8-bit and supports a wide range of international characters.</p>
+<p>In HTML5, when including the charset in your page or document, it should always be the first attribute specified in the meta tag. This is important because some browsers may ignore anything coming after the charset.</p>
+<p>Let's break down the line &#x3C;meta charset=&#x22;utf-8&#x22;&#x3E; to understand what it means:</p>
+<ul>
+    <li>&#x3C;meta&#x3E; is an HTML tag that holds metadata about a web page, like descriptors that tell search engines what kind of content a web page has (but hidden from display) so the visitors to your web page will NOT see the metadata as it's intended for browsers and search engines.</li>
+    <li>charset is an HTML attribute that defines the character encoding for your browser to use when showing website content.</li>
+    <li>utf-8 is a specific character encoding.</li>
+</ul>
+<p>In simple terms, &#x3C;meta charset=&#x22;utf-8&#x22;&#x3E; tells the browser to use utf-8 character encoding to translate machine code into readable text (and vice versa) for display in the browser.</p>
+<p>Moving on, let's discuss some common charset options and how they differ.</p>
+<p>The most commonly used charset is "UTF-8". It supports a wide spectrum of characters from many different languages, making it the go-to option for most web developers. UTF-8 is backward-compatible with ASCII (American Standard Code for Information Interchange), meaning it includes all the ASCII characters, plus an additional range of international characters and symbols.</p>
+<p>Another charset option is "ISO-8859-1". It was the default character set in HTML 4.01. ISO-8859-1 is essentially the same as ASCII, but it also includes characters used in Western European languages. However, it does not support as many characters as UTF-8 does.</p>
+<p>There's also "UTF-16", which supports the same range of characters as UTF-8, but uses more bytes to encode them. This can lead to larger web pages, which may load slower. </p>
+<p>Therefore, while there are multiple charset options available, due to its broad character support and efficient encoding, UTF-8 is the most recommended charset for web documents. It ensures maximum compatibility and accessibility for users worldwide.</p>
+<p>These are the steps to follow to include the meta charset in an HTML document:</p>
+<ol>
+    <li>Open up your HTML document in your text editor of choice. This could be Notepad, Sublime Text, Visual Studio Code, or any other text editor you prefer.</li>
+    <li>At the top of your HTML document, you should see the `&#x3C;head&#x3E;` tag. This tag is used to store meta-information about the webpage, like its title, CSS stylesheets, and, in this case, the charset.</li>
+    <li>Inside the `&#x3C;head&#x3E;` tag, add a `&#x3C;meta&#x3E;` tag with the `charset` attribute. The `charset` attribute is what specifies the character encoding for the webpage. Your tag should look like this: `&#x3C;meta charset=&#x22;utf-8&#x22;&#x3E;`.</li>
+    <li>Save your HTML document. The charset is now set and your browser will use this encoding when displaying the webpage.</li>
+</ol>
+<p>And that's it! You've successfully set the charset in your HTML document.</p>
+<p>For instance, suppose you're developing a webpage that contains Arabic text. Arabic is a non-Latin script that utilizes unique, intricate characters not found in the ASCII character set. If you were to use an ASCII-based charset, such as ISO-8859-1, the Arabic characters would not be correctly represented, leading to garbled, unreadable text on your webpage. This is where UTF-8 comes to the rescue. By setting your charset to UTF-8, as in `&#x3C;meta charset=&#x22;utf-8&#x22;&#x3E;`, you ensure that the Arabic script is accurately represented, maintaining the integrity of your content and providing a seamless user experience for Arabic readers.</p>
+<pre><code>
+    &#x3C;!DOCTYPE html&#x3E;
+    &#x3C;html&#x3E;
+    &#x3C;head&#x3E;
+      &#x3C;meta charset=&#x22;ISO-8859-1&#x22;&#x3E; &#x3C;!-- char encoding is set equal to ISO-8859-1 --&#x3E;
+    &#x3C;/head&#x3E;
+    &#x3C;body&#x3E;
+      &#x3C;h1&#x3E;!&#x645;&#x631;&#x62D;&#x628;&#x627; &#x628;&#x627;&#x644;&#x639;&#x627;&#x644;&#x645;&#x3C;/h1&#x3E;
+    &#x3C;/body&#x3E;
+    &#x3C;/html&#x3E;
+</code></pre>
+<p>Once I replace the meta charset attribute equal to be 'utf-8' instead, the Arabic text is displayed properly. </p>
+<p>
+    Now, as you create and manage webpages, remember to include the charset in HTML to ensure that your text displays correctly across various international settings. 
+    Thanks again and happy coding!
+</p>
+<h2>References: </h2>
+<ol>
+    <li>Why is &#x3C;meta charset=&#x22;utf-8&#x22;&#x3E; important? (n.d.). DEV Community. https://dev.to/maggiecodes_/why-is-lt-meta-charset-utf-8-gt-important-59hl</li>
+</ol>
