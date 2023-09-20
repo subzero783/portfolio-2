@@ -9,7 +9,7 @@ export const posts = [
     date: "2022/8/22",
     author: "Developer Gus",
     categories: ["WordPress", "CPanel"],
-    content: "<p>Today I will teach you how to install the Content Management System of WordPress in Cpanel.&nbsp;</p><h2>Before Installing WordPress</h2><p> Before getting started, you should have purchased or subscribed already to hosting. I like to use Namecheap for buying domains and hosting since they have excellent customer service, among other great benefits. Another essential thing to note before installing WordPress is checking that your web hosting provider fulfills the necessary software and conditions. Also, you must have access to the server and some tools. So the requirements on the server side are PHP 7.4 or greater and having MySQL 5.6 or MariaDB 10.1 or greater. I&apos;m going to leave a link to a detailed list of requirements in the description of this video (1)&nbsp;</p>",
+    content: "Today I will teach you how to install the Content Management System of WordPress in Cpanel. Before getting started, you should have purchased or subscribed already to hosting. I like to use Namecheap for buying domains and hosting since they have excellent customer service, among other great benefits. Another essential thing to note before installing WordPress is checking that your web hosting provider fulfills the necessary software and conditions. Also, you must have access to the server and some tools. So the requirements on the server side are PHP 7.4 or greater and having MySQL 5.6 or MariaDB 10.1 or greater. I&apos;m going to leave a link to a detailed list of requirements in the description of this video (1)&nbsp;",
   },
   {
     id: 1,
@@ -21,7 +21,7 @@ export const posts = [
     date: "2022/12/05",
     author: "Developer Gus",
     categories: ["HubSpot", "CSS", "JavaScript", "jQuery", "WordPress"],
-    content: "<p>Today I will teach you how to customize a HubSpot form with CSS and JavaScript, including jQuery.&nbsp;</p><h2>Required Before Getting Started</h2><p>Before getting started, you need to have a Hubspot pro account and have already created a form. Let me explain what type of Hubspot account you need.</p><h2>Subscribed to a Hubspot Pro Account</h2><p> Let&apos;s go to an article that HubSpot has made in their HubSpot Knowledge Base titled &quot;Set up and style a HubSpot form on an external site.&quot; Which I will leave a link to in the description (1). When you click the heading &quot;Style your embedded form with CSS in your external stylesheet &quot; in the article&apos;s table of contents or when you scroll to the bottom. You will see a notice at the bottom of the page that Hubspot mentions. To style your Hubspot form in your external stylesheet, you first need to be subscribed to one of the following Hubspot plans:&nbsp;</p>",
+    content: "Today I will teach you how to customize a HubSpot form with CSS and JavaScript, including jQuery. Before getting started, you need to have a Hubspot pro account and have already created a form. Let me explain what type of Hubspot account you need. Let&apos;s go to an article that HubSpot has made in their HubSpot Knowledge Base titled &quot;Set up and style a HubSpot form on an external site.&quot; Which I will leave a link to in the description (1). When you click the heading &quot;Style your embedded form with CSS in your external stylesheet &quot; in the article&apos;s table of contents or when you scroll to the bottom. You will see a notice at the bottom of the page that Hubspot mentions. To style your Hubspot form in your external stylesheet, you first need to be subscribed to one of the following Hubspot plans:&nbsp;",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const posts = [
     date: "2023/07/03",
     author: "Developer Gus",
     categories: ["HubSpot", "CSS", "JavaScript", "jQuery", "WordPress"],
-    content: "<p> Today I'm going to show you how to customize a HubSpot form with your own CSS and JavaScript code. </p><h2>Required Before Getting Started</h2> <p>I do want to say one thing before getting started. If I mention any links in this video you can find them in the description as well so let's get right to the point and show you the steps on how this is achieved.</p><h2>Creating a HubSpot Account</h2><p> So the first step to customizing a HubSpot form with your custom code is to have a HubSpot account to do that I will head over to hubspot.com and then I'm going to click on the button that says get started free. I will then sign up. I already created my account so I will log in using that one. </p>",
+    content: "Today I'm going to show you how to customize a HubSpot form with your own CSS and JavaScript code. I do want to say one thing before getting started. If I mention any links in this video you can find them in the description as well so let's get right to the point and show you the steps on how this is achieved. So the first step to customizing a HubSpot form with your custom code is to have a HubSpot account to do that I will head over to hubspot.com and then I'm going to click on the button that says get started free. I will then sign up. I already created my account so I will log in using that one.",
   },
   {
     id: 3,
