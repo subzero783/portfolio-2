@@ -234,6 +234,7 @@ export default function BlogPost() {
             </div>
           </div>
         </div>
+        <div className="container cta-01"></div>
         <div className="container contact-info-container">
           <ContactInfo />
         </div>

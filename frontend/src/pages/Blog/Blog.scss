@@ -202,17 +202,18 @@
             }
             .post-excerpt {
                 margin-top: 20px;
+                color: #3c3c3c;
                 .dots {
                     color: rgb(4, 229, 229);
                 }
                 p {
-                    margin-bottom: 0;
+                    margin-bottom: 16px;
                     color: #3c3c3c;
                 }
                 h2 {
                     font-size: 17px;
                     line-height: 17px;
-                    margin: 0;
+                    margin: 0 0 8px 0;
                     color: #3c3c3c;
                 }
             }

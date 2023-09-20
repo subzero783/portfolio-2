@@ -1,18 +1,15 @@
 <p>Today I will teach you how to install the Content Management System of WordPress in Cpanel.&nbsp;</p>
-<br />
 <h2>Before Installing WordPress</h2>
 <p>
   Before getting started, you should have purchased or subscribed already to hosting. I like to use Namecheap for buying domains and hosting since they have excellent customer service, among other great benefits. Another essential thing to note
   before installing WordPress is checking that your web hosting provider fulfills the necessary software and conditions. Also, you must have access to the server and some tools. So the requirements on the server side are PHP 7.4 or greater and having
   MySQL 5.6 or MariaDB 10.1 or greater. I&apos;m going to leave a link to a detailed list of requirements in the description of this video (1)&nbsp;
 </p>
-<br />
 <h2>Downloading WordPress</h2>
 <p>
   The first step is to go to WordPress.org and download the WordPress package. So let&apos;s open a web browser; I like to use Google Chrome. Then let&apos;s type WordPress.org/download and click enter. Where it says Download and Install yourself,
   you will see a button to Download Version 6.0.1 as of now, but you may see a newer version of WordPress while watching this video. Once the download has finished, the next step is to open your hosting account.
 </p>
-<br />
 <h2>Open your Shared or Reseller Hosting Account Cpanel</h2>
 <p>
   We will open the Cpanel of our hosting account, click on File Manager, and upload the zipped folder we downloaded from WordPress.org into your desired folder. You can upload the zipped folder into your Cpanel account&apos;s root installation, a
@@ -21,13 +18,11 @@
   then move the files and folders from the WordPress folder into the root of the folder named &quot;new-wordpress .&quot;I go into the directory, select all the files and folders and move them into the directory called &quot;new-wordpress&quot; by
   dragging and dropping them. Now that we have successfully uploaded and unzipped the WordPress directory, it&apos;s time to create a MySQL database, create a user, and assign it to that database.&nbsp;
 </p>
-<br />
 <h2>Create a MySQL Database and Database User</h2>
 <p>
   We create a MySQL database in CPanel by opening CPanel, going to the Databases section, and then clicking on the MySQL Databases link. On this page, we can create a new database, modify them, see your current databases, create a new MySQL user, and
   assign a user to a database. For this video chapter, please write down the database prefix, database name, username, and password assigned to the username.&nbsp;
 </p>
-<br />
 <p>
   First, we will create a new database that will always have a prefix assigned automatically by CPanel. Then I will write a database name after calling it new underscore WordPress (new_wordpress) and click on the Create Database button. The second
   step is to create a new user by going to the Add New User section. I&apos;m going to call this new user &quot;user_one.&quot; We need to assign a password by clicking on the password generator button, which will open a popup to generate a new
@@ -36,7 +31,6 @@
   adding the password that we just generated, you can write your own as well, but I would recommend using a tool to develop a strong password that is very difficult to figure out. LastPass also has a tool that will generate strong passwords, which
   you can use whenever you want to create an account.&nbsp;
 </p>
-<br />
 <p>
   Now that we have created a database and a username with its password, it&apos;s time to assign the username to the newly created database by going to the Add User to Database section, selecting the new username, selecting the new database, and then
   clicking on the Add button. It will take us to the Manage User Privileges page, where we can assign the privileges we want this username to have for this newly created database. In this case, I will click on the All Privileges checkbox. Explaining
@@ -44,7 +38,6 @@
   on the Make Changes button and return to the MySQL Databases page. The last step is to type and run the WordPress install script by going to the URL or WordPress directory where we want WordPress installed, which in my case is
   https://cyberhomelife.com/new-wordpress.&nbsp;
 </p>
-<br />
 <h2>Run the WordPress Install Script</h2>
 <p>
   The install script will first ask you to pick the language you would like your WordPress website to use. After that, it lets you know that you need to know the following information. We click on the button that says Let&apos;s Go, and then the
@@ -55,7 +48,6 @@
   recommend clicking it because you don&apos;t want your website to be indexed by search engines such as Google and Bing before you finish creating all the pages and blog posts that you want to complete first. After entering all the information, we
   click on the Install WordPress button, and we have finished installing WordPress.&nbsp;
 </p>
-<br />
 <h2>Login Into WordPress</h2>
 <p>
   We can now click on the login button that will take us to our dashboard login page or add the forward slash &quot;wp-admin&quot; to the end of our website domain. I will type my dashboard username and password to access my website. We have
@@ -63,9 +55,9 @@
   helpful. Thank you for watching this tutorial; remember to let me know what next topic you would like to learn. In the description of this video, I will leave the skills I have experience in and can teach you, so please leave a comment to let me
   know or send me an email. Remember to like this video and subscribe to my channel to get a notification of my newest web development video.&nbsp;
 </p>
-<br />
-<p><strong>References</strong></p>
-<p>
-  (1)
-  <a href="https://wordpress.org/about/requirements/" aria-label="WordPress Requirements" target="_blank" rel="noreferrer noopener">WordPress Requirements</a>
-</p>
+<h2>References</h2>
+<ol>
+  <li>
+    <a href="https://wordpress.org/about/requirements/" aria-label="WordPress Requirements" target="_blank" rel="noreferrer noopener">WordPress Requirements</a>
+  </li>
+</ol>
