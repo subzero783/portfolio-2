@@ -9,12 +9,12 @@ const addContactEmail = require("./src/includes/addContactEmail");
 
 const app = express();
 
-app.set("forceSSLOptions", {
-  enable301Redirects: true,
-  trustXFPHeader: false,
-  httpsPort: 443,
-  sslRequiredMessage: "SSL Required.",
-});
+// app.set("forceSSLOptions", {
+//   enable301Redirects: true,
+//   trustXFPHeader: false,
+//   httpsPort: 443,
+//   sslRequiredMessage: "SSL Required.",
+// });
 
 app.use(cookieParser());
 
