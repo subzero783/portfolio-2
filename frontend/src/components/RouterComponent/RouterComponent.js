@@ -28,6 +28,7 @@ export default function RouterComponent(props) {
           <Routes>
             <Route exact path="/" element={<HomePage />} />
             <Route path="/blog/" element={<Blog />} />
+            <Route path="/blog/category/:category" render={(props) => <Blog {...props} />} />
             <Route path="/blog/:post" element={<BlogPost />} />
             {/* <Route path="/hubspot-form/" element={<NewsletterSignup />} /> */}
             {/* <Route path="/thank-you/:item" element={<ThankYouPage />} /> */}

@@ -29,7 +29,8 @@ function get_video_thumbnail(video_id) {
   return thumbnail;
 }
 
-export default function Blog() {
+export default function Blog({ props }) {
+  console.log(props);
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -168,9 +169,9 @@ export default function Blog() {
       <ul id="blog-posts" className="container">
         {posts.map((post, index) => {
           if (post.active) {
-            console.log(index+1);
+            console.log(index + 1);
             return (
-              <li key={index+1} className="g-row">
+              <li key={index + 1} className="g-row">
                 <div className="post-text">
                   <div className="post" key={post.id}>
                     <a href={`/blog/${post.url}/`} aria-label={post.title} className="title-link">
