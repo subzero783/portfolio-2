@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import { useParams } from "react-router-dom";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
@@ -29,8 +30,9 @@ function get_video_thumbnail(video_id) {
   return thumbnail;
 }
 
-export default function Blog({ props }) {
-  console.log(props);
+export default function Blog() {
+  const { category } = useParams();
+  console.log(category);
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -44,7 +46,8 @@ export default function Blog({ props }) {
 
   return (
     <div id="blog">
-      <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical="https://www.developergus.com/blog/" />
+      {category !== undefined && category !== null ? <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical={`https://www.developergus.com/blog/category/${category}`} /> : <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical="https://www.developergus.com/blog/" />}
+
       <Particles
         init={particlesInit}
         loaded={particlesLoaded}
@@ -169,7 +172,6 @@ export default function Blog({ props }) {
       <ul id="blog-posts" className="container">
         {posts.map((post, index) => {
           if (post.active) {
-            console.log(index + 1);
             return (
               <li key={index + 1} className="g-row">
                 <div className="post-text">
