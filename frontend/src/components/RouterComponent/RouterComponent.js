@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, redirect } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "../../pages/HomePage/HomePage";
 import Blog from "../../pages/Blog/Blog";
 import BlogPost from "../../pages/BlogPost/BlogPost";
@@ -18,8 +18,12 @@ export default function RouterComponent() {
         let location = window.location.pathname.split("/");
         if (location.length > 0) {
           if (location.length > 2) {
-            theRoot.classList.add(location[1]);
-            theRoot.classList.add(location[2]);
+            if (location[1] !== "") {
+              theRoot.classList.add(location[1]);
+            }
+            if (location[2] !== "") {
+              theRoot.classList.add(location[2]);
+            }
           } else {
             theRoot.classList.add(location[1]);
           }

@@ -1,7 +1,7 @@
 #developer-gus {
     padding: 80px 0;
     background-color: #fff;
-    > .container {
+    > .container-lg {
         > .row {
             > #player-2 {
                 position: relative;
@@ -29,9 +29,6 @@
                     }
                 }
             }
-            // .watch_more_button {
-            //     margin-top: -40px;
-            // }
         }
     }
     .title-1 {
@@ -62,7 +59,4 @@
     .subtitle {
         margin-top: -10px;
     }
-    // #watch-latest-videos {
-    //     margin-bottom: -40px;
-    // }
 }

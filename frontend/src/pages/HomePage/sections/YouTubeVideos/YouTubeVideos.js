@@ -26,7 +26,7 @@ const YouTubeVideos = () => {
 
   return (
     <div id="developer-gus">
-      <div className="container">
+      <div className="container-lg">
         <div className="row">
           <div id="youtube-videos-text" className="title-1">
             <h2>

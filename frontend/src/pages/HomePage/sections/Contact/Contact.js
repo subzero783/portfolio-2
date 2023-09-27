@@ -133,7 +133,7 @@ export default function Contact() {
 
   return (
     <div id="contact">
-      <div className="container">
+      <div className="container-lg">
         <div className="row contact-form-row">
           <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div className="contact-form">

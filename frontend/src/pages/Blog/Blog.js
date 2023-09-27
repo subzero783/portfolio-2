@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -32,8 +32,8 @@ function get_video_thumbnail(video_id) {
 }
 
 export default function Blog() {
+  const [properCategoryName, setProperCategoryName] = useState("");
   const { category } = useParams();
-  let containsCategory = false;
   const navigate = useNavigate();
   useEffect(() => {
     if (category) {
@@ -42,12 +42,17 @@ export default function Blog() {
       });
       if (!lowerArray.includes(category)) {
         navigate("/blog");
-      } else {
-        containsCategory = true;
       }
     }
-  }, [category]);
-  console.log(containsCategory);
+    const getProperCategoryName = () => {
+      categories[0].categories.map((element) => {
+        if (element.toLowerCase() === category) {
+          setProperCategoryName(element);
+        }
+      });
+    };
+    getProperCategoryName();
+  }, [category, navigate]);
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -61,7 +66,7 @@ export default function Blog() {
 
   return (
     <div id="blog">
-      {category !== undefined && category !== null ? <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical={`https://www.developergus.com/blog/category/${category}`} /> : <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical="https://www.developergus.com/blog/" />}
+      {category !== undefined && category !== null ? <MetaInfo title={`Developer Gus Blog ${properCategoryName} Category`} description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical={`https://www.developergus.com/blog/category/${category}`} /> : <MetaInfo title="Developer Gus Blog" description="Watch and read my latest web development content about how to create websites using HTML, CSS and JavaScript as well as how to create websites on WordPres, HubSpot and ReactJS." canonical="https://www.developergus.com/blog/" />}
 
       <Particles
         init={particlesInit}
@@ -171,7 +176,7 @@ export default function Blog() {
           retina_detect: true,
         }}
       />
-      <section id="heading" className="container">
+      <section id="heading" className="container-lg">
         <div className="row">
           <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
             <h1>Developer Gus Blog</h1>
@@ -184,9 +189,19 @@ export default function Blog() {
           <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>
         </div>
       </section>
-      <ul id="blog-posts" className="container">
+      <ul id="blog-posts" className="container-lg">
         {posts.map((post, index) => {
-          if (post.active) {
+          let inCategory = false;
+          if (category === null || category === undefined) {
+            inCategory = true;
+          }
+          if (category !== undefined && category !== null) {
+            const lowerArray = post.categories.map((element) => {
+              return element.toLowerCase();
+            });
+            inCategory = lowerArray.includes(category);
+          }
+          if (post.active && inCategory) {
             return (
               <li key={index + 1} className="g-row">
                 <div className="post-text">
@@ -242,7 +257,7 @@ export default function Blog() {
           }
         })}
       </ul>
-      <div className="container contact-info-container">
+      <div className="container-lg contact-info-container">
         <ContactInfo />
       </div>
     </div>
