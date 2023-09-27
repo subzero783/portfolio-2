@@ -1,8 +1,9 @@
-import React, { useCallback } from "react";
-import { useParams } from "react-router-dom";
+import React, { useCallback, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { posts } from "../../data/blog-posts";
+import { categories } from "../../data/categories";
 import { formatted_date, custom_sort } from "../../functions";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
 import MetaInfo from "../../components/MetaInfo/MetaInfo";
@@ -32,7 +33,21 @@ function get_video_thumbnail(video_id) {
 
 export default function Blog() {
   const { category } = useParams();
-  console.log(category);
+  let containsCategory = false;
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (category) {
+      const lowerArray = categories[0].categories.map((element) => {
+        return element.toLowerCase();
+      });
+      if (!lowerArray.includes(category)) {
+        navigate("/blog");
+      } else {
+        containsCategory = true;
+      }
+    }
+  }, [category]);
+  console.log(containsCategory);
   const particlesInit = useCallback(async (engine) => {
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -199,7 +214,7 @@ export default function Blog() {
                         </p>
                         <div className="categories-list">
                           {post.categories.map((category, index) => (
-                            <a href="/" className="category" key={index}>
+                            <a href={`/blog/category/${category.toLowerCase()}`} className="category" key={index}>
                               {category}
                             </a>
                           ))}

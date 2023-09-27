@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, redirect } from "react-router-dom";
 import HomePage from "../../pages/HomePage/HomePage";
 import Blog from "../../pages/Blog/Blog";
 import BlogPost from "../../pages/BlogPost/BlogPost";
@@ -9,12 +9,22 @@ import NavBar from "../NavBar/NavBar";
 // import NewsletterSignup from "../../pages/NewsletterSignup/NewsletterSignup";
 // import ThankYouPage from "../../pages/ThankYouPage/ThankYouPage";
 
-export default function RouterComponent(props) {
-  const [currentLocation, setCurrentLocation] = useState();
+export default function RouterComponent() {
   useEffect(() => {
     const getCurrentLocation = () => {
-      let location = window.location.pathname.split("/");
-      setCurrentLocation(location[1]);
+      let theRoot = document.getElementById("root");
+      theRoot.className = "";
+      if (window.location.pathname !== "/") {
+        let location = window.location.pathname.split("/");
+        if (location.length > 0) {
+          if (location.length > 2) {
+            theRoot.classList.add(location[1]);
+            theRoot.classList.add(location[2]);
+          } else {
+            theRoot.classList.add(location[1]);
+          }
+        }
+      }
     };
 
     getCurrentLocation();
@@ -22,13 +32,14 @@ export default function RouterComponent(props) {
 
   return (
     <Router>
-      <div className={`App ${currentLocation}`}>
+      <div className={`App`}>
         <NavBar />
         <div id="page-body">
           <Routes>
             <Route exact path="/" element={<HomePage />} />
             <Route path="/blog/" element={<Blog />} />
             <Route path="/blog/category/:category" element={<Blog />} />
+            <Route path="/blog/category/" element={<NotFoundPage />} />
             <Route path="/blog/:post" element={<BlogPost />} />
             {/* <Route path="/hubspot-form/" element={<NewsletterSignup />} /> */}
             {/* <Route path="/thank-you/:item" element={<ThankYouPage />} /> */}
