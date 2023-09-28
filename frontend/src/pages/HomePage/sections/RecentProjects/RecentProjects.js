@@ -21,6 +21,7 @@ import portfolioImage7 from "../../../../images/portfolio-images/jelly-fish.jpg"
 import portfolioImage8 from "../../../../images/portfolio-images/triangle.jpg";
 import portfolioImage9 from "../../../../images/portfolio-images/pink-objects.jpg";
 import portfolioImage10 from "../../../../images/portfolio-images/green.jpg";
+import portfolioImage11 from "../../../../images/portfolio-images/abstract-02.jpg";
 
 import { activate_text_fade_down } from "../../../../functions";
 
@@ -98,15 +99,7 @@ export default function RecentProjects() {
           </div>
           {/* <Slider {...slider_settings}> */}
           <div id="projects-grid">
-            <PortfolioItem
-              key={1}
-              image={portfolioImage4}
-              alt="two iphones"
-              link={"https://careers.advantagesolutions.net/"}
-              title={"Advantage Solutions Careers"}
-              category={"WordPress Development"}
-              // repoLink="https://developergus.com"
-            />
+            <PortfolioItem key={1} image={portfolioImage4} alt="two iphones" link={"https://careers.advantagesolutions.net/"} title={"Advantage Solutions Careers"} />
             <PortfolioItem key={2} image={portfolioImage3} alt="watch" link={"https://braincorp.com/"} title={"Brain Corp"} category={"WordPress Development"} />
             <PortfolioItem key={3} image={portfolioImage5} alt="camera lens beside an iphone" link={"https://www.groupsense.io/"} title={"GroupSense"} category={"HubSpot Development"} />
             <PortfolioItem key={4} image={portfolioImage2} alt="vintage camera" link={"https://paymyprice.com/"} title={"Pay My Price"} category={"Custom Content Management System"} />
@@ -116,6 +109,7 @@ export default function RecentProjects() {
             <PortfolioItem key={8} image={portfolioImage9} alt="" link={"https://www.pcrprograms.org/"} title={"Parent-child Relationship Programs"} category={"WordPress Development"} />
             <PortfolioItem key={9} image={portfolioImage1} alt="hand holding cell phone" link={"https://driftpcola.com/home/"} title={"Drift Pcola"} category={"WordPress Development"} />
             <PortfolioItem key={10} image={portfolioImage10} alt="green" link={"https://www.miracleserv.com/"} title={"Miracle Serv"} category={"WordPress Development"} />
+            <PortfolioItem key={11} image={portfolioImage11} alt="red" link={"https://www.ascentfunding.com/faq/"} title={"Ascent Funding"} category={"WordPress, JavaScript and React Development"} />
           </div>
           {/* </Slider> */}
         </div>
