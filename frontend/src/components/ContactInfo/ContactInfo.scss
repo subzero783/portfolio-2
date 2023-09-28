@@ -73,31 +73,30 @@
                             text-decoration: none;
                         }
                     }
-                    &.social-media {
-                        > ul {
-                            margin: 0;
-                            padding: 0;
-                            list-style: none;
-                            > li {
-                                margin-right: 14px;
+                    .social-media {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+                        justify-content: center;
+                        list-style: none;
+                        > li {
+                            margin-right: 10px;
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                            > a {
                                 display: inline-block;
-                                &:last-child {
-                                    margin-right: 0;
+                                transition: all 0.5s ease-in-out;
+                                > svg {
+                                    cursor: pointer;
+                                    width: 100%;
+                                    max-width: 25px;
                                 }
-                                > a {
-                                    display: inline-block;
-                                    transition: all 0.5s ease-in-out;
-                                    > svg {
-                                        cursor: pointer;
-                                        width: 100%;
-                                        max-width: 25px;
-                                    }
-                                }
-                                &.github {
-                                    img {
-                                        -webkit-filter: brightness(0) invert(1);
-                                        filter: brightness(0) invert(1);
-                                    }
+                            }
+                            &.github {
+                                img {
+                                    -webkit-filter: brightness(0) invert(1);
+                                    filter: brightness(0) invert(1);
                                 }
                             }
                         }

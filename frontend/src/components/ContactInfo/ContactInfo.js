@@ -56,8 +56,8 @@ export default function ContactInfo() {
           </div>
           <div className="info">
             <h4 className="info-title">Social Media</h4>
-            <div className="info-link-container social-media">
-              <ul>
+            <div className="info-link-container">
+              <ul className="social-media">
                 <li className="youtube">
                   <a href="https://www.youtube.com/@developergus" target="_blank" rel="noopener noreferrer" aria-label="youtube channel">
                     <img src={youtubeIcon} alt="Youtube icon" />
