@@ -45,6 +45,68 @@
                 font-size: 22px;
             }
         }
+        #breadcrumbs {
+            .breadcrumb {
+                > .breadcrumb-item {
+                    color:#838383;
+                    font-family: "Montserrat", sans-serif;
+                    &:before {
+                        color: #838383;
+                    }
+                    > a {
+                        color: #0475e5;
+                        font-family: "Montserrat", sans-serif;
+                        font-size: 16px;
+                        text-decoration: unset;
+                        &:hover, 
+                        &:focus, 
+                        &:active {
+                            text-decoration: underline;
+                        }
+                    }
+                    &.active {
+                        > a {
+                            color: #838383;
+                            pointer-events: none;
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+        }
+        .categories-heading {
+            color: #838383;
+            text-align: left;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        #categories {
+            display: flex;
+            flex-flow: row wrap;
+            > li {
+                margin-right: 5px;
+                &:after {
+                    content: ", ";
+                    color: #0475e5;
+                }
+                &:last-child:after {
+                    content: "";
+                }
+                > a {
+                    color: #0475e5;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 16px;
+                    text-decoration: unset;
+                    &:hover, 
+                    &:focus, 
+                    &:active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
     }
     #blog-posts {
         list-style: none;

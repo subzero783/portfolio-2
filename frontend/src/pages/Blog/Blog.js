@@ -49,6 +49,7 @@ export default function Blog() {
         if (element.toLowerCase() === category) {
           setProperCategoryName(element);
         }
+        return "";
       });
     };
     getProperCategoryName();
@@ -186,7 +187,35 @@ export default function Blog() {
               web development content
             </h2>
           </div>
-          <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12"></div>
+        </div>
+        <div className="row">
+          <div className="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <nav id="breadcrumbs" aria-label="breadcrumb">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">
+                  <a href="/">Home</a>
+                </li>
+                <li className={`breadcrumb-item ${category ? "" : "active"}`} {...(category ? "" : 'aria-current="page"')}>
+                  <a href="/blog">Blog</a>
+                </li>
+                {category ? <li className="breadcrumb-item active">{properCategoryName} Category</li> : ""}
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <h3 className="categories-heading">Categories:</h3>
+            <ul id="categories">
+              {categories[0].categories.map((element) => {
+                return (
+                  <li className="category">
+                    <a href={`/blog/category/${element.toLowerCase()}`}>{element}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </section>
       <ul id="blog-posts" className="container-lg">
