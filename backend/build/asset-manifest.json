@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e74298b2.css",
-    "main.js": "/static/js/main.0ecfb878.js",
+    "main.css": "/static/css/main.d9c37f35.css",
+    "main.js": "/static/js/main.be7f7f69.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/green.jpg": "/static/media/green.5ee8968f37fc415a460c.jpg",
     "static/media/Teko-SemiBold.eot": "/static/media/Teko-SemiBold.4c47aef54e7ed24e40a9.eot",
@@ -94,6 +94,7 @@
     "static/media/Teko-Regular.woff": "/static/media/Teko-Regular.da99d7eb89375922c0ca.woff",
     "static/media/Teko-Bold.woff": "/static/media/Teko-Bold.d3c91da844458490ed75.woff",
     "static/media/Teko-Light.woff": "/static/media/Teko-Light.8b23e34994cbb07c9946.woff",
+    "static/media/abstract-02.jpg": "/static/media/abstract-02.8566ffb9e91d511e189d.jpg",
     "static/media/Montserrat-ExtraBoldItalic.woff": "/static/media/Montserrat-ExtraBoldItalic.bb56843bd48566e07ad7.woff",
     "static/media/Montserrat-BoldItalic.woff": "/static/media/Montserrat-BoldItalic.e3995ee7c61a9eb95e81.woff",
     "static/media/Montserrat-SemiBoldItalic.woff": "/static/media/Montserrat-SemiBoldItalic.3db1a9575b6c29f62162.woff",
@@ -183,12 +184,12 @@
     "static/media/EpicRide.woff": "/static/media/EpicRide.95ff8c6e9e2ce117f757.woff",
     "static/media/EpicRide.woff2": "/static/media/EpicRide.b9c60d1ce269dd58bb5e.woff2",
     "index.html": "/index.html",
-    "main.e74298b2.css.map": "/static/css/main.e74298b2.css.map",
-    "main.0ecfb878.js.map": "/static/js/main.0ecfb878.js.map",
+    "main.d9c37f35.css.map": "/static/css/main.d9c37f35.css.map",
+    "main.be7f7f69.js.map": "/static/js/main.be7f7f69.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e74298b2.css",
-    "static/js/main.0ecfb878.js"
+    "static/css/main.d9c37f35.css",
+    "static/js/main.be7f7f69.js"
   ]
 }
