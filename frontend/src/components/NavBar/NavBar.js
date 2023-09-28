@@ -3,11 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { homeNavBarLink } from "../../functions";
 import Glitch from "../Glitch/Glitch";
-import instagramIcon from "../../images/png/instagram.png";
-import youtubeIcon from "../../images/png/youtube.png";
-import linkedinIcon from "../../images/png/linkedin.png";
-import githubIcon from "../../images/png/github-sign.png";
-import facebookIcon from "../../images/png/facebook-5.png";
+import SocialMedia from "../SocialMedia/SocialMedia";
 import "./NavBar.scss";
 
 const check_window_innerwidth = () => {
@@ -130,33 +126,7 @@ const NavBar = () => {
               </li>
             </ul>
           </nav>
-          <ul className="social-media">
-            <li className="youtube">
-              <a href="https://www.youtube.com/@developergus" target="_blank" rel="noopener noreferrer" aria-label="youtube channel">
-                <img src={youtubeIcon} alt="Youtube icon" />
-              </a>
-            </li>
-            <li className="github">
-              <a href="https://github.com/subzero783" target="_blank" rel="noopener noreferrer" aria-label="github">
-                <img src={githubIcon} alt="Github icon" />
-              </a>
-            </li>
-            <li className="linkedin">
-              <a href="https://www.linkedin.com/in/subzero783-gustavo-amezcua/" target="_blank" rel="noopener noreferrer" aria-label="linkedin profile">
-                <img src={linkedinIcon} alt="Linkedin icon" />
-              </a>
-            </li>
-            <li className="facebook">
-              <a href="https://www.facebook.com/developergus" target="_blank" rel="noopener noreferrer" aria-label="facebook profile">
-                <img src={facebookIcon} alt="Facebook icon" />
-              </a>
-            </li>
-            <li className="instagram">
-              <a href="https://www.instagram.com/developergus/" target="_blank" rel="noopener noreferrer" aria-label="instagram profile">
-                <img src={instagramIcon} alt="Instagram icon" />
-              </a>
-            </li>
-          </ul>
+          <SocialMedia />
         </div>
       </div>
     </div>
