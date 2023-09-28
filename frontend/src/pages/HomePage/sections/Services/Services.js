@@ -36,7 +36,7 @@ export default function Services() {
   return (
     <div id="services">
       <div className="services-bg-image-container">
-        <img className="services-bg-image" src={bg2} alt="services background image" />
+        <img className="services-bg-image" src={bg2} alt="services background" />
       </div>
       <div className="container container-lg">
         <div className="row">

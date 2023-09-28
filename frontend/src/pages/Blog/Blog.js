@@ -207,9 +207,9 @@ export default function Blog() {
           <div className="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <h3 className="categories-heading">Categories:</h3>
             <ul id="categories">
-              {categories[0].categories.map((element) => {
+              {categories[0].categories.map((element, index) => {
                 return (
-                  <li className="category">
+                  <li className="category" key={index}>
                     <a href={`/blog/category/${element.toLowerCase()}`}>{element}</a>
                   </li>
                 );
