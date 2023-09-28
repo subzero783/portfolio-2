@@ -178,8 +178,8 @@ export default function Blog() {
       />
       <section id="heading" className="container-lg">
         <div className="row">
-          <div className="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h1>Developer Gus Blog</h1>
+          <div className="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            {category ? <h1>Developer Gus {properCategoryName} Blog Category</h1> : <h1>Developer Gus Blog</h1>}
             <h2 className="title">
               Watch and read my latest
               <br />

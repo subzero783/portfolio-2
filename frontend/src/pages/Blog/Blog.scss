@@ -15,17 +15,18 @@
         h1 {
             text-align: left;
             color: #0475e5;
-            font-size: 54px;
+            font-size: 30px;
             line-height: 1.1em;
             letter-spacing: 0.5px;
-            font-family: "Epic Ride", sans-serif;
-            font-weight: 500;
+            // font-family: "Epic Ride", sans-serif;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
             @media screen and (max-width: 991px) {
-                font-size: 40px;
+                font-size: 36px;
                 line-height: 1.1em;
             }
             @media screen and (max-width: 768px) {
-                font-size: 50px;
+                font-size: 28px;
             }
         }
         h2.title {
