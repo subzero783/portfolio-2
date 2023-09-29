@@ -1,0 +1,21 @@
+.modal-button {
+    background-color: transparent;
+    padding: 0;
+    border: unset;
+}
+.modal-dialog {
+    max-width: 90%;
+    .modal-content {
+        color: #000;
+        .modal-footer {
+            justify-content: center;
+            > a, 
+            > button {
+                margin: 0;
+            }
+            > button {
+                margin-right: 15px;
+            }
+        }
+    }
+}
