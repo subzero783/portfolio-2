@@ -24,12 +24,6 @@
                 > div {
                     width: 31%;
                     margin-right: 15px;
-                    // &:nth-child(3n) {
-                    //     margin-right: 0;
-                    // }
-                    // &:last-child {
-                    //     margin-right: auto;
-                    // }
                     @media screen and (max-width: 767px) {
                         width: 45%;
                         &:nth-child(3n) {
