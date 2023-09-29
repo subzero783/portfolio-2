@@ -141,7 +141,7 @@ export default function PortfolioItem({ image, alt, link, title, skills, repoLin
 
   useEffect(() => {
     setProjectImages(websiteImages);
-  }, [projectImages]);
+  }, [websiteImages]);
   return (
     <>
       <ItemContainer className="blue-shadow">
@@ -181,22 +181,28 @@ export default function PortfolioItem({ image, alt, link, title, skills, repoLin
       >
         <Modal.Header closeButton>
           <Modal.Title>
-            <h3>Client: {title}</h3>
+            <h3>
+              Client: <span>{title}</span>
+            </h3>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="categories">{<h4>Developer Skills Covered: {skills}</h4>}</div>
+          <div className="categories">
+            {
+              <h4>
+                Developer Skills Covered: <span>{skills}</span>
+              </h4>
+            }
+          </div>
           <div className="website-images">
             {projectImages
-              ? Object.entries(projectImages).map((item, i) => {
-                  console.log(item);
+              ? projectImages.map((element, index) => {
                   return (
-                    // <img
-                    //   src={projectImages}
-                    //   alt={projectImages["alt"]}
-                    //   key={index}
-                    // />
-                    ""
+                    <img
+                      src={element}
+                      alt=""
+                      key={index}
+                    />
                   );
                 })
               : ""}

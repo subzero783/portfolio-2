@@ -34,6 +34,7 @@ const page_scroll_2 = () => {
 };
 
 export default function RecentProjects() {
+  const advantageSolutionsImages = [websiteImage01, websiteImage02, websiteImage03];
   useEffect(() => {
     AOS.init({
       duration: 2000,
@@ -76,7 +77,7 @@ export default function RecentProjects() {
                 title={"Advantage Solutions Careers"}
                 skills={"PHP, WordPress, CSS/SCSS, JavaScript, HTML, MySQL, API Integration"}
                 story=""
-                websiteImages={({ image: websiteImage01, alt: "" }, { image: websiteImage02, alt: "" }, { image: websiteImage03, alt: "" })}
+                websiteImages={advantageSolutionsImages}
               />
               <PortfolioItem
                 key={2}

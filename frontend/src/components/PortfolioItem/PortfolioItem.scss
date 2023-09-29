@@ -7,14 +7,58 @@
     max-width: 90%;
     .modal-content {
         color: #000;
+        .modal-header {
+            .modal-title {
+                color: #838383;
+                h3 {
+                    font-weight: 600;
+                    font-family: "Montserrat", sans-serif;
+                }
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+        .modal-body {
+            > .categories {
+                color: #838383;
+                h4 {
+                    font-weight: 600;
+                    font-family: "Montserrat", sans-serif;
+                }
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+        .website-images {
+            margin-top: 20px;
+            > img {
+                width: 100%;
+                display: block;
+                margin: 0 auto 20px;
+                max-width: 1000px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
         .modal-footer {
             justify-content: center;
+            
             > a, 
             > button {
                 margin: 0;
             }
             > button {
                 margin-right: 15px;
+            }
+            @media screen and (max-width: 768px){
+                flex-flow: column nowrap;
+                > button {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
             }
         }
     }
