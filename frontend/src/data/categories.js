@@ -1,5 +1,5 @@
 export const categories = [
   {
-    categories: ["WordPress", "CPanel", "HTML", "JavaScript", "React", "HubSpot", "CSS", "jQuery"],
+    categories: ["WordPress", "CPanel", "HTML", "JavaScript", "HubSpot", "CSS", "jQuery"],
   },
 ];
